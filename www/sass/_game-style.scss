@@ -1,0 +1,68 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.score {
+  position: absolute;
+  top: 5px;;
+  right: 10px;
+}
+
+.lives {
+  position: absolute;
+  top: 5px;;
+  left: 10px;
+}
+
+.game-over {
+  display:none;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 150px;
+}
+
+.paddle {
+  width: 200px;
+  height: 30px;
+  background-color: #999;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+}
+
+.ballX {
+  position: absolute;
+  height: 100%;
+  width: 30px;
+  animation: ball-animation-horizontal 3s linear infinite alternate;
+}
+
+.ballY {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background-color: #000;
+  border-radius: 50%;
+  animation: ball-animation-vertical 5s linear infinite alternate;
+}
+
+.ball-paused {
+  animation-play-state: paused;
+}
+
+@keyframes ball-animation-horizontal {
+  0%   {left: 0}
+  100%  {left: calc(100% - 40px)}
+}
+
+@keyframes ball-animation-vertical {
+  0%   {top: 0}
+  100%  {top: calc(100% - 40px)}
+}
