@@ -3,4 +3,14 @@
 }
 .card{
     border:none;
+    .card-body{
+        background-color: rgb(15,15,15)
+    }
+    .card-title{
+        color:#fff;
+    }
+    a{
+        text-decoration-color: #fff;
+    }
 }
+
