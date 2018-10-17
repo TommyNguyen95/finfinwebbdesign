@@ -1,10 +1,11 @@
+@import "variables";
 @import "bootstrap/bootstrap";
 @import "game-style";
 @import "footer";
 @import "cards";
 
 main {
-    background-color: rgb(15, 15, 15);
+    background-color: $site-background-color;
 }
 
 h1 {
