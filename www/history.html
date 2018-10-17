@@ -1,67 +1,93 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <title>History</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- Navbar icon begins -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-      crossorigin="anonymous">
-    <!-- Navbar icon ends -->
-  </head>
+<head>
+  <title>History</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Navbar icon begins -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+  <!-- Navbar icon ends -->
+</head>
 
 <body>
   <header>
 
     <!-- Navbar begins -->
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand fas fa-gamepad" href="/index.html"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="/index.html">Finfin Webdesign<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/game.html">Vårt Spel</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/highscore.html">High Score</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/history.html">Historik</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- Navbar ends -->
-      
+      <a class="navbar-brand fas fa-gamepad" href="/index.html"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/index.html">Finfin Webdesign<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/game.html">Vårt Spel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/highscore.html">High Score</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/history.html">Historik</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar ends -->
+
   </header>
   <main>
-    <h1>Hej!svej</h1>
+    <h1>Detta är historian om
+      <span class="txt-rotate" data-period="1000" data-rotate='[ "breakout online", "BREAKOUT ONLINE" ]'></span>
+    </h1>
 
     <!--HÄR ÄR EN VIDEO-->
     <video width="320" height="240" controls>
       <source src="/video/Breakout.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+      Your browser does not support the video tag.
     </video>
 
     <!--EN BILD-->
     <img src="/imgs/history.jpg" alt="breakout game history">
 
-
-
   </main>
-  <footer>
 
+  <footer>
+    <div class="container-fluid bg-dark py-3">
+      <div class="container">
+        <div class="row pt-3">
+          <div class="col-md-4">
+            <p class="text-white">© Classic Breakout</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="d-inline-block pr-3">
+              <a href="#" class="text-white">
+                <i class="big-icon fab fa-facebook"></i></a>
+            </div>
+            <div class="d-inline-block pr-3">
+              <a href="#" class="text-white">
+                <i class="big-icon fab fa-twitter-square"></i></a>
+            </div>
+            <div class="d-inline-block pr-3">
+              <a href="#" class="text-white">
+                <i class="big-icon fab fa-snapchat"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Row ends here-->
+    </div>
+    <!--Container ends here-->
   </footer>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="/js/libs/main.js"></script>
+  <script src="/js/libs/bootstrap.min.js"></script>
   <script src="/js/main.js"></script>
 </body>
-
+<script src="/js/history.js"></script>
 </html>
