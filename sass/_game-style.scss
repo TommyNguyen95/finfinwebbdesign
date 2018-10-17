@@ -8,10 +8,35 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
+/*-------GAME CONTAINER----*/
+.game-container{
+
+border:solid red 2px;
+position:relative;
+height:100%;
+width:100%;
+}
+
 .score {
   position: absolute;
   top: 5px;;
   right: 10px;
+
+ 
+ 
+}
+
+.score span{
+  @media screen and (max-width: 900px){
+    font-size:80%;
+  }
+  @media screen and (max-width: 700px){
+    font-size:60%;
+  }
+  @media screen and (max-width: 500px){
+    font-size:40%;
+  }
+  
 }
 
 .lives {
@@ -29,8 +54,10 @@ body {
 }
 
 .paddle {
-  width: 200px;
-  height: 30px;
+  /*width: 200px;*/
+  width:14%;
+  /*height: 30px;*/
+  height:5%;
   background-color: #999;
   position: absolute;
   z-index: 1;
