@@ -5,20 +5,48 @@
   <title>Titel</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/css/style.css">
+  <!-- Navbar icon begins -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
+  <!-- Navbar icon ends -->
 </head>
 
 <body>
   <header>
     <nav>
 
+    <!-- Navbar begins -->
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark" href="#">
+      <a class="navbar-brand fas fa-gamepad" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Finfin Webdesign<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Vårt Spel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">High Score</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Historik</a>
+          </li>
+        </ul>
+      </div>
     </nav>
+    <!-- Navbar ends -->
+
   </header>
   <main>
     <div class="container">
       <div class="row">
-        <div class="card col-md-12" style="width: 18rem;">
+        <!--Main cards start here-->
+        <div class="card col-md-12 mt-5" style="width: 18rem;">
           <img class="card-img-top" src=".../100px180/" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
@@ -27,7 +55,32 @@
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
-        <!--12col card ends here-->
+        <!--Main card ends here-->
+        <div class="container">
+          <div class="row">
+            <div class="card-group ">
+              <div class="card">
+                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Row ends here-->
+        </div>
+        <!--Container ends here-->
       </div>
       <!--Row ends here-->
     </div> <!-- Container ends here-->
