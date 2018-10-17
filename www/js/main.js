@@ -86,3 +86,5 @@ function playAgain(){
   $('.game-over').hide();
   restartBallAnimation();
 }
+
+
