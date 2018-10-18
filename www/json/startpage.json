@@ -1,0 +1,31 @@
+{
+    "our-game": {
+        "sv": "Vårat egna spel",
+        "en": "Our own game"
+    },
+    "game2": {
+        "sv": "Hard Breakout",
+        "en": "Hard Breakout"
+    },
+    "game3": {
+        "sv": "BreakoutXx",
+        "en": "BreakoutXx"
+    },
+    "game4": {
+        "sv": "BreakoutDx",
+        "en": "BreakoutDx"
+    },
+    "game5": {
+        "sv": "Retro Breakout",
+        "en": "Retro Breakout"
+    },
+    "game6": {
+        "sv": "ModuleBreakout",
+        "en": "ModuleBreakout"
+    },
+    "game7": {
+        "sv": "BrEaKoUT",
+        "en": "BrEaKoUT"
+    }
+}
+
