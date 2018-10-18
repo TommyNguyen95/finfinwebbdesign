@@ -33,10 +33,10 @@ setInterval(function(){
     $paddle.animate({left : paddleX + step}, 100);
   }
 
-  // Check for hits and misses
+  // Check for hits and misses                   56px nav     $window istället för .gamecontainer
   let x = $ballX.position().left;
   let y = $ballY.position().top;
-  if(y >= $(window).height() - $ballY.height() - 20){
+  if(y >= $(".game-container").height() - $ballY.height() - 20){   
     let paddleX1 = $paddle.position().left;
     let paddleX2 = paddleX1 + $paddle.outerWidth();
     if(paddleX1 - $ballY.width() <= x && paddleX2 + $ballY.width() >= x){
