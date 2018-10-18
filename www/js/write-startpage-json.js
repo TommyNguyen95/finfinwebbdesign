@@ -6,7 +6,7 @@ $('.svflag').click(function(){
 });
 $('.ukflag').click(function(){
     language="english";
- });
+});
 
 function write(data){
 
@@ -19,6 +19,7 @@ function write(data){
     $('.game6-name').text(data["game6"].sv);
     $('.game7-name').text(data["game7"].sv);
     }
+    
 
 }
 
