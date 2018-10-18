@@ -3,4 +3,14 @@
 }
 .card{
     border:none;
+    .card-body{
+        background-color: $site-background-color;
+    }
+    .card-title{
+        color: $primary-text-color;
+    }
+    a{
+        text-decoration-color: $primary-text-color;
+    }
 }
+

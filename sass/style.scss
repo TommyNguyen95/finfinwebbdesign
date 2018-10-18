@@ -1,8 +1,14 @@
+@import "variables";
 @import "bootstrap/bootstrap";
 @import "game-style";
 @import "footer";
 @import "cards";
+@import "header";
 
-h1{
-    color: green;
+main {
+    background-color: $site-background-color;
+}
+
+h1 {
+    color: white;
 }
