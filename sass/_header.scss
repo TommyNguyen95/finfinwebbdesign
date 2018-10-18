@@ -1,5 +1,23 @@
-.img-responsive {
+/*.img-responsive {
     width: 100%;
     max-height: 30vw;
     min-height: 30vh;
+    background-color: black;
+} */
+
+
+
+.title {
+    background-size: cover;
+    width: 100%;
+    min-height: 30vh;
+    background-color: black;
+}
+
+
+header h1 {
+    margin: 0 !important; 
+    color: white;
+    text-align: center; 
+    padding-top: 61px;
 }
