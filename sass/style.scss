@@ -6,11 +6,4 @@
 @import "header";
 @import "navbar";
 @import "history";
-
-main {
-    background-color: $site-background-color;
-}
-
-h1 {
-    color: $primary-text-color;
-}
+@import "body-related";
