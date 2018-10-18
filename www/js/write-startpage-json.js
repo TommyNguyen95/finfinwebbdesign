@@ -3,9 +3,11 @@ let language="swedish";
 
 $('.svflag').click(function(){
    language="swedish";
+   $.getJSON('/json/startpage.json', write);
 });
 $('.ukflag').click(function(){
     language="english";
+    $.getJSON('/json/startpage.json', write);
 });
 
 function write(data){
@@ -19,6 +21,15 @@ function write(data){
     $('.game6-name').text(data["game6"].sv);
     $('.game7-name').text(data["game7"].sv);
     }
+    else if(language=="english"){
+        $('.ourgame-name').text(data["our-game"].en);
+        $('.game2-name').text(data["game2"].en);
+        $('.game3-name').text(data["game3"].en);
+        $('.game4-name').text(data["game4"].en);
+        $('.game5-name').text(data["game5"].en);
+        $('.game6-name').text(data["game6"].en);
+        $('.game7-name').text(data["game7"].en);
+        }
     
 
 }
