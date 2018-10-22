@@ -5,5 +5,5 @@ $('.svflag').click(function(){
 });
 $('.ukflag').click(function(){
      $('h1 span:first-child').text('This is');
-     rotatingText.toRotate = ['breakout breakout', 'BREAKOUT ONLINE'];
+     rotatingText.toRotate = ['breakout online', 'BREAKOUT ONLINE'];
 });
