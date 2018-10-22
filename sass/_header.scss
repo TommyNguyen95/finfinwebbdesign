@@ -10,8 +10,16 @@ header h1 {
     margin: 0 !important; 
     color: white;
     text-align: center; 
+
+    @media screen and (max-width: 600px){
+        font-size:20px;
+    }
+    @media screen and (min-width:601px) and (max-width: 800px){
+        font-size:30px;
+    }
 }
 
 h1 {
-    padding-top: 158px;
+    padding-top: 100px;
+    padding-bottom: 30px;
 }
