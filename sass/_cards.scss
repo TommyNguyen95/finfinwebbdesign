@@ -6,6 +6,10 @@
     border:none;
     .card-body{
         background-color: $site-background-color;
+        .link-text-inline-block{
+            display: inline-block;
+            }
+
     }
     .card-title{
         color: $primary-text-color;
@@ -14,4 +18,6 @@
         text-decoration-color: $primary-text-color;
     }
 }
+
+
 
