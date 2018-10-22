@@ -25,13 +25,9 @@ function write(data){
 $('.svflag').click(function(){
     language="swedish";
     $.getJSON('/json/startpage.json', write);
-    $('h1 span:first-child').text('Detta är');
-    rotatingText.toRotate = ['Lol', 'LOOOOOOOOOOOOOOL'];
 });
 $('.ukflag').click(function(){
      language="english";
      $.getJSON('/json/startpage.json', write);
-     $('h1 span:first-child').text('This is');
-     rotatingText.toRotate = ['23456', 'lkjhgfd'];
 });
 
