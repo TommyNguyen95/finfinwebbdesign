@@ -15,7 +15,8 @@
   <header>
     <!----------------------- HEADER STARTS----------------------->
     <div class="title">
-      <h1>This is
+      <h1>
+        <span>This is</span>
         <span class="txt-rotate" data-period="1000" data-rotate='[ "breakout online", "BREAKOUT ONLINE" ]'></span>
       </h1>
     </div>
@@ -60,13 +61,15 @@
       <div class="row">
         <div class="col-md-12">
           <!--Main cards start here-->
-          <div class="card mt-4">
+          <div class="card mt-5">
             <a href="/game">
               <img class="card-img-top" src="/imgs/9.jpg">
-              <div class="card-body">
-                <h5 class="card-title text-center ourgame-name gname1"></h5>
-              </div>
               </a>
+              <div class="card-body text-center">
+                <a href="/game" class="link-text-inline-block">
+                <h5 class="card-title ourgame-name gname1"></h5>
+              </a>
+              </div>
             </div>
         </div>
       </div>
@@ -76,21 +79,25 @@
               <div class="card">
                 <a href="#">
                 <img class="card-img-top" src="imgs/1.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title text-center game2-name gname2"></h5>
+                </a>
+                <div class="card-body text-center">
+                  <a href="#" class="link-text-inline-block">
+                  <h5 class="card-title game2-name gname2"></h5>
+                  </a>
                 </div>
-              </a>
               </div>
               </div>
       <div class="col-md-6">
           <div class="card">
               <a href="#">
             <img class="card-img-top" src="imgs/2.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title text-center game3-name gname3"></h5>
+            </a>
+            <div class="card-body text-center">
+              <a href="#" class="link-text-inline-block">
+              <h5 class="card-title game3-name gname3"></h5>
+              </a>
             </div>
           </div>
-          </a>
           </div>
     </div>  <!--Row ends here-->
     <!--First 6col card ends here-->
@@ -101,18 +108,23 @@
             <div class="card">
                 <a href="#">
               <img class="card-img-top" src="imgs/3.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-center game4-name gname4"></h5>
+              </a>
+              <div class="card-body text-center">
+                <a href="#" class="link-text-inline-block">
+                <h5 class="card-title game4-name gname4"></h5>
+                </a>
               </div>
             </div>
-            </a>
         </div>
     <div class="col-md-6">
         <div class="card">
             <a href="#">
           <img class="card-img-top" src="imgs/4.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title text-center game5-name gname5"></h5>
+            </a>
+          <div class="card-body text-center">
+              <a href="#" class="link-text-inline-block">
+            <h5 class="card-title game5-name gname5"></h5>
+            </a>
           </div>
         </div>
       </a>
@@ -126,21 +138,25 @@
             <div class="card">
               <a href="#">
               <img class="card-img-top" src="imgs/10.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-center game6-name gname6"></h5>
+              </a>
+              <div class="card-body text-center">
+                  <a href="#" class="link-text-inline-block">
+                <h5 class="card-title game6-name gname6"></h5>
+                </a>
               </div>
             </div>
-            </a>
             </div>
     <div class="col-md-6">
         <div class="card">
             <a href="#">
           <img class="card-img-top" src="imgs/6.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title text-center game7-name gname7"></h5>
+            </a>
+          <div class="card-body text-center">
+              <a href="#" class="link-text-inline-block">
+            <h5 class="card-title game7-name gname7"></h5>
+            </a>
           </div>
         </div>
-        </a>
         </div>
     </div>   <!--Row ends here-->
    <!--Third 6col card ends here-->
@@ -179,14 +195,11 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card picture">
-              <a href="#">
+            <a href="#">
+              <div class="card picture">
                 <img class="pic1" src="/imgs/his1.jpg" alt="Breakout picture">
-              </a>
-              <a href="#">
-                <img class="pic2" src="/imgs/his2.jpg" alt="Breakout picture">
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
         </div>
         <div class="row">
@@ -195,6 +208,23 @@
               <div class="card-body">
                 <p class="text2">
                 </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <a href="#">
+              <div class="card picture">
+                <img class="pic2" src="/imgs/his2.jpg" alt="Breakout picture">
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card video">
+                <video src="/video/Breakout.mp4" type="video/mp4">
+                </video>
               </div>
             </div>
           </div>
@@ -238,7 +268,6 @@
   <script src="/js/libs/bootstrap.min.js"></script>
   <script src="/js/header.js"></script>
   <script src="/js/write-startpage-json.js"></script>
-  <script src="/js/set-language.js"></script>
   <script src="/js/spa.js"></script>
   <script src="/js/main.js"></script> 
   <script src="/js/history.js"></script>
