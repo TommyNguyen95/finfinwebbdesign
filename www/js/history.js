@@ -7,8 +7,8 @@ function languageToggle(translate){
 
 		let lang = translate[language];
 
-		let textUL1 = $('<ul class="' + language + '"/>');
-		let textUL2 = $('<ul class="' + language + '"/>');
+		let textUL1 = $('<p class="' + language + '"</p>');
+		let textUL2 = $('<p class="' + language + '"</p>');
 
 
 		textUL1.append('<p>' + lang[0] + '</p>');
