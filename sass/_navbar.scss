@@ -4,6 +4,12 @@
 	cursor:pointer;
 }
 
+.svflag:active, .ukflag:active{
+	transform: translateY(2px);
+}
+
+
+
 .ukflag{
 	margin-right: 25px;
 }
