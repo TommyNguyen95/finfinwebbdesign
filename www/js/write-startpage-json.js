@@ -1,5 +1,5 @@
 
-
+/*
 function write(data){
 
     if(language=="swedish"){
@@ -23,7 +23,38 @@ function write(data){
     
 
 }
-
+*/
 
 
 $.getJSON('/json/startpage.json', write);
+
+let x=1;
+let language="swedish";
+
+function write(data){
+
+    for(let games in data){
+
+        let game= data[games];
+
+        if(language=="swedish"){
+            $('.gname'+x).text(game.sv);
+        }
+        else if(language=="english"){
+            $('.gname'+x).text(game.en);
+        }
+
+        x++;       
+    }
+}
+
+
+$('.svflag').click(function(){
+    language="swedish";
+    $.getJSON('/json/startpage.json', write);
+ });
+$('.ukflag').click(function(){
+     language="english";
+     $.getJSON('/json/startpage.json', write);
+ });
+
