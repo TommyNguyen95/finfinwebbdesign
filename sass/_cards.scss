@@ -6,6 +6,12 @@
     border:none;
     .card-body{
         background-color: $site-background-color;
+        .link-text-inline-block{
+            display: inline-block;
+            }
+            h5{
+                padding: 10px 0px 50px 0px;
+            }
     }
     .card-title{
         color: $primary-text-color;
@@ -14,4 +20,6 @@
         text-decoration-color: $primary-text-color;
     }
 }
+
+
 
