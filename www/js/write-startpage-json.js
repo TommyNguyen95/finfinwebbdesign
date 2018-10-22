@@ -28,10 +28,10 @@ function write(data){
 
 $.getJSON('/json/startpage.json', write);
 
-let x=1;
 let language="swedish";
 
 function write(data){
+    let x=1;
 
     for(let games in data){
 
@@ -52,9 +52,9 @@ function write(data){
 $('.svflag').click(function(){
     language="swedish";
     $.getJSON('/json/startpage.json', write);
- });
+});
 $('.ukflag').click(function(){
      language="english";
      $.getJSON('/json/startpage.json', write);
- });
+});
 
