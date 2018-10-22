@@ -1,3 +1,4 @@
 node_modules
-www/css
+www/css/*.css
+www/css/*.css.map
 .DS_Store
