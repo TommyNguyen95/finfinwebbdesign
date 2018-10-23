@@ -12,28 +12,28 @@ function navbarfunction(language_data) {
     let ul_en = $('<ul/>').attr('class','navbar-nav');
 
     /*Create four empty sorted lists (will add the idividual items (higscor, historia etc)into these lists. */
-    let navitem1_sv = $('<li/>').attr('class','nav-item active');
+    let navitem1_sv = $('<li/>').attr('class','nav-item');
     let navitem2_sv = $('<li/>').attr('class', 'nav-item');
     let navitem3_sv = $('<li/>').attr('class', 'nav-item');
     let navitem4_sv = $('<li/>').attr('class', 'nav-item');
 
     /*Create four empty sorted lists (will add the idividual items (higscor, history etc)into these lists. */
-    let navitem1_en = $('<li/>').attr('class', 'nav-item active');
+    let navitem1_en = $('<li/>').attr('class', 'nav-item');
     let navitem2_en = $('<li/>').attr('class', 'nav-item');
     let navitem3_en = $('<li/>').attr('class', 'nav-item');
     let navitem4_en = $('<li/>').attr('class', 'nav-item');
 
     /* Append adds the text stored in language-date (taken from JSON file)and html-code to the navbar item (empty list)*/
-    navitem1_sv.append('<a class="nav-link" href="/">'+ language_data.sv[0] + '<span class="sr-only">(current)</span></a>');
-    navitem2_sv.append('<a class="nav-link" href="/game">' + language_data.sv[1] + '</a>');
-    navitem3_sv.append('<a class="nav-link" href="/highscore">' + language_data.sv[2] + '</a>');
-    navitem4_sv.append('<a class="nav-link" href="/history">' + language_data.sv[3] + '</a>');
+    navitem1_sv.append('<a class="nav-link" href="' + language_data[0].link  + '"><i class="' + language_data[0].icon + '"></i>' + language_data[0].title.sv + '</a>');
+    navitem2_sv.append('<a class="nav-link" href="' + language_data[1].link  + '"><i class="' + language_data[1].icon + '"></i>' + language_data[1].title.sv + '</a>');
+    navitem3_sv.append('<a class="nav-link" href="' + language_data[2].link  + '"><i class="' + language_data[2].icon + '"></i>' + language_data[2].title.sv + '</a>');
+    navitem4_sv.append('<a class="nav-link" href="' + language_data[3].link  + '"><i class="' + language_data[3].icon + '"></i>' + language_data[3].title.sv + '</a>');
 
     /* Append adds the text stored in language-date (taken from JSON file)and html-code to the navbar item (empty list)*/
-    navitem1_en.append('<a class="nav-link" href="/">' + language_data.en[0] + '<span class="sr-only">(current)</span></a>');
-    navitem2_en.append('<a class="nav-link" href="/game">' + language_data.en[1] + '</a>');
-    navitem3_en.append('<a class="nav-link" href="/highscore">' + language_data.en[2] + '</a>');
-    navitem4_en.append('<a class="nav-link" href="/history">' + language_data.en[3] + '</a>');
+    navitem1_en.append('<a class="nav-link" href="' + language_data[0].link  + '"><i class="' + language_data[0].icon + '"></i>' + language_data[0].title.en + '</a>');
+    navitem2_en.append('<a class="nav-link" href="' + language_data[1].link  + '"><i class="' + language_data[1].icon + '"></i>' + language_data[1].title.en + '</a>');
+    navitem3_en.append('<a class="nav-link" href="' + language_data[2].link  + '"><i class="' + language_data[2].icon + '"></i>' + language_data[2].title.en + '</a>');
+    navitem4_en.append('<a class="nav-link" href="' + language_data[3].link  + '"><i class="' + language_data[3].icon + '"></i>' + language_data[3].title.en + '</a>');
 
     /* Adds the navitems to the unsorted list*/ 
     ul_sv.append(navitem1_sv);
