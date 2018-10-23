@@ -1,35 +1,34 @@
 [
-    {
-        "title": {
-            "sv": "Classic Breakout",
-            "en": "Classic Breakout"
-        },
-        "icon": "gamepad fas fa-gamepad",
-        "link": "/"
-    }, 
-    {
-        "title": {
-            "sv": "Vårat Spel",
-            "en": "Our Game"
-        },
-        "icon": "",
-        "link": "/game"
+  {
+    "title": {
+      "sv": "Classic Breakout",
+      "en": "Classic Breakout"
     },
-    { 
-        "title": {
-            "sv": "Topplistan",
-            "en": "High Score"
-        },
-        "icon": "",
-        "link": "/highscore"
-    }, 
-    {
-        "title": {
-            "sv": "Historia",
-            "en": "History"
-        },
-        "icon": "",
-        "link": "/history"
-    }
+    "icon": "gamepad fas fa-gamepad",
+    "link": "/"
+  },
+  {
+    "title": {
+      "sv": "Vårat Spel",
+      "en": "Our Game"
+    },
+    "icon": "",
+    "link": "/game"
+  },
+  {
+    "title": {
+      "sv": "Topplistan",
+      "en": "High Score"
+    },
+    "icon": "",
+    "link": "/highscore"
+  },
+  {
+    "title": {
+      "sv": "Historia",
+      "en": "History"
+    },
+    "icon": "",
+    "link": "/history"
+  }
 ]
-
