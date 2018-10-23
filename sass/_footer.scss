@@ -10,3 +10,7 @@ body {
 .big-icon {
     font-size: 26px;
 }
+
+.big-icon:active {
+    transform: translateY(2px);
+}
