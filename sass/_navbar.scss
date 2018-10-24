@@ -1,6 +1,7 @@
 .svflag, .ukflag{
 	width:26px;
 	height:26px;
+	margin-bottom:10px;
 	cursor:pointer;
 }
 
@@ -37,3 +38,12 @@ font-size: 27px;
 .nav-margin{
 	margin-top:5px;
 }
+
+.navbar{
+	position:fixed;
+	width:100%;
+	top: 180px;
+	padding-bottom:0;
+}
+
+
