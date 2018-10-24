@@ -1,15 +1,15 @@
-/* Gets the data stored in JSON-file and adds that to te function and starts it */ 
+/* Gets the data stored in JSON-file and adds that to te function and starts it */
 $.getJSON('/json/navbar.json', navbarfunction);
 
 /*Creates a function named navbarfunction, which expects to get data it will store inside the variable "language_data" */
 function navbarfunction(language_data) {
 
-    /*Hides the OLD html code from navbar*/
-    $(document.getElementById('nav')).hide();
+  /*Hides the OLD html code from navbar*/
+  $(document.getElementById('nav')).hide();
 
-    /*Creates an empty unsorted list (will add the navbar in here)*/
-    let ul_sv = $('<ul/>').attr('class','navbar-nav');
-    let ul_en = $('<ul/>').attr('class','navbar-nav');
+  /*Creates an empty unsorted list (will add the navbar in here)*/
+  let ul_sv = $('<ul/>').attr('class', 'navbar-nav');
+  let ul_en = $('<ul/>').attr('class', 'navbar-nav');
 
     /*Create four empty sorted lists (will add the idividual items (higscor, historia etc)into these lists. */
     let navitem1_sv = $('<li/>').attr('class','nav-item nav-margin');
@@ -52,22 +52,22 @@ function navbarfunction(language_data) {
     ul_en.append(navitem3_en);
     ul_en.append(navitem4_en);
 
-    /*Adds the unsorted list that stores the sorted list to the navbar*/ 
-    $(document.getElementById('navbarNavDropdown')).append(ul_sv);
-    $(document.getElementById('navbarNavDropdown')).append(ul_en);
+  /*Adds the unsorted list that stores the sorted list to the navbar*/
+  $(document.getElementById('navbarNavDropdown')).append(ul_sv);
+  $(document.getElementById('navbarNavDropdown')).append(ul_en);
 
-    /*The English are hidden (until English flag is clicked on)*/
+  /*The English are hidden (until English flag is clicked on)*/
+  ul_en.hide();
+
+  /* When the Swedish flag is clicked on, the Swedish is shown and the English is hidden*/
+  $('.svflag').click(function () {
+    ul_sv.show();
     ul_en.hide();
+  });
+  /* When the English flag is clicked on, the English is shown and Swedish is hidden*/
+  $('.ukflag').click(function () {
+    ul_sv.hide();
+    ul_en.show();
+  });
 
-    /* When the Swedish flag is clicked on, the Swedish is shown and the English is hidden*/
-    $('.svflag').click(function(){
-        ul_sv.show();
-        ul_en.hide();
-    });
-    /* When the English flag is clicked on, the English is shown and Swedish is hidden*/ 
-    $('.ukflag').click(function(){
-        ul_sv.hide();
-        ul_en.show();
-    });
-
-    }
+}
