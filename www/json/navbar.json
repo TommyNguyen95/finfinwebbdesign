@@ -1,10 +1,18 @@
 [
     {
         "title": {
+            "sv": "",
+            "en": ""
+        },
+        "icon": "gamepad fas fa-gamepad",
+        "link": "/"
+    }, 
+    {
+        "title": {
             "sv": "Classic Breakout",
             "en": "Classic Breakout"
         },
-        "icon": "gamepad fas fa-gamepad",
+        "icon": "",
         "link": "/"
     }, 
     {
