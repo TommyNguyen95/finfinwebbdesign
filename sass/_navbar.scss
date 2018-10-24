@@ -46,4 +46,11 @@ font-size: 27px;
 	padding-bottom:0;
 }
 
-
+@media only screen and (max-width: 770px) {
+    .gamepad {
+		margin-top: 20px;
+	}
+	.svflag, .ukflag{
+		margin: 20px 0;
+	}
+}
