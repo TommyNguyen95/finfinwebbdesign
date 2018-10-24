@@ -70,4 +70,61 @@ function navbarfunction(language_data) {
     ul_en.show();
   });
 
+  /* Attach click eventlistener on the whole UL since it's more effective to use event delegation 
+    rather than attaching event on every single LI item
+  */
+  ul_sv.click(function(event){
+    let target = event.target;
+   
+    /* Since we have an icon inside an a-tag we need to be sure that we can access the link because
+      because it's cruical since the link is what we are going to use as a reference to distinguish
+      between the a-tags that we are going to set as active
+    */
+    if(target.tagName == 'I'){
+      target = target.parentElement;
+    }
+
+    /* If the item that we are clicking on is an a-tag, only then should we perform this action, since we don't 
+      want other obscure and unpredictable actions to be performed on wrong elements 
+    */
+    if(target.tagName == 'A'){
+      const targetUrl = target.pathname;
+      
+      /* Since we are clicking somewhere inside the UL we should look for all the a-tags and to 
+        safe than sorry, so we simply remove all the tags on every single one  
+      */
+      $(this).find('a').removeClass('active');
+      /* Also remove the active class on all the items in the english version just to be safe */
+      $(ul_en).find('a').removeClass('active')
+
+      /* Set the current element we clicked with the class active to indicate.. obviously that it's definately is active...
+        Based on url that lies within the a-tag and that we extracted to the variable "targetUrl". We use "targetUrl" to find the corresponding
+        item in the english version of the navbar and set it to active so we can toggle back and forth between english and swedish.
+      */
+      $(target).addClass('active');
+      $(ul_en).find('a[href="' + targetUrl + '"]').addClass('active');
+
+    }
+  })
+
+  ul_en.click(function(event){
+    let target = event.target;
+    if(target.tagName == 'I'){
+      target = target.parentElement;
+    }
+
+    if(target.tagName == 'A'){
+      const targetUrl = target.pathname;
+      $(this).find('a').removeClass('active');
+      $(ul_sv).find('a').removeClass('active')
+      $(target).addClass('active');
+      $(ul_sv).find('a[href="' + targetUrl + '"]').addClass('active');
+    }
+  })
+
+  /* Initially set the state in the navbar based on the location.pathname by querying the links in swedish and english ULs
+    and set the class active.
+  */
+  $(ul_sv).find('a[href="' + location.pathname + '"]').addClass('active');
+  $(ul_en).find('a[href="' + location.pathname + '"]').addClass('active');
 }
