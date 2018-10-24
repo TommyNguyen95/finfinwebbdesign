@@ -23,17 +23,6 @@
         "icon": "",
         "link": "/game"
     },
-    "icon": "gamepad fas fa-gamepad",
-    "link": "/"
-  },
-  {
-    "title": {
-      "sv": "Vårat Spel",
-      "en": "Our Game"
-    },
-    "icon": "",
-    "link": "/game"
-  },
   {
     "title": {
       "sv": "Topplistan",
