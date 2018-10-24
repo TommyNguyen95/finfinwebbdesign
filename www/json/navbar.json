@@ -6,7 +6,7 @@
         },
         "icon": "gamepad fas fa-gamepad",
         "link": "/"
-    }, 
+    },
     {
         "title": {
             "sv": "Classic Breakout",
@@ -14,7 +14,7 @@
         },
         "icon": "",
         "link": "/"
-    }, 
+    },
     {
         "title": {
             "sv": "Vårat Spel",
@@ -23,20 +23,20 @@
         "icon": "",
         "link": "/game"
     },
-  {
-    "title": {
-      "sv": "Topplistan",
-      "en": "High Score"
+    {
+        "title": {
+            "sv": "Topplistan",
+            "en": "High Score"
+        },
+        "icon": "",
+        "link": "/highscore"
     },
-    "icon": "",
-    "link": "/highscore"
-  },
-  {
-    "title": {
-      "sv": "Historia",
-      "en": "History"
-    },
-    "icon": "",
-    "link": "/history"
-  }
+    {
+        "title": {
+            "sv": "Historia",
+            "en": "History"
+        },
+        "icon": "",
+        "link": "/history"
+    }
 ]
