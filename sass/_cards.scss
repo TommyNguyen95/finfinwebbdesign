@@ -4,17 +4,12 @@
 
 .card{
     border:none;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
      .card-body{
         background-color: $site-background-color;
         margin-top: 10px;
-        display: inline-block;
-        .pl{
-            padding-left: 140px;
-        }
-
     }
     .card-title{
         color: $primary-text-color;
@@ -28,8 +23,10 @@
         &{
             border-radius: 20px;        }
     } 
-    .gname1{
-        font-size:28px;
+    @media only screen and (max-width: 600px) {
+        .gname1 {
+            font-size: 1.25rem;
+        }
     }
 }
 
