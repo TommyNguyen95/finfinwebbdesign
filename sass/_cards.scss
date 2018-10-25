@@ -4,15 +4,18 @@
 
 .card{
     border:none;
-     
-    .card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     .card-body{
         background-color: $site-background-color;
         margin-top: 10px;
+        display: inline-block;
+        .ml{
+            padding-left: 140px;
+        }
 
-        .link-text-inline-block{
-            display: inline-block;
-            }
-     }
+    }
     .card-title{
         color: $primary-text-color;
     }
@@ -24,7 +27,7 @@
 
         &{
             border-radius: 20px;
-            margin-bottom: 20px; 
+            // margin-bottom: 20px; 
         }
     } 
     .gname1{
