@@ -4,16 +4,15 @@
 
 .card{
     border:none;
-     .card-body{
+     
+    .card-body{
         background-color: $site-background-color;
         margin-top: 10px;
+
         .link-text-inline-block{
             display: inline-block;
             }
-            // h5{
-            //     padding: 10px 0px 50px 0px;
-            // }
-    }
+     }
     .card-title{
         color: $primary-text-color;
     }
