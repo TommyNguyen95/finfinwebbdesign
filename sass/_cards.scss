@@ -4,8 +4,9 @@
 
 .card{
     border:none;
-    .card-body{
+     .card-body{
         background-color: $site-background-color;
+        margin-top: 10px;
         .link-text-inline-block{
             display: inline-block;
             }
@@ -24,9 +25,12 @@
 
         &{
             border-radius: 20px;
+            margin-bottom: 20px; 
         }
     } 
-
+    .gname1{
+        font-size:28px;
+    }
 }
 
 
