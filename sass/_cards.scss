@@ -20,7 +20,7 @@
         text-decoration-color: $primary-text-color;
     }
     .card-img-top{
-        border: dotted 6px $paddle-color;
+        border: outset 8px $paddle-color;
         &:hover{
             opacity: 0.5;
         }
