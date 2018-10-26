@@ -21,6 +21,9 @@
     }
     .card-img-top{
         border: dotted 6px $paddle-color;
+        &:hover{
+            opacity: 0.5;
+        }
 
         &{
             border-radius: 20px;        }
