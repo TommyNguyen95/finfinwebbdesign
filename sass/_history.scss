@@ -10,7 +10,7 @@ p {
 
 .card {
         background-color: $site-background-color;
-    }
+}
 
 
 .card-body {
@@ -19,8 +19,11 @@ p {
 
 .picture {
     padding-top: 12px;
+    width: 100%;
 }
 
 .video {
     padding-bottom: 30px;
+    width: 100%;
 }
+
