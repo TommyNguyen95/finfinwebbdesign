@@ -41,7 +41,7 @@ body {
 .paddle {
   width: 200px;
   height: 30px;
-  background-color: #999;
+  background-color: $paddle-color;
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -61,6 +61,6 @@ body {
   position: absolute;
   height: 30px;
   width: 30px;
-  background-color: #fff;
+  background-color: $ball-color;
   border-radius: 50%;
 }

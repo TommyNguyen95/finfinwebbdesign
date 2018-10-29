@@ -1,4 +1,8 @@
 {
+    "score":{
+        "sv": "Poäng",
+        "en": "Score"
+    },
     "game-over": {
         "sv": "SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN",
         "en": "GAME OVER - PRESS ENTER TO PLAY AGAIN"
