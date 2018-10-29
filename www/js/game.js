@@ -13,6 +13,9 @@ function loadGame() {
   const ball = {};
   let gameBorders = loadGameBorders();
 
+  // Robin variables
+  let paddleHits =0;
+
   // Setup key listeners before starting the first game
   setupKeyListeners();
   startNewGame();
@@ -92,11 +95,23 @@ function loadGame() {
     return true;
   }
 
+  /*------------------ ROBIN CHANGING ----------------*/
   function collisionDetectBallAndPaddle() {
     if (!isRectAOutsideRectB(ball, paddle)) {
       ball.direction.y *= -1;
       ball.top = paddle.top - ball.height;
-      score += 5;
+
+      /*--Here I changed the score getting biggger and bigger--*/
+      paddleHits++;
+      if(paddleHits>=5){        
+        score += 5;
+        score = score+paddleHits;       
+      }
+      else{
+        score += 5;
+      }
+      /*-----end----*/
+      
       updateInterface();
     }
   }
@@ -123,6 +138,7 @@ function loadGame() {
       updateInterface();
     }
   }
+ 
 
   // Assumes the properties: left, top, width, height
   function isRectAOutsideRectB(a, b) {
