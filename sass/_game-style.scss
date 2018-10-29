@@ -8,43 +8,26 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-/*-------GAME CONTAINER----*/
-.game-container{
-position:relative;
-height:100%;
-width:100%;
+.game {
+  position: relative;
+  background-color: #000;
+  color: white;
+  height: 100%;
 }
 
 .score {
   position: absolute;
-  top: 5px;;
+  top: 5px;
   right: 10px;
-  color: $primary-text-color;
- 
- 
-}
-
-.score span{
-  @media screen and (max-width: 900px){
-    font-size:80%;
-  }
-  @media screen and (max-width: 700px){
-    font-size:60%;
-  }
-  @media screen and (max-width: 500px){
-    font-size:40%;
-  }
-  
 }
 
 .lives {
   position: absolute;
-  top: 5px;;
+  top: 5px;
   left: 10px;
-  color: $primary-text-color;
 }
 
-.game-over {
+.main-text {
   display:none;
   position: absolute;
   width: 100%;
@@ -53,47 +36,28 @@ width:100%;
 }
 
 .paddle {
-  /*width: 200px;*/
-  width:14%;
-  /*height: 30px;*/
-  height:5%;
-  background-color: $paddle-color;
+  width: 200px;
+  height: 30px;
+  background-color: #999;
   position: absolute;
   z-index: 1;
   bottom: 0;
 }
 
-.ballX {
+.brick {
+  left: 300px;
+  top: 200px;
+  width: 50px;
+  height: 20px;
+  background-color: #777;
   position: absolute;
-  /*height: 100%;*/
-  /*width: 30px;*/
-  height:100%;
-  width:50%;
-  
-  animation: ball-animation-horizontal 3s linear infinite alternate;
+  z-index: 1;
 }
 
-.ballY {
+.ball {
   position: absolute;
-  /*height: 30px;
-  width: 30px;*/
-  height:5%;
-  width:5%;
-  background-color: $ball-color;
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
   border-radius: 50%;
-  animation: ball-animation-vertical 5s linear infinite alternate;
-}
-
-.ball-paused {
-  animation-play-state: paused;
-}
-
-@keyframes ball-animation-horizontal {
-  0%   {left: 0}
-  100%  {left: calc(100% - 40px)}
-}
-
-@keyframes ball-animation-vertical {
-  0%   {top: 0}
-  100%  {top: calc(100% - 40px)}
 }
