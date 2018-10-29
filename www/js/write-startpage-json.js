@@ -10,10 +10,10 @@ function write(data){
 
         let game= data[games];
 
-        if(language=="swedish"){
+        if(language==="swedish"){
             $('.gname'+x).text(game.sv);
         }
-        else if(language=="english"){
+        else if(language==="english"){
             $('.gname'+x).text(game.en);
         }
 
