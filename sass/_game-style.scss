@@ -10,10 +10,15 @@ body {
 
 .game {
   position: relative;
-  background-color: #000;
+  background-color: rgb(165, 8, 8);
   color: white;
-  height: 100%;
+  height: 100vh;
+
+  /*--robban css---*/
+  border:solid red 1px;
+  width:100%;
 }
+
 
 .score {
   position: absolute;
@@ -39,22 +44,26 @@ body {
 }
 
 .paddle {
-  width: 200px;
-  height: 30px;
-  background-color: $paddle-color;
+  /*---robin changed width and hight--*/
+  width:10%;
+  height: 5%;
+  background-color: #999;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  border-radius: 10px;
 }
 
 .brick {
   left: 300px;
-  top: 200px;
-  width: 50px;
-  height: 20px;
+  /*top: 200px;*/
+  /*---robin changed width and hight--*/
+  width: 3%;
+  height: 4%;
   background-color: #777;
   position: absolute;
   z-index: 1;
+  border-radius: 12px;
 }
 
 .ball {

@@ -1,5 +1,3 @@
-loadGame();
-
 function loadGame() {
   // Main variables
   let lives;
@@ -7,20 +5,23 @@ function loadGame() {
   let paused;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 300;
-  const initialBallSpeed = 320;
+  const initialPaddleSpeed = 900;
+  const initialBallSpeed = 900;
   const paddle = {};
   const ball = {};
   let gameBorders = loadGameBorders();
-
+  
   // Robin variables
   let paddleHits = 0;
   let bricksKilled = 0;
-
+  
   // Setup key listeners before starting the first game
   setupKeyListeners();
   startNewGame();
-
+  
+  setTimeout(()=>{
+    scrollTo(0, $('.game').position().top)
+  }, 100);
   // Reset starting variables etc
   function startNewGame() {
     lives = 3;
@@ -222,16 +223,17 @@ function loadGame() {
     paddle.left = paddle.$.position().left;
     paddle.width = paddle.$.width();
     paddle.height = paddle.$.height();
-
+    console.log(gameBorders.width, '2:', paddle.width);
+    
     paddle.$.css('left', (paddle.left = gameBorders.width / 2 - paddle.width / 2));
   }
 
   function resetBall() {
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
-    ball.$.css('left', (ball.left = 0));
-    ball.$.css('top', (ball.top = 0));
-    ball.direction = { x: 1, y: 1 };
+    ball.$.css('left', (ball.left = 1270));
+    ball.$.css('top', (ball.top = 300));
+    ball.direction = { x: 0, y: 1 };
 
     ball.width = ball.$.width();
     ball.height = ball.$.height();
@@ -266,7 +268,18 @@ function loadGame() {
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 2;
+      prevLeft += brickCSS.width * 1.5;
+    }
+
+    prevLeft = brickCSS.left;
+
+    for (let color of colors) {
+      const brick = createBrick(prevLeft, brickCSS.top + 50, brickCSS.width, brickCSS.height, color);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width * 1.5;
     }
   }
 
