@@ -21,7 +21,7 @@ function loadGame() {
   function startNewGame() {
     lives = 3;
     score = 0;
-    paused = false;
+    paused = true;
 
     resetBall();
     resetPaddle();
@@ -154,7 +154,7 @@ function loadGame() {
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
     } else if (paused) {
-      $('.main-text').text('PAUSED - press ENTER to continue...');
+      $('.main-text').html('<p>Press "Enter" to start/pause game. Left and right arrow to move paddle.</p><br> <p class="esc">ESC to quit the game.</p>');
     } else {
       $('.main-text').text('');
     }
