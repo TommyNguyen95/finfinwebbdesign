@@ -13,6 +13,10 @@ function loadGame() {
   const ball = {};
   let gameBorders = loadGameBorders();
 
+  // Robin variables
+  let paddleHits = 0;
+  let bricksKilled = 0;
+
   // Setup key listeners before starting the first game
   setupKeyListeners();
   startNewGame();
@@ -21,7 +25,7 @@ function loadGame() {
   function startNewGame() {
     lives = 3;
     score = 0;
-    paused = false;
+    paused = true;
 
     resetBall();
     resetPaddle();
@@ -92,15 +96,22 @@ function loadGame() {
     return true;
   }
 
+  /*------------------ ROBIN CHANGING ----------------*/
   function collisionDetectBallAndPaddle() {
     if (!isRectAOutsideRectB(ball, paddle)) {
       ball.direction.y *= -1;
       ball.top = paddle.top - ball.height;
-      score += 5;
+
+      /*--Here I changed the score getting biggger and bigger--*/
+      score += 5 + Math.round(paddleHits / 2 );
+      paddleHits++;
+      /*-----end----*/
+
       updateInterface();
     }
   }
 
+  /*------------------ ROBIN CHANGING ----------------*/
   function collisionDetectBallAndBricks() {
     for (let i = bricks.length - 1; i >= 0; --i) {
       const brick = bricks[i];
@@ -114,7 +125,12 @@ function loadGame() {
         }
         brick.$.remove();
         bricks.splice(i, 1);
-        score += 20;
+
+        /*--Here I changed the score getting biggger and bigger--*/
+        score +=20 + bricksKilled;
+        bricksKilled++;
+        /* ---- end -----*/
+
         updateInterface();
       }
     }
@@ -123,6 +139,7 @@ function loadGame() {
       updateInterface();
     }
   }
+
 
   // Assumes the properties: left, top, width, height
   function isRectAOutsideRectB(a, b) {
@@ -154,7 +171,7 @@ function loadGame() {
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
     } else if (paused) {
-      $('.main-text').text('PAUSED - press ENTER to continue...');
+      $('.main-text').html('<p>Press "Enter" to start/pause game. Left and right arrow to move paddle.</p><br> <p class="esc">ESC to quit the game.</p>');
     } else {
       $('.main-text').text('');
     }
@@ -188,7 +205,7 @@ function loadGame() {
     });
   }
 
-  function loadGameBorders(){
+  function loadGameBorders() {
     return {
       left: 0,
       top: 0,
@@ -239,10 +256,6 @@ function loadGame() {
       'rgb(0, 0, 255)',
       'rgb(255, 255, 0)',
       'rgb(255, 0, 255)',
-      'rgb(255, 0, 0)',
-      'rgb(0, 255, 0)',
-      'rgb(0, 0, 255)',
-      'rgb(255, 255, 0)',
     ];
 
     let prevLeft = brickCSS.left;
