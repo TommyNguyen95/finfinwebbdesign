@@ -5,8 +5,8 @@ function loadGame() {
   let paused;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 300;
-  const initialBallSpeed = 320;
+  const initialPaddleSpeed = 900;
+  const initialBallSpeed = 900;
   const paddle = {};
   const ball = {};
   let gameBorders = loadGameBorders();
@@ -231,9 +231,9 @@ function loadGame() {
   function resetBall() {
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
-    ball.$.css('left', (ball.left = 0));
-    ball.$.css('top', (ball.top = 0));
-    ball.direction = { x: 1, y: 1 };
+    ball.$.css('left', (ball.left = 1270));
+    ball.$.css('top', (ball.top = 300));
+    ball.direction = { x: 0, y: 1 };
 
     ball.width = ball.$.width();
     ball.height = ball.$.height();
