@@ -1,3 +1,5 @@
+loadGame();
+
 function loadGame() {
   // Main variables
   let lives;
