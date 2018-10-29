@@ -231,12 +231,13 @@ function loadGame() {
   function resetBall() {
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
-    ball.$.css('left', (ball.left = 1270));
-    ball.$.css('top', (ball.top = 300));
-    ball.direction = { x: 0, y: 1 };
-
+    ball.left = ball.$.position().left;
     ball.width = ball.$.width();
     ball.height = ball.$.height();
+    ball.$.css('top', (ball.top = 500));
+    ball.direction = { x: 0, y: 1 };
+
+    ball.$.css('left', (ball.left = gameBorders.width / 2 - ball.width / 2));
   }
 
   function spawnBricks() {
@@ -268,7 +269,7 @@ function loadGame() {
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 1.5;
+      prevLeft += brickCSS.width * 1.2;
     }
 
     prevLeft = brickCSS.left;
@@ -279,7 +280,7 @@ function loadGame() {
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 1.5;
+      prevLeft += brickCSS.width * 1.2;
     }
   }
 
