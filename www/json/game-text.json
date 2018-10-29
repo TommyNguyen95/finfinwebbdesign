@@ -1,0 +1,14 @@
+{
+    "game-over": {
+        "sv": "SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN",
+        "en": "GAME OVER - PRESS ENTER TO PLAY AGAIN"
+    },
+    "won": {
+        "sv": "GRATTIS - DU VANN",
+        "en": "CONGRATULATIONS - YOU WON"
+    },
+    "paused": {
+        "sv": "TRYCK 'Enter' för att starta/pausa spelet. Vänster och höger tangent för att röra bräddet. ESC för att stänga av spelet.",
+        "en": "Press 'Enter' to start/pause game. Left and right arrow to move paddle. ESC to quit the game."
+    }
+}
