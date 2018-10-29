@@ -16,10 +16,15 @@ p {
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
+	border-radius: 12px;
 }
 
 .img2, .img3 {
 	padding-top:5px;
+}
+
+.video{
+	border-radius: 12px;
 }
 
 .row1, .row2, .row3, .row4 {
@@ -43,11 +48,12 @@ p {
 		}
 		.text1{
 			margin-top: 15px;
-			padding-right: 40px;
 		}
 		.text2{
 			padding-bottom:20px;
-			padding-right: 40px;
+		}
+		.img2, .img3 {
+			margin-left: 37px;
 		}
 
 		@media only screen and (max-width: 768px) {
@@ -62,6 +68,9 @@ p {
 			}
 			.text2{
 				padding-bottom:20px;
+			}
+			.img2, .img3 {
+				margin-left: 0;
 			}
 			
 			@media only screen and (max-width: 576px) {
