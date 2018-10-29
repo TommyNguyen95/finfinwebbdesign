@@ -1,31 +1,31 @@
 $.getJSON('/json/footer.json', write);
 
-let language = "swedish";
-
 function write (data) {
 
+console.log(data);
 let x = 1;
 for(let icons in data){
 
-	let icon = data[icons];
+	console.log(icons[0]);
 
+	let icon=data[icons];
+	console.log(icon);
 	if(language=="swedish"){
-		$('.gname'+x).text(icon.sv);
+		console-log(language);
+		console.log(icon);
+		console.log(document.getElementsByTagName);
+		$(document.getElementsByTagName).text(icon.sv);
 	}
 	else if(language=="english"){
-		$('.gname'+x).text(icon.en);
+		console.log(language);
+		$(document.getElementsByTagName).text(icon.en);
 	}
 
+
 }
-
-
-	
-
 
 }
  
-
-
 $('.svflag').click(function(){
     language="swedish";
     $.getJSON('/json/footer.json', write);

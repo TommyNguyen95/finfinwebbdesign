@@ -1,14 +1,15 @@
-{
-    "socialNetwork": {
+[
+    {
         "sv": "Få kontakt med oss på sociala nätverk!",
         "en": "Get connected with us on social networks!"
     },
-    "ClassicText": {
+    {
         "sv": "Classic Breakout",
         "en": "Classic Breakout"
     }
 
-}
+]
+     
     
         
 
