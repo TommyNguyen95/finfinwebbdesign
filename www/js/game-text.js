@@ -1,9 +1,6 @@
-
-$.getJSON('/json/startpage.json', write);
-
 let language="swedish";
 
-function write(data){
+function text(data){
     let x=1;
 
     for(let games in data){
@@ -11,10 +8,10 @@ function write(data){
         let game= data[games];
 
         if(language==="swedish"){
-            $('.gname'+x).text(game.sv);
+            $('.game-text'+x).text(game.sv);
         }
         else if(language==="english"){
-            $('.gname'+x).text(game.en);
+            $('.game-text'+x).text(game.en);
         }
 
         x++;       
@@ -24,9 +21,11 @@ function write(data){
 
 $('.svflag').click(function(){
     language="swedish";
-    $.getJSON('/json/startpage.json', write);
+    $.getJSON('/json/game-text.json', text);
 });
 $('.ukflag').click(function(){
      language="english";
-     $.getJSON('/json/startpage.json', write);
+     $.getJSON('/json/game-text.json', text);
 });
+
+$.getJSON('/json/game-text.json', text);
