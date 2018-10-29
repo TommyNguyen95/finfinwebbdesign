@@ -47,7 +47,7 @@ body {
   /*---robin changed width and hight--*/
   width:10%;
   height: 5%;
-  background-color: #999;
+  background-color: $paddle-color;
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -58,7 +58,7 @@ body {
   left: 300px;
   /*top: 200px;*/
   /*---robin changed width and hight--*/
-  width: 2%;
+  width: 3%;
   height: 4%;
   background-color: #777;
   position: absolute;
@@ -70,6 +70,6 @@ body {
   position: absolute;
   height: 30px;
   width: 30px;
-  background-color: #fff;
+  background-color: $ball-color;
   border-radius: 50%;
 }
