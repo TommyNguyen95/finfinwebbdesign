@@ -269,7 +269,7 @@ function loadGame() {
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 1.2;
+      prevLeft += brickCSS.width;
     }
 
     prevLeft = brickCSS.left;
@@ -280,7 +280,7 @@ function loadGame() {
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 1.2;
+      prevLeft += brickCSS.width;
     }
   }
 
