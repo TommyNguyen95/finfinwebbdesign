@@ -10,7 +10,7 @@ body {
 
 .game {
   position: relative;
-  background-color: #000;
+  background-color: rgb(165, 8, 8);
   color: white;
   height: 100vh;
 
@@ -51,7 +51,7 @@ body {
   position: absolute;
   z-index: 1;
   bottom: 0;
-  
+  border-radius: 10px;
 }
 
 .brick {
@@ -63,6 +63,7 @@ body {
   background-color: #777;
   position: absolute;
   z-index: 1;
+  border-radius: 12px;
 }
 
 .ball {
