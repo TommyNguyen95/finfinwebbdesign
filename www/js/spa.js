@@ -25,7 +25,7 @@ $(document).on('click', 'a', function(e){
   function frontendRouter(path){
     let routes = {
       '/': () => { $('body main > *').hide(); $('.start-page').show(); },
-      '/game': () => { $('body main > *').hide(); $('.game').show(); },
+      '/game': () => { $('body main > *').hide(); $('.game').show(); loadGame(); },
       '/highscore': () => { $('body main > *').hide(); $('.highscore').show(); },
       '/history': () => { $('body main > *').hide(); $('.history').show(); },
     };
