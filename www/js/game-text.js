@@ -1,3 +1,4 @@
+$.getJSON('/json/game-text.json', text);
 let language="swedish";
 
 function text(data){
@@ -5,13 +6,13 @@ function text(data){
 
     for(let games in data){
 
-        let game= data[games];
+        let gameText = data[games];
 
-        if(language==="swedish"){
-            $('.game-text'+x).text(game.sv);
+        if(language === "swedish"){
+            $('.game-text'+ x).text(gameText.sv);
         }
-        else if(language==="english"){
-            $('.game-text'+x).text(game.en);
+        else if(language === "english"){
+            $('.game-text'+ x).text(gameText.en);
         }
 
         x++;       
@@ -27,5 +28,3 @@ $('.ukflag').click(function(){
      language="english";
      $.getJSON('/json/game-text.json', text);
 });
-
-$.getJSON('/json/game-text.json', text);
