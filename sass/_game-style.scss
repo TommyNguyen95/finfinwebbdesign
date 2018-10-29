@@ -47,7 +47,7 @@ body {
   /*---robin changed width and hight--*/
   width:10%;
   height: 5%;
-  background-color: #999;
+  background-color: $paddle-color;
   position: absolute;
   z-index: 1;
   bottom: 0;
