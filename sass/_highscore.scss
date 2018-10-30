@@ -1,0 +1,11 @@
+
+.container-history {
+    padding: 30px 100px;
+}
+
+@media only screen and (max-width: 768px) {
+    .container-history {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
