@@ -11,6 +11,13 @@ p {
 .card-body {
   padding: 0;
 }
+
+.card-history{
+	border: outset 8px $paddle-color;
+	&{
+		border-radius: 20px;
+	}
+}
   
 .img1 {
 	margin-left: auto;
