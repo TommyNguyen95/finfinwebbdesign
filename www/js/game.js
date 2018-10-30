@@ -164,9 +164,14 @@ function loadGame() {
   }
 
   function updateInterface() {
+    $('.score-text').append('<p class="en"> SCORE: <p>')
+    $('.score-text').append('<p class="sv"> POÄNG: <p>')
+    $('.score span').text((score + '').padStart(5, '0'));
 
-    $('.score span').text((score + 'points').padStart(5, '0'));
+    $('.lives-text').html('<p class="en"> LIFE: <p>')
+    $('.lives-text').html('<p class="sv"> LIV: <p>')
     $('.lives span').text(lives);
+
     $('.main.text').hide();
     if (lives < 1) {
       $('.main-text').append('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
