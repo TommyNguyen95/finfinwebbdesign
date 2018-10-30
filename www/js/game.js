@@ -166,7 +166,7 @@ function loadGame() {
   function updateInterface() {
     const scoreEn = $('<div class="en">').appendTo('.score');
 
-    $('.score span').text(scoreEn(score + 'points').padStart(5, '0'));
+    $('.score span').text((score + 'points').padStart(5, '0'));
     $('.lives span').text(lives);
     $('.main-text').hide();
     if (lives < 1) {
