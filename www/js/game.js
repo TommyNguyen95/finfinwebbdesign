@@ -1,5 +1,3 @@
-loadGame();
-
 function loadGame() {
   // Main variables
   let lives;
@@ -7,20 +5,23 @@ function loadGame() {
   let paused;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 300;
-  const initialBallSpeed = 320;
+  const initialPaddleSpeed = 900;
+  const initialBallSpeed = 900;
   const paddle = {};
   const ball = {};
   let gameBorders = loadGameBorders();
-
+  
   // Robin variables
   let paddleHits = 0;
   let bricksKilled = 0;
-
+  
   // Setup key listeners before starting the first game
   setupKeyListeners();
   startNewGame();
-
+  
+  setTimeout(()=>{
+    scrollTo(0, $('.game').position().top)
+  }, 100);
   // Reset starting variables etc
   function startNewGame() {
     lives = 3;
@@ -163,19 +164,39 @@ function loadGame() {
   }
 
   function updateInterface() {
-    $('.score span').text((score + '').padStart(5, '0'));
+    const scoreEn = $('<div class="en">').appendTo('.score');
+
+    $('.score span').text((score + 'points').padStart(5, '0'));
     $('.lives span').text(lives);
     $('.main-text').hide();
     if (lives < 1) {
-      $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+      $('.main-text').append('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
+      $('.main-text').append('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
     } else if (!bricks.length) {
-      $('.main-text').text('CONGRATULATIONS - YOU WON');
+      $('.main-text').append('<p class="en"> CONGRATULATIONS - YOU WON! </p>');
+      $('.main-text').append('<p class="sv"> GRATTIS - DU VANN! </p>');
     } else if (paused) {
-      $('.main-text').html('<p>Press "Enter" to start/pause game. Left and right arrow to move paddle.</p><br> <p class="esc">ESC to quit the game.</p>');
+      $('.main-text').append('<p class="en">Press "Enter" to start/pause game. Use left and right arrow keys to move paddle.</p>');
+      $('.main-text').append('<p class="sv">Tryck "Enter" för att starta/pausa spelet. Använd vänster och höger tangenterna för att röra bräddet</p>');
     } else {
       $('.main-text').text('');
     }
     $('.main-text').fadeIn(500);
+
+  // Class 'en' is by default hidden
+	$('.en').hide();
+
+	// When 'svflag' is clicked on 'sv' is shown and 'en' hidden
+	$('.svflag').click(function(){
+		$('.sv').show();
+		$('.en').hide();
+	});
+
+	// When 'enflag' is clicked on 'en' is shown and 'sv' hidden
+	$('.ukflag').click(function(){
+		$('.sv').hide();
+		$('.en').show();
+    });
   }
 
   function onEnterPress() {
@@ -222,19 +243,21 @@ function loadGame() {
     paddle.left = paddle.$.position().left;
     paddle.width = paddle.$.width();
     paddle.height = paddle.$.height();
-
+    console.log(gameBorders.width, '2:', paddle.width);
+    
     paddle.$.css('left', (paddle.left = gameBorders.width / 2 - paddle.width / 2));
   }
 
   function resetBall() {
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
-    ball.$.css('left', (ball.left = 0));
-    ball.$.css('top', (ball.top = 0));
-    ball.direction = { x: 1, y: 1 };
-
+    ball.left = ball.$.position().left;
     ball.width = ball.$.width();
     ball.height = ball.$.height();
+    ball.$.css('top', (ball.top = 500));
+    ball.direction = { x: 0, y: 1 };
+
+    ball.$.css('left', (ball.left = gameBorders.width / 2 - ball.width / 2));
   }
 
   function spawnBricks() {
@@ -266,7 +289,18 @@ function loadGame() {
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 2;
+      prevLeft += brickCSS.width;
+    }
+
+    prevLeft = brickCSS.left;
+
+    for (let color of colors) {
+      const brick = createBrick(prevLeft, brickCSS.top + 50, brickCSS.width, brickCSS.height, color);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width;
     }
   }
 
