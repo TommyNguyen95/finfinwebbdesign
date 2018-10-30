@@ -35,7 +35,7 @@ let fs= require('fs'); // import the fileSystem library
 let bodyParser = require('body-parser'); // import body-parser (to read sent data from clients)
 app.use(bodyParser.json()); // use body-parser
  
-let highscores = require('./www/json/highscore.json'); // load the json file - store it in a new variable
+let highscores = require('./highscore.json'); // load the json file - store it in a new variable
  
 // add a route that the browsers/clients can communicate through
 app.post('/add-score', (req, res) => {
