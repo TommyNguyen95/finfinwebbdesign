@@ -60,7 +60,7 @@
                 </a>
               </div>
               <a href="/game">
-                <img class="card-img-top" src="/imgs/9.jpg">
+                <img class="card-img-top card-border" src="/imgs/9.jpg">
               </a>
             </div>
           </div>
@@ -75,7 +75,7 @@
                 </a>
               </div>
               <a href="https://honestdan.itch.io/honest-dans-trout" target="_blank">
-                <img class="card-img-top" src="imgs/11.png" alt="Hard Breakout">
+                <img class="card-img-top card-border" src="imgs/11.png" alt="Hard Breakout">
               </a>
             </div>
           </div>
@@ -87,7 +87,7 @@
                 </a>
               </div>
               <a href="https://dev.bbrks.me/breakout/" target="_blank">
-                <img class="card-img-top" src="imgs/12.png" alt="Breakout">
+                <img class="card-img-top card-border" src="imgs/12.png" alt="Breakout">
               </a>
             </div>
           </div>
@@ -105,7 +105,7 @@
                 </a>
               </div>
               <a href="https://interglobalmedia.github.io/2d-breakout-game-mdn/" target="_blank">
-                <img class="card-img-top" src="imgs/13.png" alt="Breakout">
+                <img class="card-img-top card-border" src="imgs/13.png" alt="Breakout">
               </a>
             </div>
           </div>
@@ -117,7 +117,7 @@
                 </a>
               </div>
               <a href="https://ctinney94.itch.io/super-funky-ball" target="_blank">
-                <img class="card-img-top" src="imgs/14.png" alt="Retro Breakout">
+                <img class="card-img-top card-border" src="imgs/14.png" alt="Retro Breakout">
               </a>
             </div>
             </a>
@@ -136,7 +136,7 @@
                 </a>
               </div>
               <a href="https://spazzylemons.itch.io/ticochet">
-                <img class="card-img-top" src="imgs/15.png" alt="Breakout" target="_blank">
+                <img class="card-img-top card-border" src="imgs/15.png" alt="Breakout" target="_blank">
               </a>
             </div>
           </div>
@@ -148,7 +148,7 @@
                 </a>
               </div>
               <a href="https://krystman.itch.io/breakout-hero" target="_blank">
-                <img class="card-img-top" src="imgs/16.png" alt="Breakout Game">
+                <img class="card-img-top card-border" src="imgs/16.png" alt="Breakout Game">
               </a>
             </div>
           </div>
@@ -164,11 +164,13 @@
     <!----------------------- START-PAGE ENDS HERE----------------------->
 
     <section class="game">
-          <div class="score game-text1"> <span>00000</span></div>
-          <div class="lives">LIVES: <span>3</span></div>
-          <div class="ball"></div>
-          <div class="paddle"></div>
-          <div class="main-text"></div>
+      <div class="score-text"></div>
+      <div class="score"> <span>00000</span></div>
+      <div class="lives-text"></div>
+      <div class="lives"><span>3</span></div>
+      <div class="ball"></div>
+      <div class="paddle"></div>
+      <div class="main-text"></div>
       
     </section>
 
@@ -176,6 +178,111 @@
 
     <section class="highscore">
       <!--Add highscore content here-->
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Recipient:</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Message:</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Ranking</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Breakout Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Thinh</td>
+            <td>Legend</td>
+            <td>999999999</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>                                                           
+        </tbody>
+      </table>
+
     </section>
 
     <!----------------------- HISTORY STARTS----------------------->
@@ -195,7 +302,7 @@
         <div class="row row2">
           <div class="col-lg-4">
             <div class="card">
-              <img class="card-img-top img2" src="/imgs/highscore.jpg" alt="Card image cap">
+              <img class="card-img-top img2 card-link card-history" src="/imgs/highscore.jpg" alt="Card image cap">
             </div>
           </div>
           <div class="col-lg-8">
@@ -219,7 +326,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card">
-              <img class="card-img-top img3" src="/imgs/controller.jpg" alt="Card image cap">
+              <img class="card-img-top img3 card-history" src="/imgs/controller.jpg" alt="Card image cap">
             </div>
           </div>
         </div>
@@ -260,7 +367,7 @@
             </div>
             <div class="d-inline-block pr-3">
               <a href="#" class="text-white">
-                <i class="big-icon fab fa-snapchat"></i>
+                <i class="big-icon fab fa-snapchat"></i></a>
             </div>
           </div>
         </div>
