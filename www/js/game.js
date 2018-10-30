@@ -164,11 +164,10 @@ function loadGame() {
   }
 
   function updateInterface() {
-    const scoreEn = $('<div class="en">').appendTo('.score');
 
     $('.score span').text((score + 'points').padStart(5, '0'));
     $('.lives span').text(lives);
-    $('.main-text').hide();
+    $('.main.text').hide();
     if (lives < 1) {
       $('.main-text').append('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
       $('.main-text').append('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
@@ -189,8 +188,8 @@ function loadGame() {
 	// When 'svflag' is clicked on 'sv' is shown and 'en' hidden
 	$('.svflag').click(function(){
 		$('.sv').show();
-		$('.en').hide();
-	});
+    $('.en').hide();
+    });
 
 	// When 'enflag' is clicked on 'en' is shown and 'sv' hidden
 	$('.ukflag').click(function(){
