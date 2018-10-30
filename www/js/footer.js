@@ -1,36 +1,25 @@
-$.getJSON('/json/footer.json', write);
+$.getJSON('/json/footer.json', text);
 
-function write (data) {
 
-console.log(data);
-let x = 1;
-for(let icons in data){
+function text(data){
+    let x=1;
 
-	console.log(icons[0]);
-
-	let icon=data[icons];
-	console.log(icon);
-	if(language=="swedish"){
-		console-log(language);
-		console.log(icon);
-		console.log(document.getElementsByTagName);
-		$(document.getElementsByTagName).text(icon.sv);
+	if(language === "swedish"){
+		$('.test').text(data["one"].sv);
+		$('.test1').text(data["two"].sv);
 	}
-	else if(language=="english"){
-		console.log(language);
-		$(document.getElementsByTagName).text(icon.en);
+	else if(language === "english"){
+		$('.test').text(data["one"].en);
+		$('.test1').text(data["two"].en);
 	}
-
-
 }
 
-}
- 
+
 $('.svflag').click(function(){
     language="swedish";
-    $.getJSON('/json/footer.json', write);
+    $.getJSON('/json/footer.json', text);
 });
 $('.ukflag').click(function(){
      language="english";
-     $.getJSON('/json/footer.json', write);
+     $.getJSON('/json/footer.json', text);
 });

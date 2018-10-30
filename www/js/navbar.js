@@ -25,7 +25,7 @@ function navbarfunction(language_data) {
     let navitem4_en = $('<li/>').attr('class', 'nav-item nav-margin');
     let navitem5_en = $('<li/>').attr('class', 'nav-item icon-resize')
 
-    /* Append adds the text stored in language-date (taken from JSON file)and html-code to the navbar item (empty list)*/
+    /* Append adds the text stored in langu age-date (taken from JSON file)and html-code to the navbar item (empty list)*/
     navitem5_sv.append('<a class="nav-link" href="' + language_data[0].link  + '"><i class="' + language_data[0].icon + '"></i>' + language_data[0].title.sv + '</a>');
     navitem1_sv.append('<a class="nav-link" href="' + language_data[1].link  + '"><i class="' + language_data[1].icon + '"></i>' + language_data[1].title.sv + '</a>');
     navitem2_sv.append('<a class="nav-link" href="' + language_data[2].link  + '"><i class="' + language_data[2].icon + '"></i>' + language_data[2].title.sv + '</a>');
