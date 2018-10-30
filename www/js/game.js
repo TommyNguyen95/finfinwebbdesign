@@ -164,19 +164,39 @@ function loadGame() {
   }
 
   function updateInterface() {
-    $('.score span').text((score + '').padStart(5, '0'));
+    const scoreEn = $('<div class="en">').appendTo('.score');
+
+    $('.score span').text(scoreEn(score + 'points').padStart(5, '0'));
     $('.lives span').text(lives);
     $('.main-text').hide();
     if (lives < 1) {
-      $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+      $('.main-text').append('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
+      $('.main-text').append('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
     } else if (!bricks.length) {
-      $('.main-text').text('CONGRATULATIONS - YOU WON');
+      $('.main-text').append('<p class="en"> CONGRATULATIONS - YOU WON! </p>');
+      $('.main-text').append('<p class="sv"> GRATTIS - DU VANN! </p>');
     } else if (paused) {
-      $('.main-text').html('<p>Press "Enter" to start/pause game. Left and right arrow to move paddle.</p><br> <p class="esc">ESC to quit the game.</p>');
+      $('.main-text').append('<p class="en">Press "Enter" to start/pause game. Use left and right arrow keys to move paddle.</p>');
+      $('.main-text').append('<p class="sv">Tryck "Enter" för att starta/pausa spelet. Använd vänster och höger tangenterna för att röra bräddet</p>');
     } else {
       $('.main-text').text('');
     }
     $('.main-text').fadeIn(500);
+
+  // Class 'en' is by default hidden
+	$('.en').hide();
+
+	// When 'svflag' is clicked on 'sv' is shown and 'en' hidden
+	$('.svflag').click(function(){
+		$('.sv').show();
+		$('.en').hide();
+	});
+
+	// When 'enflag' is clicked on 'en' is shown and 'sv' hidden
+	$('.ukflag').click(function(){
+		$('.sv').hide();
+		$('.en').show();
+    });
   }
 
   function onEnterPress() {
