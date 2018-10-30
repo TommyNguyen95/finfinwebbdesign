@@ -1,4 +1,4 @@
-$('.send-to-highscore').on('click', postNewHighscore);
+$('./highscore.json').on('click', postNewHighscore);
  
 function postNewHighscore() {
   let name = $();//......  fetch the name from your <input>/or otherwhere//
