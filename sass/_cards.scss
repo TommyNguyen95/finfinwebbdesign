@@ -19,7 +19,7 @@
     a{
         text-decoration-color: $primary-text-color;
     }
-    .card-img-top{
+    .card-border{
         border: outset 8px $paddle-color;
         &:hover{
             opacity: 0.5;

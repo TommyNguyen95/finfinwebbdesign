@@ -10,7 +10,7 @@ body {
 
 .game {
   position: relative;
-  background-color: rgb(165, 8, 8);
+  background-color: rgb(25, 25, 25);
   color: white;
   height: 100vh;
 
@@ -19,6 +19,20 @@ body {
   width:100%;
 }
 
+.score-text .sv {
+  position: absolute;
+  top: 3px;
+  right: 62px;
+  font-size: 14px;
+
+}
+.score-text .en {
+  position: absolute;
+  top: 3px;
+  right: 62px;
+  font-size: 14px;
+
+}
 
 .score {
   position: absolute;
@@ -28,8 +42,26 @@ body {
 
 .lives {
   position: absolute;
-  top: 5px;
-  left: 10px;
+  top: 4px;
+  left: 44px;
+}
+.lives-text {
+  .sv{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 14px;
+
+  }
+}
+.lives-text {
+  .en{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 14px;
+
+  }
 }
 
 .main-text {
@@ -46,7 +78,7 @@ body {
 .paddle {
   /*---robin changed width and hight--*/
   width:10%;
-  height: 5%;
+  height: 2%;
   background-color: $paddle-color;
   position: absolute;
   z-index: 1;

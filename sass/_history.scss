@@ -1,7 +1,13 @@
 
+.h2-history {
+	margin-top: 70px;
+  font-size: 3em;
+}
+
 p {
-	color: white;	
-  line-height: 30px;
+  color: white;	
+  line-height: 32px;
+  font-size: 1.06em;
 }
 
 .card {
@@ -10,6 +16,13 @@ p {
 
 .card-body {
   padding: 0;
+}
+
+.card-history{
+	border: outset 8px $paddle-color;
+	&{
+		border-radius: 20px;
+	}
 }
   
 .img1 {
@@ -38,6 +51,10 @@ p {
 	.row3{
 		padding-bottom: 60px;
 	}
+	.h2-history {
+		margin-top: 50px;
+		font-size: 3em;
+	}
 
 	@media only screen and (max-width: 992px) {
 		.row1, .row2 {
@@ -47,13 +64,20 @@ p {
 			padding-bottom: 40px;
 		}
 		.text1{
-			margin-top: 15px;
+			margin-top: 35px;
 		}
 		.text2{
-			padding-bottom:20px;
+			padding-bottom:40px;
 		}
 		.img2, .img3 {
 			margin-left: 37px;
+		}
+		.video {
+			margin-bottom: 20px;
+		}
+		.h2-history {
+			margin-top: 25px;
+			font-size: 3em;
 		}
 
 		@media only screen and (max-width: 768px) {
@@ -64,7 +88,7 @@ p {
 				padding-bottom: 40px;
 			}
 			.text1{
-				margin-top: 15px;
+				margin-top: 25px;
 			}
 			.text2{
 				padding-bottom:20px;
@@ -72,10 +96,15 @@ p {
 			.img2, .img3 {
 				margin-left: 0;
 			}
+			.h2-history {
+				font-size: 2em;
+				margin-top: 15px;
+			}
 			
 			@media only screen and (max-width: 576px) {
-				h2 {
-					font-size: 1.3em;
+				.h2-history {
+					font-size: 1.5em;
+					margin-top: 10px;
 				}
 				.card .card-img-top{
 					border: outset 2px rgb(114, 255, 240);
