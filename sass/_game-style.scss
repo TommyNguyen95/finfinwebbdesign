@@ -10,7 +10,7 @@ body {
 
 .game {
   position: relative;
-  background-color: rgb(165, 8, 8);
+  background-color: rgb(25, 25, 25);
   color: white;
   height: 100vh;
 
@@ -78,7 +78,7 @@ body {
 .paddle {
   /*---robin changed width and hight--*/
   width:10%;
-  height: 5%;
+  height: 2%;
   background-color: $paddle-color;
   position: absolute;
   z-index: 1;
