@@ -18,12 +18,43 @@ body {
 
 @media only screen and (max-width: 768px) {
     .icons {
-        order: 1;
-        font-size: 10px;
+        order: 2;
+        font-size: 8px;
     }
     .Classictext {
         order: 12;
-        text-align: center;
-        font-size: 12px;
+        font-size: 8px;
+    }
+    .connect {
+        order: 1;
+        font-size: 8px;
+    }
+}
+
+footer p {
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 992px) {
+    .Classictext {
+        font-size: 10px;
+    }
+    .connect {
+        font-size: 10px;
+    }
+    .icons {
+        font-size: 10px;
+    }
+}
+
+@media only screen and  (max-width: 1200px) {
+    .Classictext {
+        font-size: 13px;
+    }
+    .connect {
+        font-size: 13px;
+    }
+    .icons {
+        font-size: 13px;
     }
 }
