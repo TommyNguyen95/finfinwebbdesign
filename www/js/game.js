@@ -49,7 +49,10 @@ function loadGame() {
         paddle.width -= paddle.width/30;
         paddle.$.css('width', paddle.width);
       } 
+      else if(paused==false){
         ball.speed += 10;
+      }
+        
         
         }, 1000);
   }     
