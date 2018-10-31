@@ -168,8 +168,8 @@ function loadGame() {
     $('.score-text').append('<p class="sv"> POÄNG: <p>')
     $('.score span').text((score + '').padStart(5, '0'));
 
-    $('.lives-text').html('<p class="en"> LIFE: <p>')
-    $('.lives-text').html('<p class="sv"> LIV: <p>')
+    $('.lives-text').append('<p class="en"> LIFE: <p>')
+    $('.lives-text').append('<p class="sv"> LIV: <p>')
     $('.lives span').text(lives);
 
     $('.main.text').hide();
