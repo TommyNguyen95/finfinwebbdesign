@@ -42,7 +42,7 @@ function loadGame() {
     /*----- makes ball faster after every 10 sec---*/
     setInterval(function(){ 
 
-      ball.speed +=100;
+      ball.speed +=10;
     }, 1000);
     
   }
