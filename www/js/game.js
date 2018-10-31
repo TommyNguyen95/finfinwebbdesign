@@ -205,6 +205,9 @@ function loadGame() {
       }else{
       $('.main-text').html('<p class="en">Press "Enter" to start/pause game. Use left and right arrow keys to move paddle.</p>');
     }
+    }
+    else{
+      $('.main-text').text('');
     } 
     $('.main-text').fadeIn(500);
   }
