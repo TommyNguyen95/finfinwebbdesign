@@ -311,7 +311,29 @@ function loadGame() {
     prevLeft = brickCSS.left;
 
     for (let color of colors) {
-      const brick = createBrick(prevLeft, brickCSS.top + 50, brickCSS.width, brickCSS.height, color);
+      const brick = createBrick(prevLeft, brickCSS.top + 40, brickCSS.width, brickCSS.height, color);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width;
+    }
+
+    prevLeft = brickCSS.left;
+
+    for (let color of colors) {
+      const brick = createBrick(prevLeft, brickCSS.top + 80, brickCSS.width, brickCSS.height, color);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width;
+    }
+
+    prevLeft = brickCSS.left;
+
+    for (let color of colors) {
+      const brick = createBrick(prevLeft, brickCSS.top + 120, brickCSS.width, brickCSS.height, color);
 
       bricks.push(brick);
       $('.game').append(brick.$);
