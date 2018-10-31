@@ -6,7 +6,7 @@ function loadGame() {
   const bricks = [];
   const keysPressed = {};
   const initialPaddleSpeed = 900;
-  const initialBallSpeed = 900;
+  const initialBallSpeed = 300;
   const paddle = {};
   const ball = {};
   let gameBorders = loadGameBorders();
@@ -19,9 +19,12 @@ function loadGame() {
   setupKeyListeners();
   startNewGame();
   
+  /*---Robin code----*/
+  /*---Scroll game window to right place when start game---*/
   setTimeout(()=>{
     scrollTo(0, $('.game').position().top)
   }, 100);
+
   // Reset starting variables etc
   function startNewGame() {
     lives = 3;
@@ -34,6 +37,14 @@ function loadGame() {
 
     updateInterface();
     startInterval();
+
+    /*----- Robin Code ------*/
+    /*----- makes ball faster after every 10 sec---*/
+    setInterval(function(){ 
+
+      ball.speed +=10;
+    }, 1000);
+    
   }
 
   function updateGame(deltaTime) {
