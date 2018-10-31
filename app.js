@@ -36,7 +36,7 @@ let bodyParser = require('body-parser'); // import body-parser (to read sent dat
 app.use(bodyParser.json()); // use body-parser
 app.use(bodyParser.urlencoded({ extended: false })); // configure body-parser
  
-let highscores = require('./highscore.json'); // load the json file - store it in a new variable
+let highscores = require('./www/json/highscore.json'); // load the json file - store it in a new variable
  
 // add a route that the browsers/clients can communicate through
 app.post('/add-score', (req, res) => {
@@ -45,7 +45,7 @@ app.post('/add-score', (req, res) => {
      // Google MDN js array sort and write the sort-function
   });
   highscores = highscores.slice(0,10); // only keep the top 10 in the array
-  fs.writeFile('./highscore.json', JSON.stringify(highscores), ()=>{}); // replace the file content with the new array
+  fs.writeFile('./www/json/highscore.json', JSON.stringify(highscores), ()=>{}); // replace the file content with the new array
   res.json(highscores); // respond to the browser, send the new/updated array
 });
 
