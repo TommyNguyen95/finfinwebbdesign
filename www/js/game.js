@@ -164,40 +164,38 @@ function loadGame() {
   }
 
   function updateInterface() {
-    
     if (language == 'swedish') {
       $('.score-text').html('<p class="sv"> POÄNG: </p>');
       $('.lives-text').html('<p class="sv"> LIV: </p>')
     } else {
-      $('.sv').hide();
+      $('.score-text').html('<p class="en"> SCORE: </p>')
+      $('.lives-text').html('<p class="en"> LIFE: </p>')
     }
-
-    $('.score-text').empty()
-    $('.score-text').html('<p class="en"> SCORE: </p>')
+    
     $('.score span').text((score + '').padStart(5, '0'));
-
-    $('.lives-text').empty()
-    $('.lives-text').html('<p class="en"> LIFE: </p>')
     $('.lives span').text(lives);
 
-    $('.main.text').empty().hide();
+    $('.main.text').hide();
     if (lives < 1) {
+      if(language == 'swedish'){
+        $('.main-text').html('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
+      }else{
       $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
-      $('.main-text').html('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
+    }
     } else if (!bricks.length) {
+      if(language == 'swedish'){
+        $('.main-text').html('<p class="sv"> GRATTIS - DU VANN! </p>');
+      }else{
       $('.main-text').html('<p class="en"> CONGRATULATIONS - YOU WON! </p>');
-      $('.main-text').html('<p class="sv"> GRATTIS - DU VANN! </p>');
+    }
     } else if (paused) {
+      if(language == 'swedish'){
+        $('.main-text').html('<p class="sv">Tryck "Enter" för att starta/pausa spelet. Använd vänster och höger tangenterna för att röra bräddet</p>');
+      }else{
       $('.main-text').html('<p class="en">Press "Enter" to start/pause game. Use left and right arrow keys to move paddle.</p>');
-      $('.main-text').html('<p class="sv">Tryck "Enter" för att starta/pausa spelet. Använd vänster och höger tangenterna för att röra bräddet</p>');
+    }
     } 
     $('.main-text').fadeIn(500);
-
-    if (language == 'swedish') {
-      $('.en').hide();
-    } else {
-      $('.sv').hide();
-    }
   }
 
   function onEnterPress() {
@@ -225,6 +223,9 @@ function loadGame() {
       if (e.which === 39) { keysPressed.right = false; }
       if (e.which === 13) { keysPressed.enter = false; }
     });
+
+    $('.ukflag, .svflag').click(updateInterface);
+
   }
 
   function loadGameBorders() {
