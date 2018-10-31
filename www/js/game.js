@@ -343,6 +343,40 @@ function loadGame() {
     }
 
     prevLeft = brickCSS.left;
+
+    for(let x=0; x<12; x++){
+      const brick = createBrick(prevLeft+90, brickCSS.top+200, brickCSS.width, brickCSS.height, '#ff9999');
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width;
+    }
+
+    prevLeft = brickCSS.left;
+
+    for(let x=0; x<13; x++){
+      const brick = createBrick(prevLeft+15, brickCSS.top+250, brickCSS.width, brickCSS.height, '#ffff99');
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width;
+    }
+
+    prevLeft = brickCSS.left;
+
+    for(let x=0; x<12; x++){
+      const brick = createBrick(prevLeft+90, brickCSS.top+300, brickCSS.width, brickCSS.height, '#99ff99');
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width;
+    }
+
+    prevLeft = brickCSS.left;
+    
   
   }
 
