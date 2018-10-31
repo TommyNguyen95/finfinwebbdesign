@@ -1,7 +1,12 @@
-
-.h2-history {
-	margin-top: 70px;
-  font-size: 3em;
+h2{
+	.sv {
+		margin-top: 70px;
+		font-size: 1.5em;
+	}
+	.en{
+		margin-top: 70px;
+		font-size: 1.5em;
+	}
 }
 
 p {
@@ -51,9 +56,15 @@ p {
 	.row3{
 		padding-bottom: 60px;
 	}
-	.h2-history {
-		margin-top: 50px;
-		font-size: 3em;
+	h2 {
+		.sv{
+			margin-top: 50px;
+			font-size: 1.5em;
+		}
+		.en{
+			margin-top: 50px;
+			font-size: 1.5em;
+		}
 	}
 
 	@media only screen and (max-width: 992px) {
@@ -75,9 +86,15 @@ p {
 		.video {
 			margin-bottom: 20px;
 		}
-		.h2-history {
-			margin-top: 25px;
-			font-size: 3em;
+		h2 {
+			.sv{
+				margin-top: 35px;
+				font-size: 1em;
+			}
+			.en{
+				margin-top: 35px;
+				font-size: 1em;
+			}
 		}
 
 		@media only screen and (max-width: 768px) {
@@ -96,15 +113,27 @@ p {
 			.img2, .img3 {
 				margin-left: 0;
 			}
-			.h2-history {
-				font-size: 2em;
-				margin-top: 15px;
+			h2 {
+				.sv{
+					font-size: 1em;
+					margin-top: 10px;
+				}
+				.en{
+					font-size: 1em;
+					margin-top: 10px;
+				}
 			}
 			
 			@media only screen and (max-width: 576px) {
-				.h2-history {
-					font-size: 1.5em;
-					margin-top: 10px;
+				h2 {
+					.sv{
+						font-size: 0.7em;
+						margin-top: 10px;
+					}
+					.en{
+						font-size: 0.7em;
+						margin-top: 10px;
+					}
 				}
 				.card .card-img-top{
 					border: outset 2px rgb(114, 255, 240);
