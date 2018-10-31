@@ -17,11 +17,12 @@ function languageToggle(translate){
 		// Appends index[0] and index[1] from history.json in previous created variables
 		textP1.append('<p>' + lang[0] + '</p>');
 		textP2.append('<p>' + lang[1] + '</p>');
-		header1.append(lang[])
+		header1.append(lang[2]);
 
 		// Appends the p-tags to the classes text1 and text2, in history section
 		$('.text1').append(textP1);
 		$('.text2').append(textP2);
+		$('.h2-history').append(header1);
 
 	}
 	
