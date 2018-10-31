@@ -5,7 +5,7 @@ $.getJSON('/json/navbar.json', navbarfunction);
 function navbarfunction(language_data) {
 
   /*Hides the OLD html code from navbar*/
-  $(document.getElementById('nav')).hide();
+  /*$(document.getElementById('nav')).hide(); */
 
   /*Creates an empty unsorted list (will add the navbar in here)*/
   let ul_sv = $('<ul/>').attr('class', 'navbar-nav');

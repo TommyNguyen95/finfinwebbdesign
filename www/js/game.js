@@ -8,6 +8,7 @@ function loadGame() {
   const initialPaddleSpeed = 900;
   const initialBallSpeed = 300;
   const paddle = {};
+  /*const initialPaddleWidth = paddle.$.width();  /* resposive*/ 
   const ball = {};
   let gameBorders = loadGameBorders();
   
@@ -38,15 +39,21 @@ function loadGame() {
     updateInterface();
     startInterval();
 
+   
     /*----- Robin Code ------*/
+    /**Paddel change size */
     /*----- makes ball faster after every 10 sec---*/
     setInterval(function(){ 
 
-      ball.speed +=10;
-    }, 1000);
-    
-  }
-
+       if(paused == false && paddle.width > gameBorders.width*0.03) {
+        paddle.width -= paddle.width/30;
+        paddle.$.css('width', paddle.width);
+      } 
+        ball.speed += 10;
+        
+        }, 1000);
+  }     
+  
   function updateGame(deltaTime) {
     if (paused) { return; }
 
@@ -256,7 +263,10 @@ function loadGame() {
 
     paddle.top = paddle.$.position().top;
     paddle.left = paddle.$.position().left;
-    paddle.width = paddle.$.width();
+    /* paddle.width = paddle.$.width(); */
+    paddle.width = gameBorders.width*0.1;
+    paddle.$.css('width', paddle.width);
+     /*Paddel size */
     paddle.height = paddle.$.height();
     console.log(gameBorders.width, '2:', paddle.width);
     
