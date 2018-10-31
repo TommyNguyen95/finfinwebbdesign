@@ -280,103 +280,42 @@ function loadGame() {
   function spawnBricks() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
-    /*const colors = [
-      'rgb(255, 0, 0)',
-      'rgb(0, 255, 0)',
-      'rgb(0, 0, 255)',
-      'rgb(255, 255, 0)',
-      'rgb(255, 0, 255)',
-      'rgb(255, 0, 0)',
-      'rgb(0, 255, 0)',
-      'rgb(0, 0, 255)',
-      'rgb(255, 255, 0)',
-      'rgb(255, 0, 255)',
-      'rgb(255, 0, 0)',
-      'rgb(0, 255, 0)',
-      'rgb(0, 0, 255)',
-      'rgb(255, 255, 0)',
-      
-    ];*/
-
-    let prevLeft = brickCSS.left;
-
-    /*for (let color of colors) {
-      const brick = createBrick(prevLeft, brickCSS.top, brickCSS.width, brickCSS.height, color);
-
-      bricks.push(brick);
-      $('.game').append(brick.$);
-
-      prevLeft += brickCSS.width;
-    }
-
-    prevLeft = brickCSS.left;*/
-
-    for(let x=0; x<13; x++){
-      const brick = createBrick(prevLeft+15, brickCSS.top+50, brickCSS.width, brickCSS.height, '#ff9999');
-
-      bricks.push(brick);
-      $('.game').append(brick.$);
-
-      prevLeft += brickCSS.width;
-    }
-
-    prevLeft = brickCSS.left;
-
-    for(let x=0; x<12; x++){
-      const brick = createBrick(prevLeft+90, brickCSS.top+100, brickCSS.width, brickCSS.height, '#ffff99');
-
-      bricks.push(brick);
-      $('.game').append(brick.$);
-
-      prevLeft += brickCSS.width;
-    }
-
-    prevLeft = brickCSS.left;
-
-    for(let x=0; x<13; x++){
-      const brick = createBrick(prevLeft+15, brickCSS.top+150, brickCSS.width, brickCSS.height, '#99ff99');
-
-      bricks.push(brick);
-      $('.game').append(brick.$);
-
-      prevLeft += brickCSS.width;
-    }
-
-    prevLeft = brickCSS.left;
-
-    for(let x=0; x<12; x++){
-      const brick = createBrick(prevLeft+90, brickCSS.top+200, brickCSS.width, brickCSS.height, '#ff9999');
-
-      bricks.push(brick);
-      $('.game').append(brick.$);
-
-      prevLeft += brickCSS.width;
-    }
-
-    prevLeft = brickCSS.left;
-
-    for(let x=0; x<13; x++){
-      const brick = createBrick(prevLeft+15, brickCSS.top+250, brickCSS.width, brickCSS.height, '#ffff99');
-
-      bricks.push(brick);
-      $('.game').append(brick.$);
-
-      prevLeft += brickCSS.width;
-    }
-
-    prevLeft = brickCSS.left;
-
-    for(let x=0; x<12; x++){
-      const brick = createBrick(prevLeft+90, brickCSS.top+300, brickCSS.width, brickCSS.height, '#99ff99');
-
-      bricks.push(brick);
-      $('.game').append(brick.$);
-
-      prevLeft += brickCSS.width;
-    }
-
-    prevLeft = brickCSS.left;
+    let prevLeft = brickCSS.left + 15;
+    let prevTop = brickCSS.height;
+    let leftyPos = true;
+    let lengthy = 13;
     
+    let gameBoxSize= $('.game').width();
+    
+    
+    for(let y=0; y<8; y++){
+
+      for(let x=0; x<lengthy; x++){
+        const brick = createBrick(prevLeft, prevTop*y, brickCSS.width, brickCSS.height, '#ff9999');
+  
+        bricks.push(brick);
+        $('.game').append(brick.$);
+               
+        prevLeft += brickCSS.width;       
+      }
+
+      prevLeft = brickCSS.left + 15;
+      
+      if(leftyPos==true){
+        prevLeft+=gameBoxSize/26;
+        leftyPos=false;
+        lengthy=12;
+      }
+      else if(leftyPos==false){
+        prevLeft+=0;
+        leftyPos=true;
+        lengthy=13;
+      }
+      
+
+    }
+
+   
   
   }
 
