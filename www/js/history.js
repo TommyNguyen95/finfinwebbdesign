@@ -12,10 +12,12 @@ function languageToggle(translate){
 		// Creates two p-tags with class names "sv" and "en" from history.json-file
 		let textP1 = $('<p class="' + language + '"</p>');
 		let textP2 = $('<p class="' + language + '"</p>');
+		let header1 = $('<h2 class="' + language + '"</h2>')
 
 		// Appends index[0] and index[1] from history.json in previous created variables
 		textP1.append('<p>' + lang[0] + '</p>');
 		textP2.append('<p>' + lang[1] + '</p>');
+		header1.append(lang[])
 
 		// Appends the p-tags to the classes text1 and text2, in history section
 		$('.text1').append(textP1);
