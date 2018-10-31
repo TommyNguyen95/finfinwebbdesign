@@ -34,6 +34,7 @@ for(let conf of config.sass){
 let fs= require('fs'); // import the fileSystem library
 let bodyParser = require('body-parser'); // import body-parser (to read sent data from clients)
 app.use(bodyParser.json()); // use body-parser
+app.use(bodyParser.urlencoded({ extended: false })); // configure body-parser
  
 let highscores = require('./highscore.json'); // load the json file - store it in a new variable
  
@@ -41,10 +42,10 @@ let highscores = require('./highscore.json'); // load the json file - store it i
 app.post('/add-score', (req, res) => {
   highscores.push(req.body); // add the new score
   highscores.sort(function(a,b){
-    // .... Check MDN js array sort
+     // Google MDN js array sort and write the sort-function
   });
   highscores = highscores.slice(0,10); // only keep the top 10 in the array
-  fs.writeFile('./highscore.json', highscores); // replace the file content with the new array
+  fs.writeFile('./highscore.json', JSON.stringify(highscores), ()=>{}); // replace the file content with the new array
   res.json(highscores); // respond to the browser, send the new/updated array
 });
 
