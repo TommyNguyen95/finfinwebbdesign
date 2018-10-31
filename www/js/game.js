@@ -283,11 +283,9 @@ function loadGame() {
     let prevLeft = brickCSS.left + 15;
     let prevTop = brickCSS.height;
     let leftyPos = true;
-    let lengthy = 13;
-    
+    let lengthy = 13;   
     let gameBoxSize= $('.game').width();
-    
-    
+     
     for(let y=0; y<8; y++){
 
       for(let x=0; x<lengthy; x++){
@@ -311,12 +309,8 @@ function loadGame() {
         leftyPos=true;
         lengthy=13;
       }
-      
-
     }
-
-   
-  
+ 
   }
 
   function createBrick(left, top, width, height, backgroundColor) {
