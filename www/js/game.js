@@ -42,7 +42,7 @@ function loadGame() {
     /*----- makes ball faster after every 10 sec---*/
     setInterval(function(){ 
 
-      ball.speed +=10;
+      ball.speed +=100;
     }, 1000);
     
   }
@@ -175,38 +175,43 @@ function loadGame() {
   }
 
   function updateInterface() {
-    if (language == 'swedish') {
-      $('.score-text').html('<p class="sv"> POÄNG: </p>');
-      $('.lives-text').html('<p class="sv"> LIV: </p>')
-    } else {
-      $('.score-text').html('<p class="en"> SCORE: </p>')
-      $('.lives-text').html('<p class="en"> LIFE: </p>')
-    }
-    
+    $('.score-text').append('<p class="en"> SCORE: <p>')
+    $('.score-text').append('<p class="sv"> POÄNG: <p>')
     $('.score span').text((score + '').padStart(5, '0'));
+
+    $('.lives-text').html('<p class="en"> LIFE: <p>')
+    $('.lives-text').html('<p class="sv"> LIV: <p>')
     $('.lives span').text(lives);
 
     $('.main.text').hide();
     if (lives < 1) {
-      if(language == 'swedish'){
-        $('.main-text').html('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
-      }else{
-      $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
-    }
+      $('.main-text').append('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
+      $('.main-text').append('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
     } else if (!bricks.length) {
-      if(language == 'swedish'){
-        $('.main-text').html('<p class="sv"> GRATTIS - DU VANN! </p>');
-      }else{
-      $('.main-text').html('<p class="en"> CONGRATULATIONS - YOU WON! </p>');
-    }
+      $('.main-text').append('<p class="en"> CONGRATULATIONS - YOU WON! </p>');
+      $('.main-text').append('<p class="sv"> GRATTIS - DU VANN! </p>');
     } else if (paused) {
-      if(language == 'swedish'){
-        $('.main-text').html('<p class="sv">Tryck "Enter" för att starta/pausa spelet. Använd vänster och höger tangenterna för att röra bräddet</p>');
-      }else{
-      $('.main-text').html('<p class="en">Press "Enter" to start/pause game. Use left and right arrow keys to move paddle.</p>');
+      $('.main-text').append('<p class="en">Press "Enter" to start/pause game. Use left and right arrow keys to move paddle.</p>');
+      $('.main-text').append('<p class="sv">Tryck "Enter" för att starta/pausa spelet. Använd vänster och höger tangenterna för att röra bräddet</p>');
+    } else {
+      $('.main-text').text('');
     }
-    } 
     $('.main-text').fadeIn(500);
+
+  // Class 'en' is by default hidden
+	$('.en').hide();
+
+	// When 'svflag' is clicked on 'sv' is shown and 'en' hidden
+	$('.svflag').click(function(){
+		$('.sv').show();
+    $('.en').hide();
+    });
+
+	// When 'enflag' is clicked on 'en' is shown and 'sv' hidden
+	$('.ukflag').click(function(){
+		$('.sv').hide();
+		$('.en').show();
+    });
   }
 
   function onEnterPress() {
@@ -234,9 +239,6 @@ function loadGame() {
       if (e.which === 39) { keysPressed.right = false; }
       if (e.which === 13) { keysPressed.enter = false; }
     });
-
-    $('.ukflag, .svflag').click(updateInterface);
-
   }
 
   function loadGameBorders() {
@@ -273,10 +275,12 @@ function loadGame() {
     ball.$.css('left', (ball.left = gameBorders.width / 2 - ball.width / 2));
   }
 
+
+  /*----------- ROBIN IS WORKING IN THIS FUNCTION TODAY-----------*/
   function spawnBricks() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
-    const colors = [
+    /*const colors = [
       'rgb(255, 0, 0)',
       'rgb(0, 255, 0)',
       'rgb(0, 0, 255)',
@@ -292,12 +296,23 @@ function loadGame() {
       'rgb(0, 0, 255)',
       'rgb(255, 255, 0)',
       
-    ];
+    ];*/
 
     let prevLeft = brickCSS.left;
 
-    for (let color of colors) {
+    /*for (let color of colors) {
       const brick = createBrick(prevLeft, brickCSS.top, brickCSS.width, brickCSS.height, color);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width;
+    }
+
+    prevLeft = brickCSS.left;*/
+
+    for(let x=0; x<13; x++){
+      const brick = createBrick(prevLeft+15, brickCSS.top+50, brickCSS.width, brickCSS.height, '#ff9999');
 
       bricks.push(brick);
       $('.game').append(brick.$);
@@ -307,14 +322,28 @@ function loadGame() {
 
     prevLeft = brickCSS.left;
 
-    for (let color of colors) {
-      const brick = createBrick(prevLeft, brickCSS.top + 50, brickCSS.width, brickCSS.height, color);
+    for(let x=0; x<12; x++){
+      const brick = createBrick(prevLeft+90, brickCSS.top+100, brickCSS.width, brickCSS.height, '#ffff99');
 
       bricks.push(brick);
       $('.game').append(brick.$);
 
       prevLeft += brickCSS.width;
     }
+
+    prevLeft = brickCSS.left;
+
+    for(let x=0; x<13; x++){
+      const brick = createBrick(prevLeft+15, brickCSS.top+150, brickCSS.width, brickCSS.height, '#99ff99');
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width;
+    }
+
+    prevLeft = brickCSS.left;
+  
   }
 
   function createBrick(left, top, width, height, backgroundColor) {
