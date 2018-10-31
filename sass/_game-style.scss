@@ -87,8 +87,8 @@ body {
 }
 
 .brick {
-  /*left: 300px;*/
-  top: 10%;
+  left: 2px;
+  top: 5%;
   /*---robin changed width and hight--*/
   width: 7.15%;
   height: 4%;
@@ -96,13 +96,12 @@ body {
   position: absolute;
   z-index: 1;
   border-radius: 12px;
-  border:solid black 1px;
 }
 
 .ball {
   position: absolute;
-  height: 3%;
-  width: 2%;
+  height: 30px;
+  width: 30px;
   background-color: $ball-color;
   border-radius: 50%;
 }
