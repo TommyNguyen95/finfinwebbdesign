@@ -285,15 +285,25 @@ function loadGame() {
     let leftyPos = true;
     let lengthy = 13;   
     let gameBoxSize= $('.game').width();
+    let color;
      
     for(let y=0; y<8; y++){
 
+      if(y==0 || y==3 || y==6){
+        color='#ff9999';
+      }
+      else if(y==1 || y==4 || y==7){
+        color='#ffff99';
+      }
+      else if(y==2 || y==5 || y==8){
+        color='#99ff99';
+      }
+
       for(let x=0; x<lengthy; x++){
-        const brick = createBrick(prevLeft, prevTop*y, brickCSS.width, brickCSS.height, '#ff9999');
-  
+
+        const brick = createBrick(prevLeft, prevTop*y, brickCSS.width, brickCSS.height, color); 
         bricks.push(brick);
-        $('.game').append(brick.$);
-               
+        $('.game').append(brick.$);              
         prevLeft += brickCSS.width;       
       }
 

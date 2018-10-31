@@ -87,7 +87,7 @@ body {
 
 .brick {
   left: 0;
-  top: 5%;
+  top: 0;
   /*---robin changed width and hight--*/
   width: 7.6%;
   height: 4%;
@@ -96,6 +96,7 @@ body {
   z-index: 1;
   /*border-radius: 12px;*/
   border:solid black 1px;
+  /*margin-top:100px;*/
 }
 
 .ball {
