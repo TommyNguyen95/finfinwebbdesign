@@ -106,7 +106,8 @@ body {
   position: absolute;
   height: 30px;
   width: 30px;
-  background-color: $ball-color;
-
   border-radius: 50%;
+  img{
+    width:24px;
+  }
 }
