@@ -154,6 +154,16 @@ function loadGame() {
         score +=20 + bricksKilled;
         bricksKilled++;
         /* ---- end -----*/
+         
+        $('.score span').css('color','yellow');
+       
+        $('.score span').css('font-size','120%');
+     
+        setInterval(function(){
+          $('.score span').css('color','white');
+          $('.score span').css('font-size','100%');
+
+        },500);
 
         updateInterface();
       }
