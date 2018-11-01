@@ -146,7 +146,7 @@ function loadGame() {
       score += 5 + Math.round(paddleHits / 2 );
       paddleHits++;
       /*-----end----*/
-      dir = whatZone();
+      dir = changeDirection();
 
       if (dir === "left"){
         ball.direction.x = -1;
@@ -168,12 +168,12 @@ function loadGame() {
         ball.direction.x = - 0.5;
       }
 
-      whatZone();
+      changeDirection();
       updateInterface();
     }
   }
 
-  function whatZone(){
+  function changeDirection(){
     let paddleMiddleX = paddle.left + paddle.width/2;
     let ballMiddleX = ball.left + ball.width/2;
     let relativePosition = (ballMiddleX - paddleMiddleX) / (paddle.width/2);
