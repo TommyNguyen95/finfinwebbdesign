@@ -140,9 +140,12 @@ function loadGame() {
         if (getHorizontalOrVerticalDirection(brick, ball) == 'horizontal') {
           // If it bounced on the side of the brick
           ball.direction.x *= -1;
+          console.log('changed x direction to', ball.direction.x)
         } else {
           // If it bounced above/below a brick
+         // if(Math.random() < .5){ball.direction.y *= -1;} thomas tips//
           ball.direction.y *= -1;
+          console.log('changed y direction to', ball.direction.y)
         }
         brick.$.remove();
         bricks.splice(i, 1);
