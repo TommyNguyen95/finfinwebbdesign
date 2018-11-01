@@ -307,7 +307,7 @@ function loadGame() {
 
       for(let x=0; x<lengthy; x++){
 
-        const brick = createBrick(prevLeft, prevTop*y, brickCSS.width, brickCSS.height, color); 
+        const brick = createBrick(prevLeft, prevTop*y + 80, brickCSS.width, brickCSS.height, color); 
         bricks.push(brick);
         $('.game').append(brick.$);              
         prevLeft += brickCSS.width;       
