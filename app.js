@@ -42,7 +42,11 @@ let highscores = require('./www/json/highscore.json'); // load the json file - s
 app.post('/add-score', (req, res) => {
   highscores.push(req.body); // add the new score
   highscores.sort(function(a,b){
-     // Google MDN js array sort and write the sort-function
+    
+    // Google MDN js array sort and write the sort-function
+
+    return b.score-a.score;
+
   });
   highscores = highscores.slice(0,10); // only keep the top 10 in the array
   fs.writeFile('./www/json/highscore.json', JSON.stringify(highscores), ()=>{}); // replace the file content with the new array
