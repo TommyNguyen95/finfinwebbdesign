@@ -171,15 +171,15 @@ function loadGame() {
         score +=20 + bricksKilled;
         bricksKilled++;
         /* ---- end -----*/
-         
+
+        /*Making score yellow*/
         $('.score span').css('color','yellow');       
-        $('.score span').css('font-size','120%');
      
         setInterval(function(){
           $('.score span').css('color','white');
-          $('.score span').css('font-size','100%');
-
+  
         },500);
+        /*end*/
 
         updateInterface();
       }
