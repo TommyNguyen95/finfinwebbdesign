@@ -83,19 +83,20 @@ function loadGame() {
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
 
-    setInterval(function(){
+   /* setInterval(function(){
       /*for(let x=0; x<4; x++){
         $('#eightball').attr('src','/imgs/eightball'+x+'.png');
       }*/
       /*let whichPic= $('#eightball').attr('src');
       alert(whichPic);
-      if(whichPic=='imgs/eightball1.png'){
-        $('#eightball').attr('src','/imgs/eightball'+whichPic+'.png');
-      }*/
+      
+      if(whichPic==imgs/eightball1.png){
+        $('#eightball').attr('src','/imgs/eightball2.png');
+      }
       
       
 
-    },1000);
+    },1000);*/
 
 
     

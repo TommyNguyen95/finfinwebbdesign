@@ -72,13 +72,17 @@ body {
 .paddle {
   /*---robin changed width and hight--*/
   width:10%;
-  height: 2%;
-  background-color: $paddle-color;
+  //height: 2%;
+  //background-color: $paddle-color;
   /*background-image: url('/imgs/paddle.png');*/
   position: absolute;
   z-index: 1;
   bottom: 0;
   border-radius: 10px;
+}
+
+.paddle img {
+  width: 100%;
 }
 
 .brick {
