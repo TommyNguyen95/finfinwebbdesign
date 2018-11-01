@@ -20,18 +20,8 @@ body {
   /*max-width:2000px;*/
 }
 
-.score-text .sv {
-  position: absolute;
-  top: 10px;
-  right: 90px;
-  font-size: 21px;
-}
-.score-text .en {
-  position: absolute;
-  top: 10px;
-  right: 90px;
-  font-size: 21px;
-
+.score-text {
+  font-size:21px;
 }
 
 .score {
@@ -39,6 +29,8 @@ body {
   top: 5px;
   right: 10px;
   font-size: 25px;
+  width:100% !important;
+  text-align:right;
 }
 
 
@@ -81,7 +73,8 @@ body {
   /*---robin changed width and hight--*/
   width:10%;
   height: 2%;
-  background-color: $paddle-color;
+  /*background-color: $paddle-color;*/
+  background-image: url('/imgs/paddle.png');
   position: absolute;
   z-index: 1;
   bottom: 0;
