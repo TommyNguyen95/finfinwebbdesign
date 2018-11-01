@@ -346,7 +346,7 @@ function loadGame() {
     ball.width = ball.$.width();
     ball.height = ball.$.height();
     ball.$.css('top', (ball.top = 500));
-    ball.direction = { x: -1, y: -1};
+    ball.direction = { x: 0, y: 1};
 
     ball.$.css('left', (ball.left = gameBorders.width / 2 - ball.width / 2));
   }
