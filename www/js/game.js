@@ -8,6 +8,7 @@ function loadGame() {
   const initialPaddleSpeed = 900;
   const initialBallSpeed = 300;
   const paddle = {};
+  let dir;
   /*const initialPaddleWidth = paddle.$.width();  /* resposive*/ 
   const ball = {};
   let gameBorders = loadGameBorders();
@@ -46,7 +47,7 @@ function loadGame() {
     setInterval(function(){ 
 
        if(paused == false && paddle.width > gameBorders.width*0.03) {
-        paddle.width -= paddle.width/30;
+        paddle.width -= paddle.width/100;
         paddle.$.css('width', paddle.width);
       } 
       else if(paused==false){
@@ -82,6 +83,24 @@ function loadGame() {
 
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
+
+   /* setInterval(function(){
+      /*for(let x=0; x<4; x++){
+        $('#eightball').attr('src','/imgs/eightball'+x+'.png');
+      }*/
+      /*let whichPic= $('#eightball').attr('src');
+      alert(whichPic);
+      
+      if(whichPic==imgs/eightball1.png){
+        $('#eightball').attr('src','/imgs/eightball2.png');
+      }
+      
+      
+
+    },1000);*/
+
+
+    
   }
 
   function calculatePaddleDirection() {
@@ -127,11 +146,44 @@ function loadGame() {
       score += 5 + Math.round(paddleHits / 2 );
       paddleHits++;
       /*-----end----*/
+      dir = changeDirection();
 
+      if (dir === "left"){
+        ball.direction.x = -1;
+      }
+
+      else if (dir === "right"){
+        ball.direction.x = 1;
+      }
+
+      else if (dir === "center"){
+        ball.direction.x = 0;
+      }
+
+      else if (dir === "middleRight"){
+        ball.direction.x = 0.5;
+      }
+
+      else if (dir === "middleLeft"){
+        ball.direction.x = - 0.5;
+      }
+
+      changeDirection();
       updateInterface();
     }
   }
 
+  function changeDirection(){
+    let paddleMiddleX = paddle.left + paddle.width/2;
+    let ballMiddleX = ball.left + ball.width/2;
+    let relativePosition = (ballMiddleX - paddleMiddleX) / (paddle.width/2);
+    let zone = 'center';
+    if(relativePosition < -0.7){ zone = "left";}
+    else if(relativePosition > 0.7){ zone = "right";}
+    else if(relativePosition > -0.7 && relativePosition < -0.3){ zone = "middleLeft";}
+    else if(relativePosition < 0.7 && relativePosition > 0.3){ zone = "middleRight";}
+    return zone;
+  }
   /*------------------ ROBIN CHANGING ----------------*/
   function collisionDetectBallAndBricks() {
     for (let i = bricks.length - 1; i >= 0; --i) {
@@ -140,9 +192,12 @@ function loadGame() {
         if (getHorizontalOrVerticalDirection(brick, ball) == 'horizontal') {
           // If it bounced on the side of the brick
           ball.direction.x *= -1;
+          console.log('changed x direction to', ball.direction.x)
         } else {
           // If it bounced above/below a brick
+         // if(Math.random() < .5){ball.direction.y *= -1;} thomas tips//
           ball.direction.y *= -1;
+          console.log('changed y direction to', ball.direction.y)
         }
         brick.$.remove();
         bricks.splice(i, 1);
@@ -151,6 +206,15 @@ function loadGame() {
         score +=20 + bricksKilled;
         bricksKilled++;
         /* ---- end -----*/
+
+        /*Making score yellow*/
+        $('.score span').css('color','yellow');       
+     
+        setInterval(function(){
+          $('.score span').css('color','white');
+  
+        },500);
+        /*end*/
 
         updateInterface();
       }
@@ -186,14 +250,14 @@ function loadGame() {
   function updateInterface() {
 
     if (language == 'swedish') {
-      $('.score-text').html('<p class="sv"> POÄNG: </p>');
-      $('.lives-text').html('<p class="sv"> LIV: </p>')
+      $('.score-text').html('<span class="sv"> POÄNG: </span>');
+      $('.lives-text').html('<span class="sv"> LIV: </span>')
     } else {
-      $('.score-text').html('<p class="en"> SCORE: </p>')
-      $('.lives-text').html('<p class="en"> LIFE: </p>')
+      $('.score-text').html('<span class="en"> SCORE: </span>')
+      $('.lives-text').html('<span class="en"> LIFE: </span>')
     }
 
-    $('.score span').text((score + '').padStart(5, '0'));
+    $('.score .score-points').text((score + '').padStart(5, '0'));
     $('.lives span').text(lives);
     if (lives < 1) {
 
@@ -284,7 +348,7 @@ function loadGame() {
     ball.width = ball.$.width();
     ball.height = ball.$.height();
     ball.$.css('top', (ball.top = 500));
-    ball.direction = { x: -1, y: -1};
+    ball.direction = { x: 0, y: 1};
 
     ball.$.css('left', (ball.left = gameBorders.width / 2 - ball.width / 2));
   }
