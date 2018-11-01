@@ -195,10 +195,11 @@ function loadGame() {
 
     $('.score span').text((score + '').padStart(5, '0'));
     $('.lives span').text(lives);
-
     if (lives < 1) {
+
       if(language == 'swedish'){
-      $('.main-text').html('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
+        $('.main-text').html('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
+        $('#exampleModal').modal('show');
       }
       else{
       $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
@@ -220,7 +221,8 @@ function loadGame() {
     }
     $('.main-text').fadeIn(500);
 
-}
+  }
+
 
   function onEnterPress() {
     if (keysPressed.enter) { return; }

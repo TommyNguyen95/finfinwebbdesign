@@ -176,6 +176,35 @@
       <div class="paddle"></div>
       <div class="main-text"></div>
 
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Breakout high score list</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="points" class="col-form-label">Your Breakout points:</label>
+                  <input type="text" class="form-control" id="points">
+                </div>
+                <div class="form-group">
+                  <label for="name" class="col-form-label">Fill in your name:</label>
+                  <textarea class="form-control" id="name"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button id="submit-button" type="button" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <!----------------------- /GAME ENDS ----------------------->
@@ -188,38 +217,6 @@
 
       <div class="container container-history">
 
-
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">HighScore</button>
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Breakout high score list</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="form-group">
-                    <label for="points" class="col-form-label">Your Breakout points:</label>
-                    <input type="text" class="form-control" id="points">
-                  </div>
-                  <div class="form-group">
-                    <label for="name" class="col-form-label">Fill in your name:</label>
-                    <textarea class="form-control" id="name"></textarea>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button id="submit-button" type="button" class="btn btn-primary">Submit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <table class="table table-striped table-dark">
           <thead>
             <tr>
@@ -229,7 +226,7 @@
             </tr>
           </thead>
           <tbody>
-            
+
           </tbody>
         </table>
 
@@ -238,6 +235,7 @@
     </section>
     <!----------------------- /HIGHSCORE ENDS ----------------------->
 
+    
 
     <!----------------------- HISTORY STARTS----------------------->
     <section class="history">
