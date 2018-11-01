@@ -40,6 +40,8 @@ body {
   top: 5px;
   right: 10px;
   font-size: 25px;
+  width:100% !important;
+  text-align:right;
 }
 
 
@@ -82,6 +84,7 @@ body {
   width:10%;
   height: 2%;
   background-color: $paddle-color;
+  /*background-image: url('/imgs/paddle.png');*/
   position: absolute;
   z-index: 1;
   bottom: 0;
