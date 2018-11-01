@@ -193,17 +193,14 @@ function loadGame() {
       $('.lives-text').html('<p class="en"> LIFE: </p>')
     }
 
-    $('.score-text').html('<p class="en"> SCORE: </p>')
     $('.score span').text((score + '').padStart(5, '0'));
-
-    $('.lives-text').html('<p class="en"> LIFE: </p>')
     $('.lives span').text(lives);
 
-    $('.main.text').hide();
     if (lives < 1) {
       if(language == 'swedish'){
-        $('.main-text').html('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
-      }else{
+      $('.main-text').html('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
+      }
+      else{
       $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
     }
     } else if (!bricks.length) {
