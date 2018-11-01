@@ -15,22 +15,23 @@ body {
   height: 100vh;
 
   /*--robban css---*/
-  border:solid red 1px;
+  /*border:solid red 1px;*/
   width:100%;
+  /*max-width:2000px;*/
 }
 
 .score-text .sv {
   position: absolute;
-  top: 3px;
-  right: 62px;
-  font-size: 14px;
+  top: 10px;
+  right: 90px;
+  font-size: 21px;
 
 }
 .score-text .en {
   position: absolute;
-  top: 3px;
-  right: 62px;
-  font-size: 14px;
+  top: 10px;
+  right: 90px;
+  font-size: 21px;
 
 }
 
@@ -38,28 +39,30 @@ body {
   position: absolute;
   top: 5px;
   right: 10px;
+  font-size: 25px;
 }
 
 .lives {
   position: absolute;
   top: 4px;
-  left: 44px;
+  left: 60px;
+  font-size: 25px;
 }
 .lives-text {
   .sv{
     position: absolute;
-    top: 5px;
-    left: 10px;
-    font-size: 14px;
+    top: 11px;
+    left: 18px;
+    font-size: 21px;
 
   }
 }
 .lives-text {
   .en{
     position: absolute;
-    top: 5px;
+    top: 11px;
     left: 10px;
-    font-size: 14px;
+    font-size: 21px;
 
   }
 }
@@ -70,9 +73,7 @@ body {
   width: 100%;
   text-align: center;
   top: 150px;
-  .esc{
-    padding-top: 25px;
-  }
+  top: 50%;
 }
 
 .paddle {
@@ -87,22 +88,24 @@ body {
 }
 
 .brick {
-  /*left: 300px;*/
-  top: 10%;
+  left: 0;
+  top: 0;
   /*---robin changed width and hight--*/
-  width: 7%;
+  width: 7.6%;
   height: 4%;
-  background-color: #777;
+  /*background-color: #777;*/
   position: absolute;
   z-index: 1;
-  border-radius: 12px;
+  /*border-radius: 12px;*/
   border:solid black 1px;
+  /*margin-top:100px;*/
 }
 
 .ball {
   position: absolute;
-  height: 3%;
-  width: 2%;
+  height: 30px;
+  width: 30px;
   background-color: $ball-color;
+
   border-radius: 50%;
 }
