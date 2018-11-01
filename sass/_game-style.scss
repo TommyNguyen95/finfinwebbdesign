@@ -20,27 +20,31 @@ body {
   /*max-width:2000px;*/
 }
 
-.score-text .sv {
+.score-text{
+  .sv {
+    position: absolute;
+    top: 10px;
+    right: 90px;
+    font-size: 21px;
+  };
+.en {
   position: absolute;
   top: 10px;
   right: 90px;
   font-size: 21px;
-
-}
-.score-text .en {
-  position: absolute;
-  top: 10px;
-  right: 90px;
-  font-size: 21px;
-
-}
+  };  
+};
 
 .score {
   position: absolute;
   top: 5px;
   right: 10px;
   font-size: 25px;
+  width:100% !important;
+  text-align:right;
 }
+
+
 
 .lives {
   position: absolute;
@@ -48,20 +52,19 @@ body {
   left: 60px;
   font-size: 25px;
 }
-.lives-text {
-  .sv{
-    position: absolute;
-    top: 11px;
-    left: 18px;
-    font-size: 21px;
 
-  }
-}
 .lives-text {
   .en{
     position: absolute;
     top: 11px;
     left: 10px;
+    font-size: 21px;
+
+  }
+  .sv{
+    position: absolute;
+    top: 11px;
+    left: 18px;
     font-size: 21px;
 
   }
@@ -78,13 +81,18 @@ body {
 
 .paddle {
   /*---robin changed width and hight--*/
-  width: 10%;
-  height: 2%;
-  background-color: $paddle-color;
+  width:10%;
+  //height: 2%;
+  //background-color: $paddle-color;
+  /*background-image: url('/imgs/paddle.png');*/
   position: absolute;
   z-index: 1;
   bottom: 0;
   border-radius: 10px;
+}
+
+.paddle img {
+  width: 100%;
 }
 
 .brick {
@@ -105,7 +113,8 @@ body {
   position: absolute;
   height: 30px;
   width: 30px;
-  background-color: $ball-color;
-
   border-radius: 50%;
+  img{
+    width:24px;
+  }
 }

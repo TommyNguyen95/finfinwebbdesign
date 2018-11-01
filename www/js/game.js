@@ -83,6 +83,24 @@ function loadGame() {
 
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
+
+   /* setInterval(function(){
+      /*for(let x=0; x<4; x++){
+        $('#eightball').attr('src','/imgs/eightball'+x+'.png');
+      }*/
+      /*let whichPic= $('#eightball').attr('src');
+      alert(whichPic);
+      
+      if(whichPic==imgs/eightball1.png){
+        $('#eightball').attr('src','/imgs/eightball2.png');
+      }
+      
+      
+
+    },1000);*/
+
+
+    
   }
 
   function calculatePaddleDirection() {
@@ -189,6 +207,15 @@ function loadGame() {
         bricksKilled++;
         /* ---- end -----*/
 
+        /*Making score yellow*/
+        $('.score span').css('color','yellow');       
+     
+        setInterval(function(){
+          $('.score span').css('color','white');
+  
+        },500);
+        /*end*/
+
         updateInterface();
       }
     }
@@ -223,14 +250,14 @@ function loadGame() {
   function updateInterface() {
 
     if (language == 'swedish') {
-      $('.score-text').html('<p class="sv"> POÄNG: </p>');
-      $('.lives-text').html('<p class="sv"> LIV: </p>')
+      $('.score-text').html('<span class="sv"> POÄNG: </span>');
+      $('.lives-text').html('<span class="sv"> LIV: </span>')
     } else {
-      $('.score-text').html('<p class="en"> SCORE: </p>')
-      $('.lives-text').html('<p class="en"> LIFE: </p>')
+      $('.score-text').html('<span class="en"> SCORE: </span>')
+      $('.lives-text').html('<span class="en"> LIFE: </span>')
     }
 
-    $('.score span').text((score + '').padStart(5, '0'));
+    $('.score .score-points').text((score + '').padStart(5, '0'));
     $('.lives span').text(lives);
 
     if (lives < 1) {
