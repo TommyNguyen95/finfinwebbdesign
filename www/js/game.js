@@ -82,6 +82,18 @@ function loadGame() {
 
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
+
+    setInterval(function(){
+      /*for(let x=0; x<4; x++){
+        $('#eightball').attr('src','/imgs/eightball'+x+'.png');
+      }*/
+      
+      $('#eightball').attr('src','/imgs/eightball2.png');
+
+    },1000);
+
+
+    
   }
 
   function calculatePaddleDirection() {
@@ -155,8 +167,7 @@ function loadGame() {
         bricksKilled++;
         /* ---- end -----*/
          
-        $('.score span').css('color','yellow');
-       
+        $('.score span').css('color','yellow');       
         $('.score span').css('font-size','120%');
      
         setInterval(function(){
