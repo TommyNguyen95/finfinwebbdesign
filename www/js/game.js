@@ -8,6 +8,7 @@ function loadGame() {
   const initialPaddleSpeed = 900;
   const initialBallSpeed = 300;
   const paddle = {};
+  let dir;
   /*const initialPaddleWidth = paddle.$.width();  /* resposive*/ 
   const ball = {};
   let gameBorders = loadGameBorders();
@@ -46,7 +47,7 @@ function loadGame() {
     setInterval(function(){ 
 
        if(paused == false && paddle.width > gameBorders.width*0.03) {
-        paddle.width -= paddle.width/30;
+        paddle.width -= paddle.width/100;
         paddle.$.css('width', paddle.width);
       } 
       else if(paused==false){
@@ -127,11 +128,44 @@ function loadGame() {
       score += 5 + Math.round(paddleHits / 2 );
       paddleHits++;
       /*-----end----*/
+      dir = whatZone();
 
+      if (dir === "left"){
+        ball.direction.x = -1;
+      }
+
+      else if (dir === "right"){
+        ball.direction.x = 1;
+      }
+
+      else if (dir === "center"){
+        ball.direction.x = 0;
+      }
+
+      else if (dir === "middleRight"){
+        ball.direction.x = 0.5;
+      }
+
+      else if (dir === "middleLeft"){
+        ball.direction.x = - 0.5;
+      }
+
+      whatZone();
       updateInterface();
     }
   }
 
+  function whatZone(){
+    let paddleMiddleX = paddle.left + paddle.width/2;
+    let ballMiddleX = ball.left + ball.width/2;
+    let relativePosition = (ballMiddleX - paddleMiddleX) / (paddle.width/2);
+    let zone = 'center';
+    if(relativePosition < -0.7){ zone = "left";}
+    else if(relativePosition > 0.7){ zone = "right";}
+    else if(relativePosition > -0.7 && relativePosition < -0.3){ zone = "middleLeft";}
+    else if(relativePosition < 0.7 && relativePosition > 0.3){ zone = "middleRight";}
+    return zone;
+  }
   /*------------------ ROBIN CHANGING ----------------*/
   function collisionDetectBallAndBricks() {
     for (let i = bricks.length - 1; i >= 0; --i) {
