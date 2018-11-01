@@ -22,16 +22,16 @@ body {
 
 .score-text .sv {
   position: absolute;
-  top: 2px;
-  right: 62px;
-  font-size: 14px;
+  top: 10px;
+  right: 90px;
+  font-size: 21px;
 
 }
 .score-text .en {
   position: absolute;
-  top: 2px;
-  right: 62px;
-  font-size: 14px;
+  top: 10px;
+  right: 90px;
+  font-size: 21px;
 
 }
 
@@ -39,28 +39,30 @@ body {
   position: absolute;
   top: 5px;
   right: 10px;
+  font-size: 25px;
 }
 
 .lives {
   position: absolute;
   top: 4px;
-  left: 44px;
+  left: 60px;
+  font-size: 25px;
 }
 .lives-text {
   .sv{
     position: absolute;
-    top: 3.6px;
-    left: 10px;
-    font-size: 14px;
+    top: 11px;
+    left: 18px;
+    font-size: 21px;
 
   }
 }
 .lives-text {
   .en{
     position: absolute;
-    top: 3.6px;
+    top: 11px;
     left: 10px;
-    font-size: 14px;
+    font-size: 21px;
 
   }
 }
