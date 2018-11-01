@@ -20,20 +20,20 @@ body {
   /*max-width:2000px;*/
 }
 
-.score-text .sv {
+.score-text{
+  .sv {
+    position: absolute;
+    top: 10px;
+    right: 90px;
+    font-size: 21px;
+  };
+.en {
   position: absolute;
   top: 10px;
   right: 90px;
   font-size: 21px;
-
-}
-.score-text .en {
-  position: absolute;
-  top: 10px;
-  right: 90px;
-  font-size: 21px;
-
-}
+  };  
+};
 
 .score {
   position: absolute;
@@ -48,20 +48,19 @@ body {
   left: 60px;
   font-size: 25px;
 }
-.lives-text {
-  .sv{
-    position: absolute;
-    top: 11px;
-    left: 18px;
-    font-size: 21px;
 
-  }
-}
 .lives-text {
   .en{
     position: absolute;
     top: 11px;
     left: 10px;
+    font-size: 21px;
+
+  }
+  .sv{
+    position: absolute;
+    top: 11px;
+    left: 18px;
     font-size: 21px;
 
   }
