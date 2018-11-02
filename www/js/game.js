@@ -261,13 +261,14 @@ function loadGame() {
     $('.lives span').text(lives);
     if (lives < 1) {
 
+      $('#gameModal').modal('show');
+
       if(language == 'swedish'){
         $('.main-text').html('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
-        $('#exampleModal').modal('show');
       }
       else{
-      $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
-    }
+        $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
+      }
     } else if (!bricks.length) {
       if(language == 'swedish'){
         $('.main-text').html('<p class="sv"> GRATTIS - DU VANN! </p>');
