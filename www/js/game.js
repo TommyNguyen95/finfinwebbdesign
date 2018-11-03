@@ -42,19 +42,25 @@ function loadGame() {
 
    
     /*----- Robin Code ------*/
-    /**Paddel change size */
     /*----- makes ball faster after every 10 sec---*/
     setInterval(function(){ 
 
-       if(paused == false && paddle.width > gameBorders.width*0.03) {
-        paddle.width -= paddle.width/100;
-        paddle.$.css('width', paddle.width);
-      } 
-      else if(paused==false){
+      if(paused==false){
         ball.speed += 10;
       }       
         
-        }, 1000);
+        }, 1000); 
+
+     /*Paddel change size */
+     setInterval(function(){ 
+
+     if(paused == false && paddle.width > gameBorders.width*0.02) {
+          paddle.width -= paddle.width/200;
+          paddle.$.css('width', paddle.width);
+      } 
+    
+          
+        }, 6000);
   }     
   
   function updateGame(deltaTime) {
