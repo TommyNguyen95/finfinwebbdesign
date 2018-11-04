@@ -17,6 +17,7 @@ function loadGame() {
   let paddleHits = 0;
   let bricksKilled = 0;
   let ballSpinn = true;
+  let rotateBallInterval;
   
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -71,7 +72,7 @@ function loadGame() {
 
     if(ballSpinn==true){
 
-      setInterval(function(){
+      rotateBallInterval =setInterval(function(){
 
         if(paused==false){
         let whichPic= $('#eightball').attr('src');
@@ -91,7 +92,7 @@ function loadGame() {
         }    
 
       },100);
-      
+
     ballSpinn=false;
     }
   }
@@ -192,6 +193,7 @@ function loadGame() {
 
       changeDirection();
       updateInterface();
+      
       rotateBall();
     }
   }
@@ -375,6 +377,9 @@ function loadGame() {
     ball.direction = { x: 0, y: 1};
 
     ball.$.css('left', (ball.left = gameBorders.width / 2 - ball.width / 2));
+  
+    clearInterval(rotateBallInterval);
+    ballSpinn=true;
   }
 
 
