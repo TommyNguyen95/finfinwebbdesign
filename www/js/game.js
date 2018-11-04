@@ -6,7 +6,7 @@ function loadGame() {
   const bricks = [];
   const keysPressed = {};
   const initialPaddleSpeed = 900;
-  const initialBallSpeed = 300;
+  const initialBallSpeed = 500;
   const paddle = {};
   let dir;
   /*const initialPaddleWidth = paddle.$.width();  /* resposive*/ 
@@ -16,6 +16,7 @@ function loadGame() {
   // Robin variables
   let paddleHits = 0;
   let bricksKilled = 0;
+  let ballSpinn = true;
   
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -62,32 +63,38 @@ function loadGame() {
           
         }, 6000);
 
-    setInterval(function(){
-     
-      let whichPic= $('#eightball').attr('src');
-      
-          
-          if(whichPic=='/imgs/neon.png'){           
-            $('#eightball').attr('src','/imgs/neon1.png');
-          }
-          else if(whichPic=='/imgs/neon1.png'){           
-            $('#eightball').attr('src','/imgs/neon2.png');
-          }
-          else if(whichPic=='/imgs/neon2.png'){           
-            $('#eightball').attr('src','/imgs/neon3.png');
-          }
-          if(whichPic=='/imgs/neon3.png'){           
-            $('#eightball').attr('src','/imgs/neon.png');
-          }
-          
-          
     
-    },100);
-
-
-
 
   }     
+
+  function rotateBall(){
+
+    if(ballSpinn==true){
+
+      setInterval(function(){
+
+        if(paused==false){
+        let whichPic= $('#eightball').attr('src');
+                   
+            if(whichPic=='/imgs/neon.png'){           
+              $('#eightball').attr('src','/imgs/neon1.png');
+            }
+            else if(whichPic=='/imgs/neon1.png'){           
+              $('#eightball').attr('src','/imgs/neon2.png');
+            }
+            else if(whichPic=='/imgs/neon2.png'){           
+              $('#eightball').attr('src','/imgs/neon3.png');
+            }
+            if(whichPic=='/imgs/neon3.png'){           
+              $('#eightball').attr('src','/imgs/neon.png');
+            }            
+        }    
+
+      },100);
+      
+    ballSpinn=false;
+    }
+  }
   
   function updateGame(deltaTime) {
     if (paused) { return; }
@@ -185,6 +192,7 @@ function loadGame() {
 
       changeDirection();
       updateInterface();
+      rotateBall();
     }
   }
 
