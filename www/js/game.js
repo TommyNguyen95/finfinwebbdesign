@@ -65,7 +65,7 @@ function loadGame() {
         }, 6000);
 
     
-
+        
   }     
 
   function rotateBall(){
@@ -195,6 +195,8 @@ function loadGame() {
       updateInterface();
       
       rotateBall();
+      const rollSound = new Audio("/audio/BONGO1.WAV");
+        rollSound.play();
     }
   }
 
@@ -232,13 +234,16 @@ function loadGame() {
         bricksKilled++;
         /* ---- end -----*/
 
+        const rollSound = new Audio("/audio/ljud1.WAV");
+        rollSound.play();
+
         /*Making score yellow*/
-        $('.score span').css('color','yellow');       
+       /* $('.score span').css('color','yellow');       
      
         setInterval(function(){
           $('.score span').css('color','white');
   
-        },500);
+        },500);*/
         /*end*/
 
         updateInterface();
