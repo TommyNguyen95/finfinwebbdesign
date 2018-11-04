@@ -61,6 +61,32 @@ function loadGame() {
     
           
         }, 6000);
+
+    setInterval(function(){
+     
+      let whichPic= $('#eightball').attr('src');
+      
+          
+          if(whichPic=='/imgs/neon.png'){           
+            $('#eightball').attr('src','/imgs/neon1.png');
+          }
+          else if(whichPic=='/imgs/neon1.png'){           
+            $('#eightball').attr('src','/imgs/neon2.png');
+          }
+          else if(whichPic=='/imgs/neon2.png'){           
+            $('#eightball').attr('src','/imgs/neon3.png');
+          }
+          if(whichPic=='/imgs/neon3.png'){           
+            $('#eightball').attr('src','/imgs/neon.png');
+          }
+          
+          
+    
+    },100);
+
+
+
+
   }     
   
   function updateGame(deltaTime) {
@@ -89,23 +115,6 @@ function loadGame() {
 
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
-
-   /* setInterval(function(){
-      /*for(let x=0; x<4; x++){
-        $('#eightball').attr('src','/imgs/eightball'+x+'.png');
-      }*/
-      /*let whichPic= $('#eightball').attr('src');
-      alert(whichPic);
-      
-      if(whichPic==imgs/eightball1.png){
-        $('#eightball').attr('src','/imgs/eightball2.png');
-      }
-      
-      
-
-    },1000);*/
-
-
     
   }
 
