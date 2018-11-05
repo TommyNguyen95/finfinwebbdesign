@@ -1,29 +1,38 @@
 
 .container-highscore {
-  padding: 60px 100px;
+  padding: 10px 150px;
   font-size: 1.2em;
 }
 
-.highscore-title{
+.highscore-title {
   color: rgb(114, 255, 240);
 }
 
-.table th, .table td{
+.table th, .table td {
   text-align:center;
 }
 
-.table th{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: rgb(195, 254, 248);
+.table th {
+  padding: 20px 0;
 }
 
-.table td{
-  padding-top: 8px;
-  padding-bottom: 25px;
+.table td {
+  padding: 8px 0 25px 0;
 }
 
-.table{
+.rank {
+  width: 25%;
+}
+
+th p {
+  color: rgb(134, 230, 220);
+}
+
+.breakout-points {
+  width: 25%;
+}
+
+.table {
   border: outset 2px rgb(114, 255, 240);
 }
 

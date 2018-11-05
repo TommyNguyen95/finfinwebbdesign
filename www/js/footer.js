@@ -2,7 +2,7 @@ $.getJSON('/json/footer.json', text);
 
 
 function text(data){
-   
+
 	if(language === "swedish"){
 		$('.test').text(data["one"].sv);
 		$('.test1').text(data["two"].sv);
