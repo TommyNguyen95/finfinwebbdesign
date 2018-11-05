@@ -91,7 +91,7 @@ function loadGame() {
           }
         }
 
-      }, 100);
+      }, 80);
 
       ballSpinn = false;
     }
@@ -403,9 +403,9 @@ function loadGame() {
 
     for (let y = 0; y < 8; y++) {
 
-      if (y == 0 || y == 3 || y == 6) { color = '#ff9999'; }
-      else if (y == 1 || y == 4 || y == 7) { color = '#ffff99'; }
-      else if (y == 2 || y == 5 || y == 8) { color = '#99ff99'; }
+      if (y == 0 || y == 3 || y == 6) { color = 'rgba(255,110,199)'; }
+      else if (y == 1 || y == 4 || y == 7) { color = 'rgba(247,247,15)'; }
+      else if (y == 2 || y == 5 || y == 8) { color = 'rgba(55,228,46'; }
 
       for (let x = 0; x < lengthy; x++) {
 
