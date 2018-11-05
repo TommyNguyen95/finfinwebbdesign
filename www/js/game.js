@@ -359,7 +359,6 @@ function loadGame() {
   function resetPaddle() {
     paddle.$ = $('.paddle');
     paddle.speed = initialPaddleSpeed;
-
     paddle.top = paddle.$.position().top;
     paddle.left = paddle.$.position().left;
     /* paddle.width = paddle.$.width(); */
