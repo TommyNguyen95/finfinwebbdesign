@@ -9,23 +9,23 @@ function loadGame() {
   const initialBallSpeed = 500;
   const paddle = {};
   let dir;
-  /*const initialPaddleWidth = paddle.$.width();  /* resposive*/ 
+  /*const initialPaddleWidth = paddle.$.width();  /* resposive*/
   const ball = {};
   let gameBorders = loadGameBorders();
-  
+
   // Robin variables
   let paddleHits = 0;
   let bricksKilled = 0;
   let ballSpinn = true;
   let rotateBallInterval;
-  
+
   // Setup key listeners before starting the first game
   setupKeyListeners();
   startNewGame();
-  
+
   /*---Robin code----*/
   /*---Scroll game window to right place when start game---*/
-  setTimeout(()=>{
+  setTimeout(() => {
     scrollTo(0, $('.game').position().top)
   }, 100);
 
@@ -42,61 +42,61 @@ function loadGame() {
     updateInterface();
     startInterval();
 
-   
+
     /*----- Robin Code ------*/
     /*----- makes ball faster after every 10 sec---*/
-    setInterval(function(){ 
+    setInterval(function () {
 
-      if(paused==false){
+      if (paused == false) {
         ball.speed += 10;
-      }       
-        
-        }, 1000); 
+      }
 
-     /*Paddel change size */
-     setInterval(function(){ 
+    }, 1000);
 
-     if(paused == false && paddle.width > gameBorders.width*0.02) {
-          paddle.width -= paddle.width/200;
-          paddle.$.css('width', paddle.width);
-      } 
-    
-          
-        }, 6000);
+    /*Paddel change size */
+    setInterval(function () {
 
-    
-        
-  }     
+      if (paused == false && paddle.width > gameBorders.width * 0.02) {
+        paddle.width -= paddle.width / 200;
+        paddle.$.css('width', paddle.width);
+      }
 
-  function rotateBall(){
 
-    if(ballSpinn==true){
+    }, 6000);
 
-      rotateBallInterval =setInterval(function(){
 
-        if(paused==false){
-        let whichPic= $('#eightball').attr('src');
-                   
-            if(whichPic=='/imgs/neon.png'){           
-              $('#eightball').attr('src','/imgs/neon1.png');
-            }
-            else if(whichPic=='/imgs/neon1.png'){           
-              $('#eightball').attr('src','/imgs/neon2.png');
-            }
-            else if(whichPic=='/imgs/neon2.png'){           
-              $('#eightball').attr('src','/imgs/neon3.png');
-            }
-            else if(whichPic=='/imgs/neon3.png'){           
-              $('#eightball').attr('src','/imgs/neon.png');
-            }            
-        }    
 
-      },100);
+  }
 
-    ballSpinn=false;
+  function rotateBall() {
+
+    if (ballSpinn == true) {
+
+      rotateBallInterval = setInterval(function () {
+
+        if (paused == false) {
+          let whichPic = $('#eightball').attr('src');
+
+          if (whichPic == '/imgs/neon.png') {
+            $('#eightball').attr('src', '/imgs/neon1.png');
+          }
+          else if (whichPic == '/imgs/neon1.png') {
+            $('#eightball').attr('src', '/imgs/neon2.png');
+          }
+          else if (whichPic == '/imgs/neon2.png') {
+            $('#eightball').attr('src', '/imgs/neon3.png');
+          }
+          else if (whichPic == '/imgs/neon3.png') {
+            $('#eightball').attr('src', '/imgs/neon.png');
+          }
+        }
+
+      }, 100);
+
+      ballSpinn = false;
     }
   }
-  
+
   function updateGame(deltaTime) {
     if (paused) { return; }
 
@@ -123,7 +123,7 @@ function loadGame() {
 
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
-    
+
   }
 
   function calculatePaddleDirection() {
@@ -166,49 +166,49 @@ function loadGame() {
       ball.top = paddle.top - ball.height;
 
       /*--Here I changed the score getting biggger and bigger--*/
-      score += 5 + Math.round(paddleHits / 2 );
+      score += 5 + Math.round(paddleHits / 2);
       paddleHits++;
       /*-----end----*/
       dir = changeDirection();
 
-      if (dir === "left"){
+      if (dir === "left") {
         ball.direction.x = -1;
       }
 
-      else if (dir === "right"){
+      else if (dir === "right") {
         ball.direction.x = 1;
       }
 
-      else if (dir === "center"){
+      else if (dir === "center") {
         ball.direction.x = 0;
       }
 
-      else if (dir === "middleRight"){
+      else if (dir === "middleRight") {
         ball.direction.x = 0.5;
       }
 
-      else if (dir === "middleLeft"){
+      else if (dir === "middleLeft") {
         ball.direction.x = - 0.5;
       }
 
       changeDirection();
       updateInterface();
-      
+
       rotateBall();
       const rollSound = new Audio("/audio/BONGO1.WAV");
-        rollSound.play();
+      rollSound.play();
     }
   }
 
-  function changeDirection(){
-    let paddleMiddleX = paddle.left + paddle.width/2;
-    let ballMiddleX = ball.left + ball.width/2;
-    let relativePosition = (ballMiddleX - paddleMiddleX) / (paddle.width/2);
+  function changeDirection() {
+    let paddleMiddleX = paddle.left + paddle.width / 2;
+    let ballMiddleX = ball.left + ball.width / 2;
+    let relativePosition = (ballMiddleX - paddleMiddleX) / (paddle.width / 2);
     let zone = 'center';
-    if(relativePosition < -0.7){ zone = "left";}
-    else if(relativePosition > 0.7){ zone = "right";}
-    else if(relativePosition > -0.7 && relativePosition < -0.3){ zone = "middleLeft";}
-    else if(relativePosition < 0.7 && relativePosition > 0.3){ zone = "middleRight";}
+    if (relativePosition < -0.7) { zone = "left"; }
+    else if (relativePosition > 0.7) { zone = "right"; }
+    else if (relativePosition > -0.7 && relativePosition < -0.3) { zone = "middleLeft"; }
+    else if (relativePosition < 0.7 && relativePosition > 0.3) { zone = "middleRight"; }
     return zone;
   }
   /*------------------ ROBIN CHANGING ----------------*/
@@ -222,7 +222,7 @@ function loadGame() {
           console.log('changed x direction to', ball.direction.x)
         } else {
           // If it bounced above/below a brick
-         // if(Math.random() < .5){ball.direction.y *= -1;} thomas tips//
+          // if(Math.random() < .5){ball.direction.y *= -1;} thomas tips//
           ball.direction.y *= -1;
           console.log('changed y direction to', ball.direction.y)
         }
@@ -230,7 +230,7 @@ function loadGame() {
         bricks.splice(i, 1);
 
         /*--Here I changed the score getting biggger and bigger--*/
-        score +=20 + bricksKilled;
+        score += 20 + bricksKilled;
         bricksKilled++;
         /* ---- end -----*/
 
@@ -238,12 +238,12 @@ function loadGame() {
         rollSound.play();
 
         /*Making score yellow*/
-       /* $('.score span').css('color','yellow');       
-     
-        setInterval(function(){
-          $('.score span').css('color','white');
-  
-        },500);*/
+        /* $('.score span').css('color','yellow');       
+      
+         setInterval(function(){
+           $('.score span').css('color','white');
+   
+         },500);*/
         /*end*/
 
         updateInterface();
@@ -293,25 +293,25 @@ function loadGame() {
 
       $('#gameModal').modal('show');
 
-      if(language == 'swedish'){
+      if (language == 'swedish') {
         $('.main-text').html('<p class="sv"> SPELET ÄR ÖVER - TRYCK ENTER FÖR ATT SPELA IGEN </p>');
       }
-      else{
+      else {
         $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
       }
     } else if (!bricks.length) {
 
       $('#gameModal').modal('show');
 
-      if(language == 'swedish'){
+      if (language == 'swedish') {
         $('.main-text').html('<p class="sv"> GRATTIS - DU VANN! </p>');
-      }else{
+      } else {
         $('.main-text').html('<p class="en"> CONGRATULATIONS - YOU WON! </p>');
       }
     } else if (paused) {
-      if(language == 'swedish'){
+      if (language == 'swedish') {
         $('.main-text').html('<p class="sv">Tryck "Enter" för att starta/pausa spelet. Använd vänster och höger tangenterna för att röra bräddet</p>');
-      }else{
+      } else {
         $('.main-text').html('<p class="en">Press "Enter" to start/pause game. Use left and right arrow keys to move paddle.</p>');
       }
     } else {
@@ -365,12 +365,12 @@ function loadGame() {
     paddle.top = paddle.$.position().top;
     paddle.left = paddle.$.position().left;
     /* paddle.width = paddle.$.width(); */
-    paddle.width = gameBorders.width*0.1;
+    paddle.width = gameBorders.width * 0.1;
     paddle.$.css('width', paddle.width);
-     /*Paddel size */
+    /*Paddel size */
     paddle.height = paddle.$.height();
     console.log(gameBorders.width, '2:', paddle.width);
-    
+
     paddle.$.css('left', (paddle.left = gameBorders.width / 2 - paddle.width / 2));
   }
 
@@ -381,12 +381,12 @@ function loadGame() {
     ball.width = ball.$.width();
     ball.height = ball.$.height();
     ball.$.css('top', (ball.top = 500));
-    ball.direction = { x: 0, y: 1};
+    ball.direction = { x: 0, y: 1 };
 
     ball.$.css('left', (ball.left = gameBorders.width / 2 - ball.width / 2));
-  
+
     clearInterval(rotateBallInterval);
-    ballSpinn=true;
+    ballSpinn = true;
   }
 
 
@@ -397,38 +397,38 @@ function loadGame() {
     let prevLeft = brickCSS.left + 15;
     let prevTop = brickCSS.height;
     let leftyPos = true;
-    let lengthy = 13;   
-    let gameBoxSize= $('.game').width();
+    let lengthy = 13;
+    let gameBoxSize = $('.game').width();
     let color;
-     
-    for(let y=0; y<8; y++){
 
-      if(y==0 || y==3 || y==6){color='#ff9999';}
-      else if(y==1 || y==4 || y==7){color='#ffff99';}
-      else if(y==2 || y==5 || y==8){color='#99ff99';}
+    for (let y = 0; y < 8; y++) {
 
-      for(let x=0; x<lengthy; x++){
+      if (y == 0 || y == 3 || y == 6) { color = '#ff9999'; }
+      else if (y == 1 || y == 4 || y == 7) { color = '#ffff99'; }
+      else if (y == 2 || y == 5 || y == 8) { color = '#99ff99'; }
 
-        const brick = createBrick(prevLeft, prevTop*y + 80, brickCSS.width, brickCSS.height, color); 
+      for (let x = 0; x < lengthy; x++) {
+
+        const brick = createBrick(prevLeft, prevTop * y + 80, brickCSS.width, brickCSS.height, color);
         bricks.push(brick);
-        $('.game').append(brick.$);              
-        prevLeft += brickCSS.width;       
+        $('.game').append(brick.$);
+        prevLeft += brickCSS.width;
       }
 
       prevLeft = brickCSS.left + 15;
-      
-      if(leftyPos==true){
-        prevLeft+=gameBoxSize/26;
-        leftyPos=false;
-        lengthy=12;
+
+      if (leftyPos == true) {
+        prevLeft += gameBoxSize / 26;
+        leftyPos = false;
+        lengthy = 12;
       }
-      else if(leftyPos==false){
-        prevLeft+=0;
-        leftyPos=true;
-        lengthy=13;
+      else if (leftyPos == false) {
+        prevLeft += 0;
+        leftyPos = true;
+        lengthy = 13;
       }
     }
- 
+
   }
 
   function createBrick(left, top, width, height, backgroundColor) {
