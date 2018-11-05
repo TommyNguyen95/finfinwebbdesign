@@ -1,27 +1,24 @@
-$.getJSON('/json/gameover.json', text);
+$.getJSON('/json/gameover.json', gameovertranslate);
 
-function text(data){
+function gameovertranslate(data){
 
 	if(language === "swedish"){
-        $('.brhighscore').text(data["highscorelist"].sv);
-        console.log($('.brhighscore').text(data["highscorelist"].sv));
-        // $('.col-form-label').text(data["points"].sv);
-        // $('.modal-footer').text(data["submit"].sv);
+        console.log(data);
+        $('.brhighscore').text(data[0].sv);
+        console.log($('.brhighscore').text(data[0].sv));
+        
 	}
 	else if(language === "english"){
-        $('.brhighscore').text(data["breakout"].en);
-        // $('.col-form-label').text(data["points"].en);
-        // $('.modal-footer').text(data["submit"].en);
-		
-	}
+        $('.brhighscore').text(data["highscorelist"].en);
+    }
 }
 
 
 $('.svflag').click(function(){
     language="swedish";
-    $.getJSON('/json/gameover.json', text);
+    $.getJSON('/json/gameover.json', gameovertranslate);
 });
 $('.ukflag').click(function(){
      language="english";
-     $.getJSON('/json/gameover.json', text);
+     $.getJSON('/json/gameover.json', gameovertranslate);
 });
