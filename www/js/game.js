@@ -300,6 +300,9 @@ function loadGame() {
         $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
       }
     } else if (!bricks.length) {
+
+      $('#gameModal').modal('show');
+
       if(language == 'swedish'){
         $('.main-text').html('<p class="sv"> GRATTIS - DU VANN! </p>');
       }else{
