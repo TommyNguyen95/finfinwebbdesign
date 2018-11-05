@@ -13,11 +13,16 @@ body {
   background-color: rgb(25, 25, 25);
   color: white;
   height: 100vh;
-
-  /*--robban css---*/
-  /*border:solid red 1px;*/
   width:100%;
-  /*max-width:2000px;*/
+}
+
+.score {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 25px;
+  width:100% !important;
+  text-align:right;
 }
 
 .score-text{
@@ -34,17 +39,6 @@ body {
   font-size: 21px;
   };  
 };
-
-.score {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 25px;
-  width:100% !important;
-  text-align:right;
-}
-
-
 
 .lives {
   position: absolute;
@@ -84,35 +78,23 @@ body {
 }
 
 .paddle {
-  /*---robin changed width and hight--*/
   width:10%;
   height: 2%;
-  //background-color: $paddle-color;
-  /*background-image: url('/imgs/paddle.png');*/
   position: absolute;
   z-index: 1;
   bottom: 0;
   border-radius: 10px;
   background-color:#595959;
-  //border:solid white 3px;
-}
-
-.paddle img {
-  width: 100%;
 }
 
 .brick {
   left: 0;
   top: 0;
-  /*---robin changed width and hight--*/
   width: 7.6%;
   height: 4%;
-  /*background-color: #777;*/
   position: absolute;
   z-index: 1;
-  /*border-radius: 12px;*/
   border:solid black 1px;
-  /*margin-top:100px;*/
 }
 
 .ball {
