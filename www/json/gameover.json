@@ -1,24 +1,26 @@
-[
-    {
-      "sv":"Breakout Rekord Lista",
-      "en":"Breakout Highscore List"
-    },
+{
+    "highscorelist": {
+        "sv":"Breakout Rekord Lista",
+        "en":"Breakout Highscore List"
+      },
+    
+      "points":{
+        "sv":"Dina Breakout Poäng",
+        "en":"Your Breakout Points"
+      },
   
-    {
-      "sv":"Dina Breakout Poäng",
-      "en":"Your Breakout Points"
-    },
+     "name": {
+         "sv":"Fyll i ditt namn",
+         "en":"Fill in your name"
+      },
+  
+     "submit": {
+          "sv":"lägga till",
+          "en":"submit"
+      }
+    
+}
+   
+  
 
-    {
-       "sv":"Fyll i ditt namn",
-       "en":"Fill in your name"
-    },
-
-    {
-        "sv":"lägga till",
-        "en":"submit"
-    }
-  
-  
-]
 
