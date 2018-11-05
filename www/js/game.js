@@ -209,8 +209,8 @@ function loadGame() {
     let zone = 'center';
     if (relativePosition < -0.7) { zone = "left"; }
     else if (relativePosition > 0.7) { zone = "right"; }
-    else if (relativePosition > -0.7 && relativePosition < -0.3) { zone = "middleLeft"; }
-    else if (relativePosition < 0.7 && relativePosition > 0.3) { zone = "middleRight"; }
+    else if (relativePosition > -0.7 && relativePosition < -0.2) { zone = "middleLeft"; }
+    else if (relativePosition < 0.7 && relativePosition > 0.2) { zone = "middleRight"; }
     return zone;
   }
  
@@ -406,9 +406,9 @@ function loadGame() {
 
     for (let y = 0; y < 8; y++) {
 
-      if (y == 0 || y == 3 || y == 6) { color = 'rgba(255,110,199)'; }
-      else if (y == 1 || y == 4 || y == 7) { color = 'rgba(247,247,15)'; }
-      else if (y == 2 || y == 5 || y == 8) { color = 'rgba(55,228,46'; }
+      if (y == 0 || y == 3 || y == 6) { color = '#ff0066'; }
+      else if (y == 1 || y == 4 || y == 7) { color = '#ffff00'; }
+      else if (y == 2 || y == 5 || y == 8) { color = '#00ff00'; }
 
       for (let x = 0; x < lengthy; x++) {
 
