@@ -86,7 +86,7 @@ function loadGame() {
             else if(whichPic=='/imgs/neon2.png'){           
               $('#eightball').attr('src','/imgs/neon3.png');
             }
-            if(whichPic=='/imgs/neon3.png'){           
+            else if(whichPic=='/imgs/neon3.png'){           
               $('#eightball').attr('src','/imgs/neon.png');
             }            
         }    
