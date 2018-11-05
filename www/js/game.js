@@ -1,4 +1,5 @@
 function loadGame() {
+
   // Main variables
   let lives;
   let score;
@@ -9,11 +10,10 @@ function loadGame() {
   const initialBallSpeed = 500;
   const paddle = {};
   let dir;
-  /*const initialPaddleWidth = paddle.$.width();  /* resposive*/
   const ball = {};
   let gameBorders = loadGameBorders();
 
-  // Robin variables
+  // Group 6 variables
   let paddleHits = 0;
   let bricksKilled = 0;
   let ballSpinn = true;
@@ -23,11 +23,11 @@ function loadGame() {
   setupKeyListeners();
   startNewGame();
 
-  /*---Robin code----*/
   /*---Scroll game window to right place when start game---*/
   setTimeout(() => {
     scrollTo(0, $('.game').position().top)
   }, 100);
+
 
   // Reset starting variables etc
   function startNewGame() {
@@ -42,29 +42,32 @@ function loadGame() {
     updateInterface();
     startInterval();
 
+    ballFaster();
+    changePaddleSize();
 
-    /*----- Robin Code ------*/
-    /*----- makes ball faster after every 10 sec---*/
+  }
+
+  function changePaddleSize(){
+    //Paddel change size 
+    setInterval(function () {
+
+      if (paused == false && paddle.width > gameBorders.width * 0.02) {
+        paddle.width -= paddle.width / 100;
+        paddle.$.css('width', paddle.width);
+      }
+
+
+    }, 2000);
+  }
+  function ballFaster(){
+    //makes ball faster
     setInterval(function () {
 
       if (paused == false) {
         ball.speed += 10;
       }
-
+    
     }, 1000);
-
-    /*Paddel change size */
-    setInterval(function () {
-
-      if (paused == false && paddle.width > gameBorders.width * 0.02) {
-        paddle.width -= paddle.width / 200;
-        paddle.$.css('width', paddle.width);
-      }
-
-
-    }, 6000);
-
-
 
   }
 
@@ -91,7 +94,7 @@ function loadGame() {
           }
         }
 
-      }, 100);
+      }, 80);
 
       ballSpinn = false;
     }
@@ -159,16 +162,15 @@ function loadGame() {
     return true;
   }
 
-  /*------------------ ROBIN CHANGING ----------------*/
   function collisionDetectBallAndPaddle() {
     if (!isRectAOutsideRectB(ball, paddle)) {
       ball.direction.y *= -1;
       ball.top = paddle.top - ball.height;
 
-      /*--Here I changed the score getting biggger and bigger--*/
+      //Score getting biggger and bigger
       score += 5 + Math.round(paddleHits / 2);
       paddleHits++;
-      /*-----end----*/
+      
       dir = changeDirection();
 
       if (dir === "left") {
@@ -207,11 +209,11 @@ function loadGame() {
     let zone = 'center';
     if (relativePosition < -0.7) { zone = "left"; }
     else if (relativePosition > 0.7) { zone = "right"; }
-    else if (relativePosition > -0.7 && relativePosition < -0.3) { zone = "middleLeft"; }
-    else if (relativePosition < 0.7 && relativePosition > 0.3) { zone = "middleRight"; }
+    else if (relativePosition > -0.7 && relativePosition < -0.2) { zone = "middleLeft"; }
+    else if (relativePosition < 0.7 && relativePosition > 0.2) { zone = "middleRight"; }
     return zone;
   }
-  /*------------------ ROBIN CHANGING ----------------*/
+ 
   function collisionDetectBallAndBricks() {
     for (let i = bricks.length - 1; i >= 0; --i) {
       const brick = bricks[i];
@@ -229,10 +231,9 @@ function loadGame() {
         brick.$.remove();
         bricks.splice(i, 1);
 
-        /*--Here I changed the score getting biggger and bigger--*/
+        //Score getting biggger and bigger--*/
         score += 20 + bricksKilled;
         bricksKilled++;
-        /* ---- end -----*/
 
         const rollSound = new Audio("/audio/ljud1.WAV");
         rollSound.play();
@@ -290,7 +291,9 @@ function loadGame() {
     $('.score .score-points').text((score + '').padStart(5, '0'));
     $('.lives span').text(lives);
     if (lives < 1) {
-
+     
+      //sets the score value in the Data Modal  
+      $('#gameModal #points').val(score);
       $('#gameModal').modal('show');
 
       if (language == 'swedish') {
@@ -300,7 +303,9 @@ function loadGame() {
         $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
       }
     } else if (!bricks.length) {
-
+      
+      //sets the score value in the Data Modal 
+      $('#gameModal #points').val(score);
       $('#gameModal').modal('show');
 
       if (language == 'swedish') {
@@ -389,8 +394,6 @@ function loadGame() {
     ballSpinn = true;
   }
 
-
-  /*----------- ROBIN IS WORKING IN THIS FUNCTION TODAY-----------*/
   function spawnBricks() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
@@ -403,9 +406,9 @@ function loadGame() {
 
     for (let y = 0; y < 8; y++) {
 
-      if (y == 0 || y == 3 || y == 6) { color = '#ff9999'; }
-      else if (y == 1 || y == 4 || y == 7) { color = '#ffff99'; }
-      else if (y == 2 || y == 5 || y == 8) { color = '#99ff99'; }
+      if (y == 0 || y == 3 || y == 6) { color = '#ff0066'; }
+      else if (y == 1 || y == 4 || y == 7) { color = '#ffff00'; }
+      else if (y == 2 || y == 5 || y == 8) { color = '#00ff00'; }
 
       for (let x = 0; x < lengthy; x++) {
 
