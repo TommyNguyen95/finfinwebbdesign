@@ -5,7 +5,7 @@ function loadGame() {
   let paused;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 900;
+  const initialPaddleSpeed = 1300;
   const initialBallSpeed = 500;
   const paddle = {};
   let dir;
@@ -86,7 +86,7 @@ function loadGame() {
             else if(whichPic=='/imgs/neon2.png'){           
               $('#eightball').attr('src','/imgs/neon3.png');
             }
-            if(whichPic=='/imgs/neon3.png'){           
+            else if(whichPic=='/imgs/neon3.png'){           
               $('#eightball').attr('src','/imgs/neon.png');
             }            
         }    
@@ -328,7 +328,7 @@ function loadGame() {
     } else {
       startNewGame();
     }
-
+    resetPaddle();
     updateInterface();
   }
 
@@ -359,7 +359,6 @@ function loadGame() {
   function resetPaddle() {
     paddle.$ = $('.paddle');
     paddle.speed = initialPaddleSpeed;
-
     paddle.top = paddle.$.position().top;
     paddle.left = paddle.$.position().left;
     /* paddle.width = paddle.$.width(); */
