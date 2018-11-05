@@ -1,6 +1,5 @@
 
 .container-highscore {
-  padding: 10px 150px;
   font-size: 1.2em;
 }
 
@@ -8,8 +7,9 @@
   color: rgb(114, 255, 240);
 }
 
+
 .table th, .table td {
-  text-align:center;
+  text-align: center;
 }
 
 .table th {
@@ -20,15 +20,11 @@
   padding: 8px 0 25px 0;
 }
 
-.rank {
-  width: 25%;
-}
-
 th p {
   color: rgb(134, 230, 220);
 }
 
-.breakout-points {
+.rank, .breakout-points {
   width: 25%;
 }
 
@@ -37,9 +33,16 @@ th p {
 }
 
 @media only screen and (max-width: 768px) {
-    .container-highscore {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .container-highscore {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+
+@media only screen and (min-width: 1200px){
+  .container-highscore {
+    padding: 0 150px 50px 150px;
+  }
 }
 
