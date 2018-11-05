@@ -1,4 +1,5 @@
 function loadGame() {
+
   // Main variables
   let lives;
   let score;
@@ -9,11 +10,10 @@ function loadGame() {
   const initialBallSpeed = 500;
   const paddle = {};
   let dir;
-  /*const initialPaddleWidth = paddle.$.width();  /* resposive*/
   const ball = {};
   let gameBorders = loadGameBorders();
 
-  // Robin variables
+  // Group 6 variables
   let paddleHits = 0;
   let bricksKilled = 0;
   let ballSpinn = true;
@@ -23,11 +23,11 @@ function loadGame() {
   setupKeyListeners();
   startNewGame();
 
-  /*---Robin code----*/
   /*---Scroll game window to right place when start game---*/
   setTimeout(() => {
     scrollTo(0, $('.game').position().top)
   }, 100);
+
 
   // Reset starting variables etc
   function startNewGame() {
@@ -42,18 +42,13 @@ function loadGame() {
     updateInterface();
     startInterval();
 
+    ballFaster();
+    changePaddleSize();
 
-    /*----- Robin Code ------*/
-    /*----- makes ball faster after every 10 sec---*/
-    setInterval(function () {
+  }
 
-      if (paused == false) {
-        ball.speed += 10;
-      }
-
-    }, 1000);
-
-    /*Paddel change size */
+  function changePaddleSize(){
+    //Paddel change size 
     setInterval(function () {
 
       if (paused == false && paddle.width > gameBorders.width * 0.02) {
@@ -61,10 +56,18 @@ function loadGame() {
         paddle.$.css('width', paddle.width);
       }
 
-
     }, 6000);
+  }
 
+  function ballFaster(){
+    //makes ball faster
+    setInterval(function () {
 
+      if (paused == false) {
+        ball.speed += 10;
+      }
+    
+    }, 1000);
 
   }
 
@@ -159,16 +162,15 @@ function loadGame() {
     return true;
   }
 
-  /*------------------ ROBIN CHANGING ----------------*/
   function collisionDetectBallAndPaddle() {
     if (!isRectAOutsideRectB(ball, paddle)) {
       ball.direction.y *= -1;
       ball.top = paddle.top - ball.height;
 
-      /*--Here I changed the score getting biggger and bigger--*/
+      //Score getting biggger and bigger
       score += 5 + Math.round(paddleHits / 2);
       paddleHits++;
-      /*-----end----*/
+      
       dir = changeDirection();
 
       if (dir === "left") {
@@ -211,7 +213,7 @@ function loadGame() {
     else if (relativePosition < 0.7 && relativePosition > 0.3) { zone = "middleRight"; }
     return zone;
   }
-  /*------------------ ROBIN CHANGING ----------------*/
+ 
   function collisionDetectBallAndBricks() {
     for (let i = bricks.length - 1; i >= 0; --i) {
       const brick = bricks[i];
@@ -229,10 +231,9 @@ function loadGame() {
         brick.$.remove();
         bricks.splice(i, 1);
 
-        /*--Here I changed the score getting biggger and bigger--*/
+        //Score getting biggger and bigger--*/
         score += 20 + bricksKilled;
         bricksKilled++;
-        /* ---- end -----*/
 
         const rollSound = new Audio("/audio/ljud1.WAV");
         rollSound.play();
@@ -389,8 +390,6 @@ function loadGame() {
     ballSpinn = true;
   }
 
-
-  /*----------- ROBIN IS WORKING IN THIS FUNCTION TODAY-----------*/
   function spawnBricks() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
