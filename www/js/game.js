@@ -209,8 +209,8 @@ function loadGame() {
     let zone = 'center';
     if (relativePosition < -0.7) { zone = "left"; }
     else if (relativePosition > 0.7) { zone = "right"; }
-    else if (relativePosition > -0.7 && relativePosition < -0.3) { zone = "middleLeft"; }
-    else if (relativePosition < 0.7 && relativePosition > 0.3) { zone = "middleRight"; }
+    else if (relativePosition > -0.7 && relativePosition < -0.2) { zone = "middleLeft"; }
+    else if (relativePosition < 0.7 && relativePosition > 0.2) { zone = "middleRight"; }
     return zone;
   }
  
