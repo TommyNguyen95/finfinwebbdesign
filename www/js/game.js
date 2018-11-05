@@ -180,22 +180,27 @@ function loadGame() {
 
       if (dir === "left") {
         ball.direction.x = -1;
+        ball.$.addClass('fast');
       }
 
       else if (dir === "right") {
         ball.direction.x = 1;
+        ball.$.addClass('fast');
       }
 
       else if (dir === "center") {
         ball.direction.x = 0;
+        ball.$.removeClass('fast');
       }
 
       else if (dir === "middleRight") {
         ball.direction.x = 0.5;
+        ball.$.removeClass('fast');
       }
 
       else if (dir === "middleLeft") {
         ball.direction.x = - 0.5;
+        ball.$.removeClass('fast');
       }
 
       changeDirection();
