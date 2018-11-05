@@ -13,23 +13,60 @@ body {
   background-color: rgb(25, 25, 25);
   color: white;
   height: 100vh;
-
-  /*--robban css---*/
-  /*border:solid red 1px;*/
   width:100%;
-  /*max-width:2000px;*/
+  color: #fff;
+	background: linear-gradient(-45deg, #FCFC2A, #FF5733, #64FC2A, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
 
 .score-text{
   .sv {
     position: absolute;
-    top: 10px;
+    top: 6px;
     right: 90px;
     font-size: 21px;
   };
 .en {
   position: absolute;
-  top: 10px;
+  top: 6px;
   right: 90px;
   font-size: 21px;
   };  
