@@ -15,7 +15,8 @@ body {
   height: 100vh;
   width:100%;
   color: #fff;
-	background: linear-gradient(-45deg, #000,  #001052, #000, #001052);
+	background: linear-gradient(-45deg, #FCFC2A, #FF5733, #64FC2A, #23D5AB);
+  background: linear-gradient(-45deg, #000,  #001052, #000, #001052);
 	background-size: 400% 400%;
 	-webkit-animation: Gradient 15s ease infinite;
 	-moz-animation: Gradient 15s ease infinite;
@@ -144,8 +145,40 @@ body {
   position: absolute;
   height: 30px;
   width: 30px;
+  border:solid red 1px;
   border-radius: 50%;
-  img{
-    width:24px;
+
+  &.rotate {
+    animation: rotation 2s infinite linear;
+
+    &.fast {
+      animation-duration: 0.5s;
+    }
   }
-}
+
+    img{
+      width:100%;
+      vertical-align: top;
+    }
+    @media screen and (max-width:1000px){
+
+      top: -300px;
+      height:10px;
+      width:10px;
+
+    }
+
+  }
+
+  @keyframes rotation {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(359deg);
+    }
+
+
+
+
+  }

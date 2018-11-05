@@ -72,7 +72,8 @@ function loadGame() {
   }
 
   function rotateBall() {
-
+    
+    /*
     if (ballSpinn == true) {
 
       rotateBallInterval = setInterval(function () {
@@ -97,7 +98,11 @@ function loadGame() {
       }, 80);
 
       ballSpinn = false;
-    }
+    }*/
+
+
+
+
   }
 
   function updateGame(deltaTime) {
@@ -175,28 +180,34 @@ function loadGame() {
 
       if (dir === "left") {
         ball.direction.x = -1;
+        ball.$.addClass('fast');
       }
 
       else if (dir === "right") {
         ball.direction.x = 1;
+        ball.$.addClass('fast');
       }
 
       else if (dir === "center") {
         ball.direction.x = 0;
+        ball.$.removeClass('fast');
       }
 
       else if (dir === "middleRight") {
         ball.direction.x = 0.5;
+        ball.$.removeClass('fast');
       }
 
       else if (dir === "middleLeft") {
         ball.direction.x = - 0.5;
+        ball.$.removeClass('fast');
       }
 
       changeDirection();
       updateInterface();
 
-      rotateBall();
+      // rotateBall();
+      ball.$.addClass('rotate');
       const rollSound = new Audio("/audio/BONGO1.WAV");
       rollSound.play();
     }
@@ -333,6 +344,7 @@ function loadGame() {
 
     if (lives > 0) {
       paused = !paused;
+      ball.$.toggleClass('rotate');
     } else {
       startNewGame();
     }
@@ -385,19 +397,21 @@ function loadGame() {
     ball.left = ball.$.position().left;
     ball.width = ball.$.width();
     ball.height = ball.$.height();
-    ball.$.css('top', (ball.top = 500));
+    ball.$.css('top', (ball.top = 300));
     ball.direction = { x: 0, y: 1 };
 
     ball.$.css('left', (ball.left = gameBorders.width / 2 - ball.width / 2));
 
-    clearInterval(rotateBallInterval);
+    // clearInterval(rotateBallInterval);
+    ball.$.removeClass('rotate');
+
     ballSpinn = true;
   }
 
   function spawnBricks() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
-    let prevLeft = brickCSS.left + 15;
+    let prevLeft = brickCSS.left;
     let prevTop = brickCSS.height;
     let leftyPos = true;
     let lengthy = 13;
@@ -418,7 +432,7 @@ function loadGame() {
         prevLeft += brickCSS.width;
       }
 
-      prevLeft = brickCSS.left + 15;
+      prevLeft = brickCSS.left;
 
       if (leftyPos == true) {
         prevLeft += gameBoxSize / 26;
