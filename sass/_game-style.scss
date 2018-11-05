@@ -15,7 +15,6 @@ body {
   height: 100vh;
   width:100%;
   color: #fff;
-	background: linear-gradient(-45deg, #FCFC2A, #FF5733, #64FC2A, #23D5AB);
   background: linear-gradient(-45deg, #000,  #001052, #000, #001052);
 	background-size: 400% 400%;
 	-webkit-animation: Gradient 15s ease infinite;
@@ -34,15 +33,6 @@ body {
 	100% {
 		background-position: 0% 50%
 	}
-}
-
-.score {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 25px;
-  width:100% !important;
-  text-align:right;
 }
 
 @-moz-keyframes Gradient {
@@ -67,6 +57,15 @@ body {
 	100% {
 		background-position: 0% 50%
 	}
+}
+
+.score {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 25px;
+  width:100% !important;
+  text-align:right;
 }
 
 .score-text{
