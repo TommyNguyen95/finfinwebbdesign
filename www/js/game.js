@@ -209,8 +209,8 @@ function loadGame() {
     let zone = 'center';
     if (relativePosition < -0.7) { zone = "left"; }
     else if (relativePosition > 0.7) { zone = "right"; }
-    else if (relativePosition > -0.7 && relativePosition < -0.3) { zone = "middleLeft"; }
-    else if (relativePosition < 0.7 && relativePosition > 0.3) { zone = "middleRight"; }
+    else if (relativePosition > -0.7 && relativePosition < -0.2) { zone = "middleLeft"; }
+    else if (relativePosition < 0.7 && relativePosition > 0.2) { zone = "middleRight"; }
     return zone;
   }
  
@@ -291,7 +291,11 @@ function loadGame() {
     $('.score .score-points').text((score + '').padStart(5, '0'));
     $('.lives span').text(lives);
     if (lives < 1) {
+      //alert window to display the score
+      alert ("You got  " + score + " points");
 
+      //sets the score value in the Data Modal  
+      $('#gameModal #points').val(score);
       $('#gameModal').modal('show');
 
       if (language == 'swedish') {
@@ -301,7 +305,11 @@ function loadGame() {
         $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
       }
     } else if (!bricks.length) {
+      //alert window to display the score
+      alert ("You got  " + score + " points");
 
+      //sets the score value in the Data Modal 
+      $('#gameModal #points').val(score);
       $('#gameModal').modal('show');
 
       if (language == 'swedish') {
