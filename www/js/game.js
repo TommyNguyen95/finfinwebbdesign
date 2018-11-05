@@ -52,13 +52,13 @@ function loadGame() {
     setInterval(function () {
 
       if (paused == false && paddle.width > gameBorders.width * 0.02) {
-        paddle.width -= paddle.width / 200;
+        paddle.width -= paddle.width / 100;
         paddle.$.css('width', paddle.width);
       }
 
-    }, 6000);
-  }
 
+    }, 2000);
+  }
   function ballFaster(){
     //makes ball faster
     setInterval(function () {
@@ -94,7 +94,7 @@ function loadGame() {
           }
         }
 
-      }, 100);
+      }, 80);
 
       ballSpinn = false;
     }
