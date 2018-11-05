@@ -181,8 +181,7 @@
       <div class="main-text"></div>
 
       <!--gameover Modal starts-->
-      <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel"
-        aria-hidden="true">
+      <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -204,8 +203,9 @@
               </form>
             </div>
             <div class="modal-footer">
-              <button id="submit-button" type="button" class="btn btn-primary">Submit</button>
+              <button id="submit-button" type="button" class="btn btn-primary" onclick="location.href='/highscore'">Submit</button>
             </div>
+
           </div>
         </div>
       </div>
@@ -232,7 +232,7 @@
             </tr>
           </thead>
           <tbody>
-          <!-- highscore-list here -->
+            <!-- highscore-list here -->
           </tbody>
         </table>
       </div>
@@ -240,7 +240,7 @@
     </section>
     <!----------------------- /HIGHSCORE ENDS ----------------------->
 
-    
+
 
     <!----------------------- HISTORY STARTS----------------------->
     <section class="history">
@@ -346,7 +346,6 @@
   <script src="/js/change-header-lang.js"></script>
   <script src="/js/spa.js"></script>
   <script src="/js/highscore.js"></script>
-
 
 
 </body>

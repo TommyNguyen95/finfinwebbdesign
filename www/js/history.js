@@ -1,10 +1,10 @@
 $.getJSON('/json/history.json', languageToggle);
 
 
-function languageToggle(translate){
+function languageToggle(translate) {
 
 	// Loops through the first object in history.json-file
-	for( let language in translate){
+	for (let language in translate) {
 
 		// Creates a variable 'lang' to hold the propertyValue from 'translate'
 		let lang = translate[language];
@@ -25,18 +25,18 @@ function languageToggle(translate){
 		$('.h2-history').append(header1);
 
 	}
-	
+
 	// Class 'en' is by default hidden
 	$('.en').hide();
 
 	// When 'svflag' is clicked on 'sv' is shown and 'en' hidden
-	$('.svflag').click(function(){
+	$('.svflag').click(function () {
 		$('.sv').show();
 		$('.en').hide();
 	});
 
 	// When 'enflag' is clicked on 'en' is shown and 'sv' hidden
-	$('.ukflag').click(function(){
+	$('.ukflag').click(function () {
 		$('.sv').hide();
 		$('.en').show();
 	})
