@@ -5,7 +5,7 @@ function loadGame() {
   let paused;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 900;
+  const initialPaddleSpeed = 1300;
   const initialBallSpeed = 500;
   const paddle = {};
   let dir;
@@ -328,7 +328,7 @@ function loadGame() {
     } else {
       startNewGame();
     }
-
+    resetPaddle();
     updateInterface();
   }
 
