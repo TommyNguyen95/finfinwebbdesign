@@ -2,3 +2,4 @@ node_modules
 www/css/*.css
 www/css/*.css.map
 .DS_Store
+www/json/highscore.json
