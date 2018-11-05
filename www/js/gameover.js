@@ -1,0 +1,1 @@
+$.getJSON('/json/gameover.json', text);

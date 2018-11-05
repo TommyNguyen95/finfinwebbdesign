@@ -297,9 +297,7 @@ function loadGame() {
     $('.score .score-points').text((score + '').padStart(5, '0'));
     $('.lives span').text(lives);
     if (lives < 1) {
-      //alert window to display the score
-      alert ("You got  " + score + " points");
-
+     
       //sets the score value in the Data Modal  
       $('#gameModal #points').val(score);
       $('#gameModal').modal('show');
@@ -311,9 +309,7 @@ function loadGame() {
         $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
       }
     } else if (!bricks.length) {
-      //alert window to display the score
-      alert ("You got  " + score + " points");
-
+      
       //sets the score value in the Data Modal 
       $('#gameModal #points').val(score);
       $('#gameModal').modal('show');
