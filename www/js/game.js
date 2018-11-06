@@ -23,6 +23,7 @@ function loadGame() {
   initialBallSpeed= gameBorders.height/3;
   //let ballSpinn = true;
   //let rotateBallInterval;
+  
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
