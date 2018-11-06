@@ -367,20 +367,22 @@ function loadGame() {
   }
 
   function resetBall() {
+
+    let x = gameBorders.height/2;
+
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
     ball.left = ball.$.position().left;
     ball.width = ball.$.width();
     ball.height = ball.$.height();
-    ball.$.css('top', (ball.top = 300));
+    ball.$.css('top', (ball.top = x));
     ball.direction = { x: 0, y: 1 };
 
     ball.$.css('left', (ball.left = gameBorders.width / 2 - ball.width / 2));
 
-    // clearInterval(rotateBallInterval);
     ball.$.removeClass('rotate');
 
-    ballSpinn = true;
+    //ballSpinn = true;
   }
 
   function spawnBricks() {
