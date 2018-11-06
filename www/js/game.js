@@ -73,7 +73,7 @@ function loadGame() {
         ball.speed += 10;
       }
     
-    }, 1000);
+    }, 2000);
 
   }
 
