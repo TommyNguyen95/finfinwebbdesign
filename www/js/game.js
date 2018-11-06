@@ -1,13 +1,16 @@
 function loadGame() {
 
   // Main variables
+
+
+
   let lives;
   let score;
   let paused;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 1300;
-  const initialBallSpeed = 500;
+  const initialPaddleSpeed = 800;
+  let initialBallSpeed= 0;
   const paddle = {};
   let dir;
   const ball = {};
@@ -16,8 +19,10 @@ function loadGame() {
   // Group 6 variables
   let paddleHits = 0;
   let bricksKilled = 0;
-  let ballSpinn = true;
-  let rotateBallInterval;
+
+  initialBallSpeed= gameBorders.height/3;
+  //let ballSpinn = true;
+  //let rotateBallInterval;
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -98,7 +103,9 @@ function loadGame() {
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
 
+    
   }
+  
 
   function calculatePaddleDirection() {
     let movementVelocity = 0;
