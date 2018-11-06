@@ -35,16 +35,6 @@ body {
 		background-position: 0% 50%
 	}
 }
-
-.score {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 25px;
-  width:100% !important;
-  text-align:right;
-}
-
 @-moz-keyframes Gradient {
 	0% {
 		background-position: 0% 50%
@@ -56,7 +46,6 @@ body {
 		background-position: 0% 50%
 	}
 }
-
 @keyframes Gradient {
 	0% {
 		background-position: 0% 50%
@@ -69,48 +58,84 @@ body {
 	}
 }
 
-.score-text{
-  .sv {
-    position: absolute;
-    top: 6px;
-    right: 90px;
-    font-size: 21px;
-  };
-  .en {
-    position: absolute;
-    top: 6px;
-    right: 90px;
-    font-size: 21px;
-  };  
-};
-
-.lives {
-  position: absolute;
-  top: 4px;
-  left: 60px;
-  font-size: 25px;
-}
 
 .lives-text {
   .en{
     position: absolute;
-    top: 11px;
+    top: 8px;
     left: 10px;
-    font-size: 21px;
+    font-size: 25px;
 
+    @media  screen and  (max-height:600px)  {     
+      font-size:20px;
+    }
+    @media  screen and  (max-height:500px)  {     
+      font-size:15px;
+    }
+    @media  screen and  (max-height:400px)  {     
+      font-size:12px;
+    }
+    
   }
   .sv{
     position: absolute;
-    top: 11px;
+    top: 8px;
     left: 18px;
-    font-size: 21px;
+    font-size: 25px;
 
+    @media  screen and  (max-height:600px)  {     
+      font-size:20px;
+    }
+    @media  screen and  (max-height:500px)  {     
+      font-size:15px;
+    }
+    @media  screen and  (max-height:400px)  {     
+      font-size:12px;
+    }
+    
+  }
+}
+.lives {
+  position: absolute;
+  top: 5px;
+  left: 70px;
+  font-size: 25px;
+  width:100px;
+
+  @media  screen and  (max-height:600px)  {     
+    font-size:20px;
+  }
+  @media  screen and  (max-height:500px)  {     
+    font-size:15px;
+  }
+  @media  screen and  (max-height:400px)  {     
+    font-size:12px;
   }
 }
 
-#gameModal {
-  color: #000;
+
+
+.score {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 25px;
+  width:100% !important;
+  text-align:right;
+ 
+  @media  screen and  (max-height:600px)  {     
+    font-size:20px;
+  }
+  @media  screen and  (max-height:500px)  {     
+    font-size:15px; 
+  }
+  @media  screen and  (max-height:400px)  {     
+    font-size:12px;
+  }
+
 }
+
+
 
 .main-text {
   display:none;
@@ -119,6 +144,10 @@ body {
   text-align: center;
   top: 150px;
   top: 50%;
+}
+
+#gameModal {
+  color: #000;
 }
 
 .paddle {
