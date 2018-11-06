@@ -421,10 +421,10 @@ function loadGame() {
     for (let y = 0; y < 8; y++) {
 
       if (y == 0 || y == 3 || y == 6) { color = '#72fff0'; }
-      else if (y == 1 || y == 4 || y == 7) { color = '#00b3b3'; }
-      else if (y == 2 || y == 5 || y == 8) { color = '#004d4d'; }
+      else if (y == 1 || y == 4 || y == 7) { color = '#00ff99'; }
+      else if (y == 2 || y == 5 || y == 8) { color = '#00b3b3'; }
 
-      /*#72fff0 middle #ffff00, #ff0066, #00ff00  #00b3b3  #0000ff  #e6ffff*/
+      /*#72fff0 middle #ffff00, #ff0066, #00ff00  #00b3b3  #0000ff  #e6ffff  #004d4d */
       for (let x = 0; x < lengthy; x++) {
 
         const brick = createBrick(prevLeft, prevTop * y + 80, brickCSS.width, brickCSS.height, color);
