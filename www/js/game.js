@@ -71,40 +71,6 @@ function loadGame() {
 
   }
 
-  function rotateBall() {
-    
-    /*
-    if (ballSpinn == true) {
-
-      rotateBallInterval = setInterval(function () {
-
-        if (paused == false) {
-          let whichPic = $('#eightball').attr('src');
-
-          if (whichPic == '/imgs/neon.png') {
-            $('#eightball').attr('src', '/imgs/neon1.png');
-          }
-          else if (whichPic == '/imgs/neon1.png') {
-            $('#eightball').attr('src', '/imgs/neon2.png');
-          }
-          else if (whichPic == '/imgs/neon2.png') {
-            $('#eightball').attr('src', '/imgs/neon3.png');
-          }
-          else if (whichPic == '/imgs/neon3.png') {
-            $('#eightball').attr('src', '/imgs/neon.png');
-          }
-        }
-
-      }, 80);
-
-      ballSpinn = false;
-    }*/
-
-
-
-
-  }
-
   function updateGame(deltaTime) {
     if (paused) { return; }
 
