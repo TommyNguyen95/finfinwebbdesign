@@ -127,8 +127,11 @@ body {
   z-index: 1;
   bottom: 0;
   border-radius: 10px;
-  background-color:#595959;
+  background-color:#72fff0;
 }
+
+  
+  /* #8600b3, paddle: background-color:#595959; */
 
 .brick {
   left: 0;
@@ -144,9 +147,10 @@ body {
   position: absolute;
   height: 30px;
   width: 30px;
-  border:solid red 1px;
+  border:solid #72fff0 1px;
   border-radius: 50%;
 
+  /* border:solid red 1px;*/
   &.rotate {
     animation: rotation 2s infinite linear;
 

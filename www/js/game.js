@@ -1,13 +1,16 @@
 function loadGame() {
 
   // Main variables
+
+
+
   let lives;
   let score;
   let paused;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 1300;
-  const initialBallSpeed = 500;
+  const initialPaddleSpeed = 800;
+  let initialBallSpeed= 0;
   const paddle = {};
   let dir;
   const ball = {};
@@ -16,8 +19,10 @@ function loadGame() {
   // Group 6 variables
   let paddleHits = 0;
   let bricksKilled = 0;
-  let ballSpinn = true;
-  let rotateBallInterval;
+
+  initialBallSpeed= gameBorders.height/3;
+  //let ballSpinn = true;
+  //let rotateBallInterval;
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -71,40 +76,6 @@ function loadGame() {
 
   }
 
-  function rotateBall() {
-    
-    /*
-    if (ballSpinn == true) {
-
-      rotateBallInterval = setInterval(function () {
-
-        if (paused == false) {
-          let whichPic = $('#eightball').attr('src');
-
-          if (whichPic == '/imgs/neon.png') {
-            $('#eightball').attr('src', '/imgs/neon1.png');
-          }
-          else if (whichPic == '/imgs/neon1.png') {
-            $('#eightball').attr('src', '/imgs/neon2.png');
-          }
-          else if (whichPic == '/imgs/neon2.png') {
-            $('#eightball').attr('src', '/imgs/neon3.png');
-          }
-          else if (whichPic == '/imgs/neon3.png') {
-            $('#eightball').attr('src', '/imgs/neon.png');
-          }
-        }
-
-      }, 80);
-
-      ballSpinn = false;
-    }*/
-
-
-
-
-  }
-
   function updateGame(deltaTime) {
     if (paused) { return; }
 
@@ -132,7 +103,9 @@ function loadGame() {
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
 
+    
   }
+  
 
   function calculatePaddleDirection() {
     let movementVelocity = 0;
@@ -420,10 +393,11 @@ function loadGame() {
 
     for (let y = 0; y < 8; y++) {
 
-      if (y == 0 || y == 3 || y == 6) { color = '#ff0066'; }
-      else if (y == 1 || y == 4 || y == 7) { color = '#ffff00'; }
-      else if (y == 2 || y == 5 || y == 8) { color = '#00ff00'; }
+      if (y == 0 || y == 3 || y == 6) { color = '#72fff0'; }
+      else if (y == 1 || y == 4 || y == 7) { color = '#00ff99'; }
+      else if (y == 2 || y == 5 || y == 8) { color = '#00b3b3'; }
 
+      /*#72fff0 middle #ffff00, #ff0066, #00ff00  #00b3b3  #0000ff  #e6ffff  #004d4d */
       for (let x = 0; x < lengthy; x++) {
 
         const brick = createBrick(prevLeft, prevTop * y + 80, brickCSS.width, brickCSS.height, color);
