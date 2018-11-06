@@ -9,8 +9,8 @@ function loadGame() {
   let paused;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 800;
-  let initialBallSpeed= 0;
+  let initialPaddleSpeed = 0;
+  let initialBallSpeed = 0;
   const paddle = {};
   let dir;
   const ball = {};
@@ -21,6 +21,7 @@ function loadGame() {
   let bricksKilled = 0;
 
   initialBallSpeed= gameBorders.height/3;
+  initialPaddleSpeed= gameBorders.width/2;
   //let ballSpinn = true;
   //let rotateBallInterval;
   
@@ -73,7 +74,7 @@ function loadGame() {
         ball.speed += 10;
       }
     
-    }, 2000);
+    }, 4000);
 
   }
 
