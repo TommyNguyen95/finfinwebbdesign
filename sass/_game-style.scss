@@ -142,8 +142,22 @@ body {
   position: absolute;
   width: 100%;
   text-align: center;
-  top: 150px;
-  top: 50%;
+  //top: 150px;
+  top: 55%;
+  font-size:20px;
+
+  @media  screen and  (max-height:600px)  {     
+    font-size:16px;
+    color:red; 
+  }
+  @media  screen and  (max-height:500px)  {     
+    font-size:14px;
+    color:red; 
+  }
+  @media  screen and  (max-height:400px)  {     
+    font-size:12px;
+    color:red; 
+  }
 }
 
 #gameModal {
