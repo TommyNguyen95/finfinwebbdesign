@@ -169,9 +169,11 @@
 
     <section class="game">
 
-      <div class="score"><span class="score-text"></span><span class="score-points">00000</span></div>
+      <div class="score-text"></div>
+      <div class="score"><span class="score-points">00000</span></div>
       <div class="lives-text"></div>
       <div class="lives"><span>3</span></div>
+
       <div class="ball">
         <img src="/imgs/neon.png" id="eightball">
       </div>
@@ -201,9 +203,7 @@
                   <input type="text" class="form-control" maxlength="11" id="name" autofocus></textarea>
                 </div>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button id="submit-button" type="button" class="btn btn-primary">Submit</button>
+              <button id="submit-button" type="button" class="btn btn-primary submit-button">Submit</button>
             </div>
 
           </div>
@@ -223,15 +223,13 @@
 
       <div class="container container-highscore">
         <table class="table table-striped table-dark">
-          <thead>
+          <tbody>
             <tr class="highscore-box">
               <h2 class="highscore-title"></h2>
               <th scope="col" class="rank"></th>
               <th scope="col" class="name"></th>
               <th scope="col" class="breakout-points"></th>
             </tr>
-          </thead>
-          <tbody>
             <!-- highscore-list here -->
           </tbody>
         </table>
