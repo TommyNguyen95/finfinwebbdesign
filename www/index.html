@@ -168,12 +168,10 @@
     <!----------------------- GAME STARTS ----------------------->
 
     <section class="game">
-
-      <div class="score-text"></div>
-      <div class="score"><span class="score-points">00000</span></div>
+      <div class="score"><span class="score-text"></span><span class="score-points">00000</span></div>
+      <!--<div class="lives"><span class="lives-text">Liv</span><span class="lives-points">3</span></div>-->
       <div class="lives-text"></div>
       <div class="lives"><span>3</span></div>
-
       <div class="ball">
         <img src="/imgs/neon.png" id="eightball">
       </div>
@@ -185,31 +183,29 @@
         
       </div>
       <div class="main-text"></div>
-
       <!--gameover Modal starts-->
       <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-body">
-              <form>
+              <form role="form" id="ModalForm">
                 <div class="form-group">
-                  <label for="points" class="col-form-label">Your Breakout points:</label>
+                  <label for="points" class="col-form-label label1">Your Breakout points:</label>
                   <input type="text" class="form-control" id="points" readonly>
                 </div>
                 <div class="form-group">
-                  <label for="name" class="col-form-label">Fill in your name:</label>
-                  <input type="text" class="form-control" maxlength="11" id="name" autofocus></textarea>
+                  <label for="name" class="col-form-label label2">Fill in your name:</label>
+                  <input type="text" class="form-control" maxlength="11" id="submit" name="submit" autofocus require></textarea>
                 </div>
+                <button id="submit-button" type="submit" class="btn btn-primary submit-button">Submit</button>
               </form>
-              <button id="submit-button" type="button" class="btn btn-primary submit-button">Submit</button>
             </div>
-
           </div>
         </div>
       </div>
       <!--gameover Modal ends-->
-
     </section>
+
 
     <!----------------------- /GAME ENDS ----------------------->
 
@@ -343,6 +339,7 @@
   <script src="/js/spa.js"></script>
   <script src="/js/highscore.js"></script>
   <script src="/js/highscore-translate.js"></script>
+  <script src="/js/gameover-translate.js"></script>
 
 
 </body>
