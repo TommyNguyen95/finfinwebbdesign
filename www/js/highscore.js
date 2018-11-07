@@ -1,9 +1,8 @@
-$('#submit-button').on('click', postNewHighscore);
-
+//$('#input-name').on('submit', submitValidator);
  
 function postNewHighscore() {
   
-  let name = $('#name').val();//......  fetch the name from your <input>/or otherwhere//
+  let name = $('#submit-name').val();//......  fetch the name from your <input>/or otherwhere//
   let score = $('#points').val();//...... fetch the score from the game's "score"-variable//
   $.post( "/add-score", { "name": name, "score": score }, function(responseData) {
     //highscoreTable(responseData);
