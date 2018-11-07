@@ -9,8 +9,8 @@ function loadGame() {
   let paused;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 800;
-  let initialBallSpeed= 0;
+  let initialPaddleSpeed = 0;
+  let initialBallSpeed = 0;
   const paddle = {};
   let dir;
   const ball = {};
@@ -21,8 +21,10 @@ function loadGame() {
   let bricksKilled = 0;
 
   initialBallSpeed= gameBorders.height/3;
+  initialPaddleSpeed= gameBorders.width/2;
   //let ballSpinn = true;
   //let rotateBallInterval;
+  
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -72,7 +74,7 @@ function loadGame() {
         ball.speed += 10;
       }
     
-    }, 1000);
+    }, 4000);
 
   }
 
@@ -365,20 +367,22 @@ function loadGame() {
   }
 
   function resetBall() {
+
+    let x = gameBorders.height/2;
+
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
     ball.left = ball.$.position().left;
     ball.width = ball.$.width();
     ball.height = ball.$.height();
-    ball.$.css('top', (ball.top = 300));
+    ball.$.css('top', (ball.top = x));
     ball.direction = { x: 0, y: 1 };
 
     ball.$.css('left', (ball.left = gameBorders.width / 2 - ball.width / 2));
 
-    // clearInterval(rotateBallInterval);
     ball.$.removeClass('rotate');
 
-    ballSpinn = true;
+    //ballSpinn = true;
   }
 
   function spawnBricks() {
@@ -391,6 +395,9 @@ function loadGame() {
     let gameBoxSize = $('.game').width();
     let color;
 
+    let hej = gameBorders.height/10;
+    
+
     for (let y = 0; y < 8; y++) {
 
       if (y == 0 || y == 3 || y == 6) { color = '#72fff0'; }
@@ -400,7 +407,7 @@ function loadGame() {
       /*#72fff0 middle #ffff00, #ff0066, #00ff00  #00b3b3  #0000ff  #e6ffff  #004d4d */
       for (let x = 0; x < lengthy; x++) {
 
-        const brick = createBrick(prevLeft, prevTop * y + 80, brickCSS.width, brickCSS.height, color);
+        const brick = createBrick(prevLeft, prevTop * y + hej, brickCSS.width, brickCSS.height, color);
         bricks.push(brick);
         $('.game').append(brick.$);
         prevLeft += brickCSS.width;
