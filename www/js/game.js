@@ -368,7 +368,7 @@ function loadGame() {
 
   function resetBall() {
 
-    let x = gameBorders.height/2;
+    let x = gameBorders.height/1.3;
 
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
