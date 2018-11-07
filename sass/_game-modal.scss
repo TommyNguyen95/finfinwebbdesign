@@ -18,8 +18,19 @@
 
 #submit-button {
     color: black;    
-    background-color: rgb(114, 255, 240);
+    background-color: rgb(180, 252, 245);
     margin-left: 41%;
+}
+
+#submit-name-validation-message {
+    margin-top: 5px;
+    color: rgb(237, 105, 105);
+}
+
+.close {
+		font-size: 40px;
+		color: rgb(114, 255, 240);
+		opacity: 1;
 }
 
 #points {

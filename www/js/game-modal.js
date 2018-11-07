@@ -21,7 +21,7 @@ function submitValidator(e) {
 		postNewHighscore();
 	}
 }
-
+ 
 
 
 $.getJSON('/json/game-modal.json', gameModalText);
