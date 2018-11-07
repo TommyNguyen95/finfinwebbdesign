@@ -189,14 +189,14 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-body">
-              <form role="form" id="ModalForm">
+              <form data-toggle="validator" role="form" id="ModalForm">
                 <div class="form-group">
                   <label for="points" class="col-form-label label1">Your Breakout points:</label>
                   <input type="text" class="form-control" id="points" readonly>
                 </div>
                 <div class="form-group">
                   <label for="name" class="col-form-label label2">Fill in your name:</label>
-                  <input type="text" class="form-control" maxlength="11" id="submit" name="submit" autofocus require></textarea>
+                  <input type="text" class="form-control" maxlength="11" id="submit" name="submit" autofocus="autofocus" required></textarea>
                 </div>
                 <button id="submit-button" type="submit" class="btn btn-primary submit-button">Submit</button>
               </form>
