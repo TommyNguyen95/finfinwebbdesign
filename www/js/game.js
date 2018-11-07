@@ -122,6 +122,8 @@ function loadGame() {
     paused = true;
     updateInterface();
     resetBall();
+    /*Resets the paddle to its default position when the player loses a life*/
+    resetPaddle();
   }
 
   function collisionDetectBallAndGame() {
@@ -324,7 +326,8 @@ function loadGame() {
     } else {
       startNewGame();
     }
-    resetPaddle();
+    /* Moved resetPaddle to loseLife function, to fix issue with paddle resetting when paused*/
+   /* resetPaddle(); */
     updateInterface();
   }
 
