@@ -1,48 +1,48 @@
 
 #gameModal {
-	color: rgb(114, 255, 240);
-	border-radius: 52px;
-	margin-top: 60px;
+    color: rgb(114, 255, 240);
+    border-radius: 52px;
+    margin-top: 60px;
 }
 
 .modal-header, .modal-body {
-	background-color: $site-background-color;
-	border: outset 2px rgb(114, 255, 240);
-	border-radius: 40px;
+    background-color: $site-background-color;
+    border: outset 2px rgb(114, 255, 240);
+    border-radius: 40px;
 }
 
 .modal-content{
-	margin: 0;
-	border-radius: 50px;
+    margin: 0;
+    border-radius: 50px;
 }
 
 #submit-button {
-	color: black;	
-	background-color: rgb(114, 255, 240);
-	margin-left: 41%;
+    color: black;    
+    background-color: rgb(114, 255, 240);
+    margin-left: 41%;
 }
 
 #points {
-	background-color: $site-background-color;
-	border: 0;
-	font-size: 37px;
-	color: rgb(114, 255, 240);
-	text-shadow: 1px 1px rgb(17, 140, 255);
+    background-color: $site-background-color;
+    border: 0;
+    font-size: 37px;
+    color: rgb(114, 255, 240);
+    text-shadow: 1px 1px rgb(17, 140, 255);
 }
 
 #name {
-	background-color: $site-background-color;
-	border: 1;
-	font-size: 40px;
-	color: rgb(89, 211, 255);
-	text-shadow: 1px 1px rgb(17, 140, 255);
-	text-align: center;
-	padding-top: 30px;
-	padding-bottom: 30px;
+    background-color: $site-background-color;
+    border: 1;
+    font-size: 40px;
+    color: rgb(89, 211, 255);
+    text-shadow: 1px 1px rgb(17, 140, 255);
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 @media only screen and (max-width: 400px){
-  #submit-button {
-    margin-left: 38%;
-  }
+ #submit-button {
+   margin-left: 38%;
+ }
 }

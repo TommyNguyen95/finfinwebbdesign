@@ -60,7 +60,7 @@
                 </a>
               </div>
               <a href="/game">
-                <img class="card-img-top card-border" src="/imgs/9.jpg">
+                <img class="card-img-top card-border main-h-change" src="/imgs/ourGame.png">
               </a>
             </div>
           </div>
@@ -168,20 +168,22 @@
     <!----------------------- GAME STARTS ----------------------->
 
     <section class="game">
-
       <div class="score-text"></div>
       <div class="score"><span class="score-points">00000</span></div>
       <div class="lives-text"></div>
+      <div></div>
       <div class="lives"><span>3</span></div>
-
       <div class="ball">
         <img src="/imgs/neon.png" id="eightball">
       </div>
+
+      <div class="button-left">left</div>
+      <div class="button-right">right</div>
+
       <div class="paddle">
         
       </div>
       <div class="main-text"></div>
-
       <!--gameover Modal starts-->
       <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -189,7 +191,7 @@
             <div class="modal-body">
               <form role="form" id="input-name">
                 <div class="form-group">
-                  <label for="points" class="col-form-label">Your Breakout points:</label>
+                  <label for="points" class="col-form-label label1">Your Breakout points:</label>
                   <input type="text" class="form-control" id="points" readonly>
                 </div>
                 <div class="form-group">
@@ -204,8 +206,8 @@
         </div>
       </div>
       <!--gameover Modal ends-->
-
     </section>
+
 
     <!----------------------- /GAME ENDS ----------------------->
 

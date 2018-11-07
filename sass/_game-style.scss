@@ -207,7 +207,7 @@ body {
   width: 100%;
   text-align: center;
   //top: 150px;
-  top: 55%;
+  top: 50%;
   font-size:20px;
 
   @media  screen and  (max-height:600px)  {     
@@ -238,6 +238,22 @@ body {
   background-color:#72fff0;
 }
 
+.button-left{
+  width:20%;
+  height:10%;
+  border:solid red 1px;
+  position:absolute;
+  bottom:0;
+}
+.button-right{
+  width:20%;
+  height:10%;
+  border:solid red 1px;
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+
   
   /* #8600b3, paddle: background-color:#595959; */
 
@@ -249,6 +265,7 @@ body {
   position: absolute;
   z-index: 1;
   border:solid black 1px;
+
 }
 
 .ball {
