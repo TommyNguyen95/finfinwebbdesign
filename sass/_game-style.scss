@@ -70,34 +70,70 @@ body {
 .score-text{
   .sv {
     position: absolute;
-    top: 6px;
+    top: 12px;
     right: 90px;
     font-size: 21px;
+
+    @media  screen and  (max-height:600px)  {     
+      font-size:20px;
+      top:10px;
+      right: 75px;
+
+    }
+    @media  screen and  (max-height:500px)  {     
+      font-size:15px; 
+      top:9px;
+      right: 58px;
+    }
+    @media  screen and  (max-height:400px)  {     
+      font-size:12px;
+      top:8.5px;
+      right: 48px;
+    }
   };
   .en {
     position: absolute;
-    top: 6px;
+    top: 12px;
     right: 90px;
     font-size: 21px;
+
+    @media  screen and  (max-height:600px)  {     
+      font-size:20px;
+      top:10px;
+      right: 75px;
+    }
+    @media  screen and  (max-height:500px)  {     
+      font-size:15px;
+      top:9px;
+      right: 58px;     
+    }
+    @media  screen and  (max-height:400px)  {     
+      font-size:12px;
+      top:8.5px;
+      right: 48px;
+    }
   };  
 };
 
-.lives-text {
+.lives-text{
   .en{
     position: absolute;
     top: 8px;
     left: 10px;
     font-size: 25px;
 
-    @media  screen and  (max-height:600px)  {     
+    @media screen and  (max-height:600px)  {     
       font-size:20px;
+      top:8px;
     }
-    @media  screen and  (max-height:500px)  {     
+    @media screen and  (max-height:500px)  {     
       font-size:15px;
+      top:7px;
     }
-    @media  screen and  (max-height:400px)  {     
+    @media screen and  (max-height:400px)  {     
       font-size:12px;
-    }
+      top:7px;
+    };
     
   }
   .sv{
@@ -108,12 +144,15 @@ body {
 
     @media  screen and  (max-height:600px)  {     
       font-size:20px;
+      top:8px;
     }
     @media  screen and  (max-height:500px)  {     
       font-size:15px;
+      top:7px;
     }
     @media  screen and  (max-height:400px)  {     
       font-size:12px;
+      top:7px;
     }
     
   }
@@ -127,12 +166,15 @@ body {
 
   @media  screen and  (max-height:600px)  {     
     font-size:20px;
+    left:55px;
   }
   @media  screen and  (max-height:500px)  {     
     font-size:15px;
+    left: 48px;
   }
   @media  screen and  (max-height:400px)  {     
     font-size:12px;
+    left: 40px;
   }
 }
 
@@ -145,7 +187,7 @@ body {
   font-size: 25px;
   width:100% !important;
   text-align:right;
- 
+  
   @media  screen and  (max-height:600px)  {     
     font-size:20px;
   }
@@ -155,7 +197,6 @@ body {
   @media  screen and  (max-height:400px)  {     
     font-size:12px;
   }
-
 }
 
 
