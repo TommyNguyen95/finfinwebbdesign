@@ -28,6 +28,7 @@ function loadGame() {
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
+  setupButtons();
   startNewGame();
 
   /*---Scroll game window to right place when start game---*/
@@ -342,6 +343,15 @@ function loadGame() {
     $('.ukflag, .svflag').click(updateInterface);
   }
 
+  function setupButtons(){
+
+    $('.button-left').click(function(){
+      
+      keysPressed.left === true;
+    });
+
+  }
+
   function loadGameBorders() {
     return {
       left: 0,
@@ -456,11 +466,8 @@ function loadGame() {
     clearInterval(window.gameInterval);
     // Wait a short delay before starting to let the player prepare
     setTimeout(() => {
-      let previousTime = performance.now() - updateSpeed;
       window.gameInterval = setInterval(() => {
-        const now = performance.now();
-        updateGame((now - previousTime) / 1000);
-        previousTime = now;
+        updateGame(updateSpeed / 1000);
       }, updateSpeed);
     }, 1000);
   }
