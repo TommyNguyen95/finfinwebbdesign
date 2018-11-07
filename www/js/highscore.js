@@ -1,4 +1,3 @@
-$('#submit-button').on('click', postNewHighscore);
 
  
 function postNewHighscore() {
