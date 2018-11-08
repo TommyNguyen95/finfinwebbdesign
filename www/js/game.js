@@ -22,8 +22,7 @@ function loadGame() {
 
   initialBallSpeed = gameBorders.height / 3;
   initialPaddleSpeed = gameBorders.width / 2;
-  //let ballSpinn = true;
-  //let rotateBallInterval;
+
 
 
   // Setup key listeners before starting the first game
@@ -212,7 +211,6 @@ function loadGame() {
           ball.direction.x *= -1;
         } else {
           // If it bounced above/below a brick
-          // if(Math.random() < .5){ball.direction.y *= -1;} thomas tips//
           ball.direction.y *= -1;
         }
         brick.$.remove();
@@ -373,7 +371,6 @@ function loadGame() {
     paddle.speed = initialPaddleSpeed;
     paddle.top = paddle.$.position().top;
     paddle.left = paddle.$.position().left;
-    /* paddle.width = paddle.$.width(); */
     paddle.width = gameBorders.width * 0.1;
     paddle.$.css('width', paddle.width);
     /*Paddel size */
