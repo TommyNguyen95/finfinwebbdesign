@@ -20,11 +20,11 @@ function loadGame() {
   let paddleHits = 0;
   let bricksKilled = 0;
 
-  initialBallSpeed= gameBorders.height/3;
-  initialPaddleSpeed= gameBorders.width/2;
+  initialBallSpeed = gameBorders.height / 3;
+  initialPaddleSpeed = gameBorders.width / 2;
   //let ballSpinn = true;
   //let rotateBallInterval;
-  
+
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -55,7 +55,7 @@ function loadGame() {
 
   }
 
-  function changePaddleSize(){
+  function changePaddleSize() {
     //Paddel change size 
     setInterval(function () {
 
@@ -67,14 +67,14 @@ function loadGame() {
 
     }, 2000);
   }
-  function ballFaster(){
+  function ballFaster() {
     //makes ball faster
     setInterval(function () {
 
       if (paused == false) {
         ball.speed += 10;
       }
-    
+
     }, 4000);
 
   }
@@ -106,9 +106,9 @@ function loadGame() {
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
 
-    
+
   }
-  
+
 
   function calculatePaddleDirection() {
     let movementVelocity = 0;
@@ -153,7 +153,7 @@ function loadGame() {
       //Score getting biggger and bigger
       score += 5 + Math.round(paddleHits / 2);
       paddleHits++;
-      
+
       dir = changeDirection();
 
       if (dir === "left") {
@@ -202,7 +202,7 @@ function loadGame() {
     else if (relativePosition < 0.7 && relativePosition > 0.2) { zone = "middleRight"; }
     return zone;
   }
- 
+
   function collisionDetectBallAndBricks() {
     for (let i = bricks.length - 1; i >= 0; --i) {
       const brick = bricks[i];
@@ -278,7 +278,7 @@ function loadGame() {
     $('.score .score-points').text((score + '').padStart(5, '0'));
     $('.lives span').text(lives);
     if (lives < 1) {
-     
+
       //sets the score value in the Data Modal  
       $('#gameModal #points').val(score);
       $('#gameModal').modal('show');
@@ -290,7 +290,7 @@ function loadGame() {
         $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
       }
     } else if (!bricks.length) {
-      
+
       //sets the score value in the Data Modal 
       $('#gameModal #points').val(score);
       $('#gameModal').modal('show');
@@ -343,7 +343,7 @@ function loadGame() {
     $('.ukflag, .svflag').click(updateInterface);
   }
 
-  function setupButtons(){
+  function setupButtons() {
 
     // Won't work when dev tools are open
     // on Windows...
@@ -392,7 +392,7 @@ function loadGame() {
 
   function resetBall() {
 
-    let x = gameBorders.height/1.3;
+    let x = gameBorders.height / 1.3;
 
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
@@ -419,8 +419,8 @@ function loadGame() {
     let gameBoxSize = $('.game').width();
     let color;
 
-    let hej = gameBorders.height/10;
-    
+    let hej = gameBorders.height / 10;
+
 
     for (let y = 0; y < 8; y++) {
 
@@ -428,7 +428,6 @@ function loadGame() {
       else if (y == 1 || y == 4 || y == 7) { color = '#00ff99'; }
       else if (y == 2 || y == 5 || y == 8) { color = '#00b3b3'; }
 
-      /*#72fff0 middle #ffff00, #ff0066, #00ff00  #00b3b3  #0000ff  #e6ffff  #004d4d */
       for (let x = 0; x < lengthy; x++) {
 
         const brick = createBrick(prevLeft, prevTop * y + hej, brickCSS.width, brickCSS.height, color);

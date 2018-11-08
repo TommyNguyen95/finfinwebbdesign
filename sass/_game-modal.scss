@@ -19,7 +19,8 @@
 #submit-button {
     color: black;    
     background-color: rgb(180, 252, 245);
-    margin-left: 41%;
+    display: block;
+		margin: auto;
 }
 
 #submit-name-validation-message {

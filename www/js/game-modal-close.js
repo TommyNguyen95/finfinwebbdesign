@@ -1,10 +1,5 @@
-
-
-$('.close').click(function(e){
-
-	e.preventDefault();
-
-    location.href='/game';
-
+$('.close').click(function (e) {
+  e.preventDefault();
+  location.href = '/game';
 });
 
