@@ -1,4 +1,4 @@
-//$('#input-name').on('submit', submitValidator);
+
 function postNewHighscore() {
   let name = $('#submit-name').val();//......  fetch the name from your <input>/or otherwhere//
   let score = $('#points').val();//...... fetch the score from the game's "score"-variable//
