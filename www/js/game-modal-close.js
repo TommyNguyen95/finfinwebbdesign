@@ -1,5 +1,6 @@
 $('.close').click(function (e) {
   e.preventDefault();
-  location.href = '/game';
+  window.location.reload();
+
 });
 
