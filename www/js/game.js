@@ -291,7 +291,7 @@ function loadGame() {
       }
     } else if (paused) {
       if (language == 'swedish') {
-        $('.main-text').html('<p class="sv">Tryck "Enter" för att starta/pausa spelet. Använd vänster och höger tangenterna för att röra bräddet</p>');
+        $('.main-text').html('<p class="sv">Tryck "Enter" för att starta/pausa spelet. Använd vänster- och högertangenterna för att röra bräddet</p>');
       } else {
         $('.main-text').html('<p class="en">Press "Enter" to start/pause game. Use left and right arrow keys to move paddle.</p>');
       }
