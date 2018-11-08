@@ -225,15 +225,6 @@ function loadGame() {
         const rollSound = new Audio("/audio/ljud1.WAV");
         rollSound.play();
 
-        /*Making score yellow*/
-        /* $('.score span').css('color','yellow');       
-      
-         setInterval(function(){
-           $('.score span').css('color','white');
-   
-         },500);*/
-        /*end*/
-
         updateInterface();
       }
     }
