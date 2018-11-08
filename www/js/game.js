@@ -394,7 +394,6 @@ function loadGame() {
 
     ball.$.removeClass('rotate');
 
-    //ballSpinn = true;
   }
 
   function spawnBricks() {
