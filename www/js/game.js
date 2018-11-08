@@ -325,7 +325,6 @@ function loadGame() {
       startNewGame();
     }
     /* Moved resetPaddle to loseLife function, to fix issue with paddle resetting when paused*/
-   /* resetPaddle(); */
     updateInterface();
   }
 
@@ -346,10 +345,26 @@ function loadGame() {
 
   function setupButtons(){
 
-    $('.button-left').click(function(){
-      
-      keysPressed.left === true;
+    // Won't work when dev tools are open
+    // on Windows...
+
+    $('.left').mousedown(function(){
+      keysPressed.left = true;
     });
+
+    $('.left').mouseup(function(){
+      keysPressed.left = false;
+    });
+
+    
+    $('.right').mousedown(function(){
+      keysPressed.right = true;
+    });
+
+    $('.right').mouseup(function(){
+      keysPressed.right = false;
+    });
+
 
   }
 

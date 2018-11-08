@@ -254,8 +254,32 @@ body {
   right:0;
 }
 
+@media only screen and (max-width: 600px) {
+  i {
+    position:absolute;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 6px;
+  }
   
-  /* #8600b3, paddle: background-color:#595959; */
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    bottom: 100px;
+    right: 25px;
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    bottom: 100px;
+    left:25px
+  }
+} 
+
+
+  
 
 .brick {
   left: 0;
