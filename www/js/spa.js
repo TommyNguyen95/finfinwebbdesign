@@ -1,5 +1,3 @@
-
-
 // For details: http://diveinto.html5doctor.com/history.html
 
 // Clicks on links

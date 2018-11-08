@@ -1,10 +1,8 @@
 $.getJSON('/json/startpage.json', write);
 
 let language = "swedish";
-
 function write(data) {
   let x = 1;
-
   for (let games in data) {
     let game = data[games];
     if (language === "swedish") {
@@ -13,7 +11,6 @@ function write(data) {
     else if (language === "english") {
       $('.gname' + x).text(game.en);
     }
-
     x++;
   }
 }

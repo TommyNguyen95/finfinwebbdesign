@@ -20,11 +20,11 @@ function loadGame() {
   let paddleHits = 0;
   let bricksKilled = 0;
 
-  initialBallSpeed= gameBorders.height/3;
-  initialPaddleSpeed= gameBorders.width/2;
+  initialBallSpeed = gameBorders.height / 3;
+  initialPaddleSpeed = gameBorders.width / 2;
   //let ballSpinn = true;
   //let rotateBallInterval;
-  
+
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -55,7 +55,7 @@ function loadGame() {
 
   }
 
-  function changePaddleSize(){
+  function changePaddleSize() {
     //Paddel change size 
     setInterval(function () {
 
@@ -67,14 +67,14 @@ function loadGame() {
 
     }, 2000);
   }
-  function ballFaster(){
+  function ballFaster() {
     //makes ball faster
     setInterval(function () {
 
       if (paused == false) {
         ball.speed += 10;
       }
-    
+
     }, 4000);
 
   }
@@ -106,9 +106,9 @@ function loadGame() {
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
 
-    
+
   }
-  
+
 
   function calculatePaddleDirection() {
     let movementVelocity = 0;
@@ -153,7 +153,7 @@ function loadGame() {
       //Score getting biggger and bigger
       score += 5 + Math.round(paddleHits / 2);
       paddleHits++;
-      
+
       dir = changeDirection();
 
       if (dir === "left") {
@@ -202,7 +202,7 @@ function loadGame() {
     else if (relativePosition < 0.7 && relativePosition > 0.2) { zone = "middleRight"; }
     return zone;
   }
- 
+
   function collisionDetectBallAndBricks() {
     for (let i = bricks.length - 1; i >= 0; --i) {
       const brick = bricks[i];
@@ -210,12 +210,10 @@ function loadGame() {
         if (getHorizontalOrVerticalDirection(brick, ball) == 'horizontal') {
           // If it bounced on the side of the brick
           ball.direction.x *= -1;
-          console.log('changed x direction to', ball.direction.x)
         } else {
           // If it bounced above/below a brick
           // if(Math.random() < .5){ball.direction.y *= -1;} thomas tips//
           ball.direction.y *= -1;
-          console.log('changed y direction to', ball.direction.y)
         }
         brick.$.remove();
         bricks.splice(i, 1);
@@ -280,7 +278,7 @@ function loadGame() {
     $('.score .score-points').text((score + '').padStart(5, '0'));
     $('.lives span').text(lives);
     if (lives < 1) {
-     
+
       //sets the score value in the Data Modal  
       $('#gameModal #points').val(score);
       $('#gameModal').modal('show');
@@ -292,7 +290,7 @@ function loadGame() {
         $('.main-text').html('<p class="en"> GAME OVER - PRESS ENTER TO PLAY AGAIN </p>');
       }
     } else if (!bricks.length) {
-      
+
       //sets the score value in the Data Modal 
       $('#gameModal #points').val(score);
       $('#gameModal').modal('show');
@@ -327,7 +325,7 @@ function loadGame() {
       startNewGame();
     }
     /* Moved resetPaddle to loseLife function, to fix issue with paddle resetting when paused*/
-   /* resetPaddle(); */
+    /* resetPaddle(); */
     updateInterface();
   }
 
@@ -346,10 +344,10 @@ function loadGame() {
     $('.ukflag, .svflag').click(updateInterface);
   }
 
-  function setupButtons(){
+  function setupButtons() {
 
-    $('.button-left').click(function(){
-      
+    $('.button-left').click(function () {
+
       keysPressed.left === true;
     });
 
@@ -374,14 +372,12 @@ function loadGame() {
     paddle.$.css('width', paddle.width);
     /*Paddel size */
     paddle.height = paddle.$.height();
-    console.log(gameBorders.width, '2:', paddle.width);
-
     paddle.$.css('left', (paddle.left = gameBorders.width / 2 - paddle.width / 2));
   }
 
   function resetBall() {
 
-    let x = gameBorders.height/1.3;
+    let x = gameBorders.height / 1.3;
 
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
@@ -408,8 +404,8 @@ function loadGame() {
     let gameBoxSize = $('.game').width();
     let color;
 
-    let hej = gameBorders.height/10;
-    
+    let hej = gameBorders.height / 10;
+
 
     for (let y = 0; y < 8; y++) {
 
