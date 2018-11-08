@@ -1,6 +1,6 @@
-$.getJSON('/json/gameover.json', text);
+$.getJSON('/json/gameover.json', gameoverText);
 
-function text(data) {
+function gameoverText(data) {
   if (language === "swedish") {
     $('.label1').text(data["points"].sv);
     $('.label2').text(data["name"].sv);
@@ -15,11 +15,11 @@ function text(data) {
 
 $('.svflag').click(function () {
   language = "swedish";
-  $.getJSON('/json/gameover.json', text);
+  $.getJSON('/json/gameover.json', gameoverText);
 });
 $('.ukflag').click(function () {
   language = "english";
-  $.getJSON('/json/gameover.json', text);
+  $.getJSON('/json/gameover.json', gameoverText);
 });
 
 

@@ -1,6 +1,6 @@
-$.getJSON('/json/footer.json', text);
+$.getJSON('/json/footer.json', footerText);
 
-function text(data) {
+function footerText(data) {
   if (language === "swedish") {
     $('.test').text(data["one"].sv);
     $('.test1').text(data["two"].sv);
@@ -12,9 +12,9 @@ function text(data) {
 }
 $('.svflag').click(function () {
   language = "swedish";
-  $.getJSON('/json/footer.json', text);
+  $.getJSON('/json/footer.json', footerText);
 });
 $('.ukflag').click(function () {
   language = "english";
-  $.getJSON('/json/footer.json', text);
+  $.getJSON('/json/footer.json', footerText);
 });
