@@ -1,24 +1,20 @@
 $.getJSON('/json/footer.json', text);
 
-
-function text(data){
-
-	if(language === "swedish"){
-		$('.test').text(data["one"].sv);
-		$('.test1').text(data["two"].sv);
-	}
-	else if(language === "english"){
-		$('.test').text(data["one"].en);
-		$('.test1').text(data["two"].en);
-	}
+function text(data) {
+  if (language === "swedish") {
+    $('.test').text(data["one"].sv);
+    $('.test1').text(data["two"].sv);
+  }
+  else if (language === "english") {
+    $('.test').text(data["one"].en);
+    $('.test1').text(data["two"].en);
+  }
 }
-
-
-$('.svflag').click(function(){
-    language="swedish";
-    $.getJSON('/json/footer.json', text);
+$('.svflag').click(function () {
+  language = "swedish";
+  $.getJSON('/json/footer.json', text);
 });
-$('.ukflag').click(function(){
-     language="english";
-     $.getJSON('/json/footer.json', text);
+$('.ukflag').click(function () {
+  language = "english";
+  $.getJSON('/json/footer.json', text);
 });
